@@ -1,0 +1,580 @@
+{
+  "GroundSpawn": {
+    "objclass": "SpawnZombiesJitteredWaveActionProps",
+    "objdata": {
+      "AdditionalPlantfood": 0,
+      "Zombies": [
+        {
+          "Type": "RTID(dark_armor3@ZombieTypes)",
+          "Row": 3,
+          "Column": 7
+        },
+        {
+          "Type": "RTID(dark@ZombieTypes)",
+          "Row": 3,
+          "Column": 9
+        }
+      ]
+    }
+  },
+  "GroundSpawnAlt": {
+    "objclass": "SpawnZombiesFromGroundSpawnerProps",
+    "objdata": {
+      "ColumnStart": 4,
+      "ColumnEnd": 9,
+      "Zombies": [
+        {
+          "Type": "RTID(mummy@ZombieTypes)"
+        },
+        {
+          "Type": "RTID(mummy@ZombieTypes)"
+        },
+        {
+          "Type": "RTID(mummy_armor1@ZombieTypes)"
+        }
+      ]
+    }
+  },
+  "SandstormSpecific": {
+    "objclass": "SpawnZombiesJitteredWaveActionProps",
+    "objdata": {
+      "Zombies": [
+        {
+          "Style": "sandstorm",
+          "Column": "7",
+          "Row": "2",
+          "Type": "RTID(pharaoh@ZombieTypes)"
+        },
+        {
+          "Style": "sandstorm",
+          "Column": "6",
+          "Row": "3",
+          "Type": "RTID(pharaoh@ZombieTypes)"
+        }
+      ]
+    }
+  },
+  "SandstormColumns": {
+    "objclass": "StormZombieSpawnerProps",
+    "objdata": {
+      "ColumnEnd": 5,
+      "ColumnStart": 4,
+      "GroupSize": 2,
+      "TimeBetweenGroups": 2.5,
+      "Type": "sandstorm",
+      "Zombies": [
+        {
+          "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+          "Row": "5"
+        }
+      ]
+    }
+  },
+  "SnowstormSpecific": {
+    "objclass": "SpawnZombiesJitteredWaveActionProps",
+    "objdata": {
+      "Zombies": [
+        {
+          "Style": "snowstorm",
+          "Column": "7",
+          "Row": "2",
+          "Type": "RTID(iceage_armor4@ZombieTypes)"
+        },
+        {
+          "Style": "snowstorm",
+          "Column": "6",
+          "Row": "3",
+          "Type": "RTID(iceage_armor4@ZombieTypes)"
+        }
+      ]
+    }
+  },
+  "SnowstormColumns": {
+    "objclass": "StormZombieSpawnerProps",
+    "objdata": {
+      "ColumnEnd": 5,
+      "ColumnStart": 4,
+      "GroupSize": 2,
+      "TimeBetweenGroups": 2.5,
+      "Type": "snowstorm",
+      "Zombies": [
+        {
+          "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+          "Row": "5"
+        }
+      ]
+    }
+  },
+  "RaidingParty": {
+    "objclass": "RaidingPartyZombieSpawnerProps",
+    "objdata": {
+      "GroupSize": 1,
+      "SwashbucklerCount": 5,
+      "TimeBetweenGroups": 1
+    }
+  },
+  "MissileLoaded": {
+    "objclass": "MissileLocateWaveActionProps",
+    "objdata": {
+      "ColumnEnd": 0,
+      "ColumnStart": 0,
+      "MissileCount": 1,
+      "MissileFallCountdown": 4,
+      "WaveStartMessage": "[WARNING_MISSILE]"
+    }
+  },
+  "SpiderRain": {
+    "objclass": "SpiderRainZombieSpawnerProps",
+    "objdata": {
+      "ColumnEnd": 8,
+      "ColumnStart": 5,
+      "GroupSize": 2,
+      "SpiderCount": 5,
+      "SpiderZombieName": "future_imp",
+      "TimeBeforeFullSpawn": 2,
+      "TimeBetweenGroups": 0.5,
+      "WaveStartMessage": "[WARNING_SPIDERRAIN]",
+      "ZombieFallTime": 1.5
+    }
+  },
+  "Necromancy": {
+    "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+    "objdata": {
+      "AdditionalPlantfood": "0",
+      "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+      "ZombieSpawnWaitTime": "1",
+      "GridTypes": [
+        "RTID(gravestone_dark@GridItemTypes)",
+        "RTID(gravestoneSunOnDestruction@GridItemTypes)",
+        "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+      ],
+      "Zombies": [
+        {
+          "Type": "RTID(dark_imp@ZombieTypes)"
+        },
+        {
+          "Type": "RTID(dark_imp@ZombieTypes)"
+        }
+      ]
+    }
+  },
+  "GravestoneSpawn": {
+    "objclass": "SpawnGravestonesWaveActionProps",
+    "objdata": {
+      "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+      "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+      "maxX": 9,
+      "minX": 0,
+      "GravestonePool": [
+        {
+          "Count": 4,
+          "Type": "RTID(gravestone_dark@GridItemTypes)"
+        },
+        {
+          "Count": 0,
+          "Type": "RTID(gravestoneSunOnDestruction@GridItemTypes)"
+        },
+        {
+          "Count": 1,
+          "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+        }
+      ],
+      "SpawnPositionsPool": [
+        {
+          "mX": 4,
+          "mY": 0
+        },
+        {
+          "mX": 4,
+          "mY": 1
+        },
+        {
+          "mX": 4,
+          "mY": 2
+        },
+        {
+          "mX": 4,
+          "mY": 3
+        },
+        {
+          "mX": 4,
+          "mY": 4
+        }
+      ]
+    }
+  },
+  "TideChangeTo1": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 1,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "TideChangeTo2": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 2,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "TideChangeTo3": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 3,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "TideChangeTo4": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 4,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "TideChangeTo5": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 5,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "TideChangeTo6": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 6,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "TideChangeTo7": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 7,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "TideChangeTo8": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 8,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "TideChangeTo9": {
+    "objclass": "TidalChangeWaveActionProps",
+    "objdata": {
+      "TidalChange": {
+        "ChangeAmount": 9,
+        "ChangeType": "absolute"
+      }
+    }
+  },
+  "LowTide": {
+    "objclass": "BeachStageEventZombieSpawnerProps",
+    "objdata": {
+      "ColumnEnd": "8",
+      "ColumnStart": "4",
+      "GroupSize": "4",
+      "TimeBeforeFullSpawn": "0.5",
+      "TimeBetweenGroups": "0.25",
+      "WaveStartMessage": "[WARNING_LOW_TIDE]",
+      "ZombieCount": 2,
+      "ZombieName": "beach_armor2"
+    }
+  },
+  "FrostWind": {
+    "objclass": "FrostWindWaveActionProps",
+    "objdata": {
+      "Winds": [
+        {
+          "Direction": "right",
+          "Row": 0
+        },
+        {
+          "Direction": "right",
+          "Row": 4
+        }
+      ]
+    }
+  },
+  "ParachuteRain": {
+    "objclass": "ParachuteRainZombieSpawnerProps",
+    "objdata": {
+      "ColumnEnd": "8",
+      "ColumnStart": "4",
+      "GroupSize": "2",
+      "SpiderCount": 2,
+      "SpiderZombieName": "lostcity_lostpilot",
+      "TimeBeforeFullSpawn": "1",
+      "TimeBetweenGroups": "0.2",
+      "WaveStartMessage": "[WARNING_PARACHUTERAIN]",
+      "ZombieFallTime": "1.5"
+    }
+  },
+  "ParachuteRainVeteran": {
+    "objclass": "ParachuteRainZombieSpawnerProps",
+    "objdata": {
+      "ColumnEnd": 3,
+      "ColumnStart": 2,
+      "GroupSize": 1,
+      "SpiderCount": 2,
+      "SpiderZombieName": "lostcity_lostpilot_veteran",
+      "TimeBeforeFullSpawn": "2",
+      "TimeBetweenGroups": "0.5",
+      "WaveStartMessage": "[WARNING_PARACHUTERAIN]",
+      "ZombieFallTime": "1.5",
+      "ZombiesToBringWith": [
+        {
+          "mY": 1,
+          "mX": 1,
+          "Type": "lostcity_excavator"
+        },
+        {
+          "mY": 2,
+          "mX": 3,
+          "Type": "lostcity_excavator"
+        }
+      ]
+    }
+  },
+  "RocketStrike": {
+    "objclass": "RaidingPartyZombieSpawnerProps",
+    "objdata": {
+      "GroupSize": 3,
+      "SwashbucklerCount": 9,
+      "TimeBetweenGroups": 2.5,
+      "ZombieType": "RTID(kongfu_rocket_imp@ZombieTypes)",
+      "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+    }
+  },
+  "BlackHole": {
+    "objclass": "KongfuChiHoleProps",
+    "objdata": {
+      "Direction": 3,
+      "LanesToAffect": [0, 1, 2, 3, 4],
+      "WaveStartMessage": "[WARNING_QIGONG_HOLE]",
+      "PlantMovingTimeBetweenSquares": 1,
+      "LifeSpan": 1.5,
+      "TimeBeforeAbsorbing": 1.5,
+      "Column": 8,
+      "SuppressesNextWave": true,
+      "SuppressObjectiveTip": false
+    }
+  },
+  "SpawnDino": {
+    "objclass": "DinoWaveActionProps",
+    "objdata": {
+      "DinoRow": 0,
+      "DinoType": "ankylo"
+    }
+  },
+  "Lightning": {
+    "objclass": "ThunderChargeWaveActionProps",
+    "objdata": {
+      "WaveStartMessage": "[WARNING_THUNDER_STRIKE]",
+      "TimeBeforeFirst": {
+        "Min": 3,
+        "Max": 3
+      },
+      "TimeBetween": {
+        "Min": 3,
+        "Max": 3
+      },
+      "Thunders": [
+        {
+          "Sign": -1,
+          "LinkedPlantCount": 5
+        }
+      ]
+    }
+  },
+  "Dropship": {
+    "objclass": "DropShipZombieSpawnerProps",
+    "objdata": {
+      "DropShipType": "sky_dropship",
+      "DropShipPosition": {
+        "mX": 4,
+        "mY": 1
+      },
+      "DropShipShiftedProperties": {
+        "ImpType": "sky_imp",
+        "ImpCount": {
+          "Min": 3,
+          "Max": 3
+        },
+        "TimeBeforeFirst": {
+          "Min": 2,
+          "Max": 2
+        },
+        "TimeBetween": {
+          "Min": 4,
+          "Max": 4
+        },
+        "ImpLandingColumns": [1, 2],
+        "ImpLandingRows": [],
+        "ImpFlyingDuration": {
+          "Min": 3,
+          "Max": 3.5
+        }
+      }
+    }
+  },
+  "PortalSpawnVanilla": {
+    "objclass": "SpawnModernPortalsWaveActionProps",
+    "objdata": {
+      "PortalColumn": 6,
+      "PortalRow": 1,
+      "PortalType": "RTID(egypt@PortalTypes)",
+      "SpawnEffectAnimID": "",
+      "SpawnSoundID": ""
+    }
+  },
+  "PortalSpawnCustom": {
+    "objclass": "SpawnModernPortalsWaveActionProps",
+    "objdata": {
+      "PortalColumn": 6,
+      "PortalRow": 1,
+      "PortalType": "RTID(portal_custom@CurrentLevel)",
+      "SpawnEffectAnimID": "",
+      "SpawnSoundID": ""
+    }
+  },
+  "PortalTypeCustom": {
+    "objclass": "PortalType",
+    "objdata": {
+      "Properties": "RTID(portal_custom_props@CurrentLevel)"
+    }
+  },
+  "PortalPropsCustom": {
+    "objclass": "PortalProps",
+    "objdata": {
+      "TimeBeforeFirst": {
+        "Min": 0.5,
+        "Max": 1
+      },
+      "TimeBetween": {
+        "Min": 4,
+        "Max": 6
+      },
+      "Scale": 1,
+      "World": "egypt",
+      "ZombieTypesToSpawn": [
+        {
+          "Weight": 1,
+          "ZombieTypeName": "tutorial_armor4"
+        },
+        {
+          "Weight": 2,
+          "ZombieTypeName": "mummy_armor4"
+        },
+        {
+          "Weight": 1,
+          "ZombieTypeName": "pirate_armor4"
+        }
+      ]
+    }
+  },
+  "CustomAmbushText": {
+    "objclass": "WaveWarningProps",
+    "objdata": {
+      "LabelR": 173,
+      "LabelG": 20,
+      "LabelB": 9,
+      "LabelAInit": 1,
+      "OutlineR": 0,
+      "OutlineG": 0,
+      "OutlineB": 0,
+      "String": "Test Ambush",
+      "Sound": "HugeWave",
+      "LabelTargetScale": 0.5,
+      "LabelInitScale": 4,
+      "Duration": 2.5,
+      "InitTime": 0.33
+    }
+  },
+  "SpawnPlants": {
+    "objclass": "SpawnPlantsWaveActionProps",
+    "objdata": {
+      "Plants": [
+        {
+          "TypeName": "wallnut",
+          "SpawnAnim": "grow",
+          "AllowSpawnOnOtherPlants": false,
+          "GridX": 2,
+          "GridY": 2
+        }
+      ]
+    }
+  },
+  "LevelScheduler": {
+    "objclass": "LevelSchedulerProps",
+    "objdata": {
+      "TimeBeforeFirst": {
+        "Max": 10,
+        "Min": 10
+      },
+      "TimeBetween": {
+        "Max": 10,
+        "Min": 10
+      },
+      "Repeat": {
+        "Max": 1000,
+        "Min": 1000
+      },
+      "RewardWhenEnded": false,
+      "SuppressRewardState": false,
+      "Events": ["RTID(WaveMissileEvent@CurrentLevel)"]
+    }
+  },
+  "RandomEvent": {
+    "objclass": "RandomEventsProps",
+    "objdata": {
+      "EventCount": {
+        "Min": 1,
+        "Max": 1
+      },
+      "Events": [
+        "RTID(Necromancy@CurrentLevel)",
+        "RTID(Sandstorm@CurrentLevel)",
+        "RTID(Raiding@CurrentLevel)",
+        "RTID(Bot@CurrentLevel)"
+      ]
+    }
+  },
+  "LoseGame": {
+    "objclass": "LoseGameWaveActionProps",
+    "objdata": {
+      "Tip": {
+        "en": "YOU LOST!",
+        "zh": "你输了"
+      },
+      "SmallTip": {
+        "en": "",
+        "zh": ""
+      }
+    }
+  },
+  "TimerObjective": {
+    "objclass": "LevelDeadLineProps",
+    "objdata": {
+      "SuppressObjectiveTip": false,
+      "Countdown": 200,
+      "Events": ["RTID(Deadline@CurrentLevel)"]
+    }
+  }
+}

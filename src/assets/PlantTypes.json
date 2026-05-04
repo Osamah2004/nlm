@@ -1,0 +1,3449 @@
+{
+  "#comment": "Plant Types!",
+  "version": 1,
+  "objects": [
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "peashooter"
+        ],
+        "objdata": {
+            "PlantBasedOn": "peashooter",
+            "Properties": "RTID(peashooter@.)",
+            "//ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(peashooter@PlantAlmanac)"
+            },
+            "//PlantRedirection": [
+                {
+                    "Type": "peashooter",
+                    "Weight": 1
+                }
+            ],
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(peashooter@.)",
+                "NAME": {
+                    "en": "peashooter",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "seashooter"
+        ],
+        "objdata": {
+            "PlantBasedOn": "seashooter",
+            "Properties": "RTID(seashooter@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(seashooter@.)",
+                "NAME": {
+                    "en": "seashooter",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "sunflower"
+        ],
+        "objdata": {
+            "PlantBasedOn": "sunflower",
+            "Properties": "RTID(sunflower@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(sunflower@.)",
+                "NAME": {
+                    "en": "sunflower",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "wallnut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "wallnut",
+            "Properties": "RTID(wallnut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(wallnut@.)",
+                "NAME": {
+                    "en": "wallnut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "potatomine"
+        ],
+        "objdata": {
+            "PlantBasedOn": "potatomine",
+            "Properties": "RTID(potatomine@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(potatomine@.)",
+                "NAME": {
+                    "en": "potatomine",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "cabbagepult"
+        ],
+        "objdata": {
+            "PlantBasedOn": "cabbagepult",
+            "Properties": "RTID(cabbagepult@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(cabbagepult@.)",
+                "NAME": {
+                    "en": "cabbagepult",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "bloomerang"
+        ],
+        "objdata": {
+            "PlantBasedOn": "bloomerang",
+            "Properties": "RTID(bloomerang@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(bloomerang@.)",
+                "NAME": {
+                    "en": "bloomerang",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "iceburg"
+        ],
+        "objdata": {
+            "PlantBasedOn": "iceburg",
+            "Properties": "RTID(iceburg@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(iceburg@.)",
+                "NAME": {
+                    "en": "iceburg",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "bonkchoy"
+        ],
+        "objdata": {
+            "PlantBasedOn": "bonkchoy",
+            "Properties": "RTID(bonkchoy@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(bonkchoy@.)",
+                "NAME": {
+                    "en": "bonkchoy",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "repeater"
+        ],
+        "objdata": {
+            "PlantBasedOn": "repeater",
+            "Properties": "RTID(repeater@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(repeater@.)",
+                "NAME": {
+                    "en": "repeater",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "megagatling"
+        ],
+        "objdata": {
+            "PlantBasedOn": "megagatling",
+            "Properties": "RTID(megagatling@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(megagatling@.)",
+                "NAME": {
+                    "en": "megagatling",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "scaredyshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "scaredyshroom",
+            "Properties": "RTID(scaredyshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(scaredyshroom@.)",
+                "NAME": {
+                    "en": "scaredyshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "fumeshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "fumeshroom",
+            "Properties": "RTID(fumeshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(fumeshroom@.)",
+                "NAME": {
+                    "en": "fumeshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "gravebuster"
+        ],
+        "objdata": {
+            "PlantBasedOn": "gravebuster",
+            "Properties": "RTID(gravebuster@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(gravebuster@.)",
+                "NAME": {
+                    "en": "gravebuster",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "pumpkin"
+        ],
+        "objdata": {
+            "PlantBasedOn": "pumpkin",
+            "Properties": "RTID(pumpkin@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(pumpkin@.)",
+                "NAME": {
+                    "en": "pumpkin",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "pvine"
+        ],
+        "objdata": {
+            "PlantBasedOn": "pvine",
+            "Properties": "RTID(pvine@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(pvine@.)",
+                "NAME": {
+                    "en": "pvine",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "floawerPot"
+        ],
+        "objdata": {
+            "PlantBasedOn": "floawerPot",
+            "Properties": "RTID(floawerPot@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(floawerPot@.)",
+                "NAME": {
+                    "en": "floawerPot",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "murkadamia"
+        ],
+        "objdata": {
+            "PlantBasedOn": "murkadamia",
+            "Properties": "RTID(murkadamia@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(murkadamia@.)",
+                "NAME": {
+                    "en": "murkadamia",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "noctarine"
+        ],
+        "objdata": {
+            "PlantBasedOn": "noctarine",
+            "Properties": "RTID(noctarine@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(noctarine@.)",
+                "NAME": {
+                    "en": "noctarine",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "shadowpeashooter"
+        ],
+        "objdata": {
+            "PlantBasedOn": "shadowpeashooter",
+            "Properties": "RTID(shadowpeashooter@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(shadowpeashooter@.)",
+                "NAME": {
+                    "en": "shadowpeashooter",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "firepeashooter"
+        ],
+        "objdata": {
+            "PlantBasedOn": "firepeashooter",
+            "Properties": "RTID(firepeashooter@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(firepeashooter@.)",
+                "NAME": {
+                    "en": "firepeashooter",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "threepeater"
+        ],
+        "objdata": {
+            "PlantBasedOn": "threepeater",
+            "Properties": "RTID(threepeater@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(threepeater@.)",
+                "NAME": {
+                    "en": "threepeater",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "primalpeashooter"
+        ],
+        "objdata": {
+            "PlantBasedOn": "primalpeashooter",
+            "Properties": "RTID(primalpeashooter@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(primalpeashooter@.)",
+                "NAME": {
+                    "en": "primalpeashooter",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "xshot"
+        ],
+        "objdata": {
+            "PlantBasedOn": "xshot",
+            "Properties": "RTID(xshot@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(xshot@.)",
+                "NAME": {
+                    "en": "xshot",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "homingthistle"
+        ],
+        "objdata": {
+            "PlantBasedOn": "homingthistle",
+            "Properties": "RTID(homingthistle@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(homingthistle@.)",
+                "NAME": {
+                    "en": "homingthistle",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "starfruit"
+        ],
+        "objdata": {
+            "PlantBasedOn": "starfruit",
+            "Properties": "RTID(starfruit@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(starfruit@.)",
+                "NAME": {
+                    "en": "starfruit",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "shootingstarfruit"
+        ],
+        "objdata": {
+            "PlantBasedOn": "shootingstarfruit",
+            "Properties": "RTID(shootingstarfruit@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(shootingstarfruit@.)",
+                "NAME": {
+                    "en": "shootingstarfruit",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "lilypad"
+        ],
+        "objdata": {
+            "PlantBasedOn": "lilypad",
+            "Properties": "RTID(lilypad@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(lilypad@.)",
+                "NAME": {
+                    "en": "lilypad",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "atombomb"
+        ],
+        "objdata": {
+            "PlantBasedOn": "atombomb",
+            "Properties": "RTID(atombomb@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(atombomb@.)",
+                "NAME": {
+                    "en": "atombomb",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "atombomb_seedling"
+        ],
+        "objdata": {
+            "PlantBasedOn": "atombomb_seedling",
+            "Properties": "RTID(atombomb_seedling@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(atombomb_seedling@.)",
+                "NAME": {
+                    "en": "atombomb_seedling",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "seedling"
+        ],
+        "objdata": {
+            "PlantBasedOn": "seedling",
+            "Properties": "RTID(seedling@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(seedling@.)",
+                "NAME": {
+                    "en": "seedling",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "sunshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "sunshroom",
+            "Properties": "RTID(sunshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(sunshroom@.)",
+                "NAME": {
+                    "en": "sunshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "twinsunflower"
+        ],
+        "objdata": {
+            "PlantBasedOn": "twinsunflower",
+            "Properties": "RTID(twinsunflower@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(twinsunflower@.)",
+                "NAME": {
+                    "en": "twinsunflower",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "dragonbruit"
+        ],
+        "objdata": {
+            "PlantBasedOn": "dragonbruit",
+            "Properties": "RTID(dragonbruit@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(dragonbruit@.)",
+                "NAME": {
+                    "en": "dragonbruit",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "moonflower"
+        ],
+        "objdata": {
+            "PlantBasedOn": "moonflower",
+            "Properties": "RTID(moonflower@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(moonflower@.)",
+                "NAME": {
+                    "en": "moonflower",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "snowpea"
+        ],
+        "objdata": {
+            "PlantBasedOn": "snowpea",
+            "Properties": "RTID(snowpea@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(snowpea@.)",
+                "NAME": {
+                    "en": "snowpea",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "lightningreed"
+        ],
+        "objdata": {
+            "PlantBasedOn": "lightningreed",
+            "Properties": "RTID(lightningreed@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(lightningreed@.)",
+                "NAME": {
+                    "en": "lightningreed",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "kernelpult"
+        ],
+        "objdata": {
+            "PlantBasedOn": "kernelpult",
+            "Properties": "RTID(kernelpult@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(kernelpult@.)",
+                "NAME": {
+                    "en": "kernelpult",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "snappea"
+        ],
+        "objdata": {
+            "PlantBasedOn": "snappea",
+            "Properties": "RTID(snappea@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(snappea@.)",
+                "NAME": {
+                    "en": "snappea",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "meteorflower"
+        ],
+        "objdata": {
+            "PlantBasedOn": "meteorflower",
+            "Properties": "RTID(meteorflower@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(meteorflower@.)",
+                "NAME": {
+                    "en": "meteorflower",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "springbean"
+        ],
+        "objdata": {
+            "PlantBasedOn": "springbean",
+            "Properties": "RTID(springbean@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(springbean@.)",
+                "NAME": {
+                    "en": "springbean",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "umbrellaleaf"
+        ],
+        "objdata": {
+            "PlantBasedOn": "umbrellaleaf",
+            "Properties": "RTID(umbrellaleaf@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(umbrellaleaf@.)",
+                "NAME": {
+                    "en": "umbrellaleaf",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "melonpult"
+        ],
+        "objdata": {
+            "PlantBasedOn": "melonpult",
+            "Properties": "RTID(melonpult@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(melonpult@.)",
+                "NAME": {
+                    "en": "melonpult",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "wintermelon"
+        ],
+        "objdata": {
+            "PlantBasedOn": "wintermelon",
+            "Properties": "RTID(wintermelon@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(wintermelon@.)",
+                "NAME": {
+                    "en": "wintermelon",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "blover"
+        ],
+        "objdata": {
+            "PlantBasedOn": "blover",
+            "Properties": "RTID(blover@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(blover@.)",
+                "NAME": {
+                    "en": "blover",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "spikeweed"
+        ],
+        "objdata": {
+            "PlantBasedOn": "spikeweed",
+            "Properties": "RTID(spikeweed@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(spikeweed@.)",
+                "NAME": {
+                    "en": "spikeweed",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "spikerock"
+        ],
+        "objdata": {
+            "PlantBasedOn": "spikerock",
+            "Properties": "RTID(spikerock@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(spikerock@.)",
+                "NAME": {
+                    "en": "spikerock",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "chomper"
+        ],
+        "objdata": {
+            "PlantBasedOn": "chomper",
+            "Properties": "RTID(chomper@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(chomper@.)",
+                "NAME": {
+                    "en": "chomper",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "glaciershroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "glaciershroom",
+            "Properties": "RTID(glaciershroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(glaciershroom@.)",
+                "NAME": {
+                    "en": "glaciershroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "primalwallnut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "primalwallnut",
+            "Properties": "RTID(primalwallnut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(primalwallnut@.)",
+                "NAME": {
+                    "en": "primalwallnut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "buttercup"
+        ],
+        "objdata": {
+            "PlantBasedOn": "buttercup",
+            "Properties": "RTID(buttercup@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(buttercup@.)",
+                "NAME": {
+                    "en": "buttercup",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "banana"
+        ],
+        "objdata": {
+            "PlantBasedOn": "banana",
+            "Properties": "RTID(banana@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(banana@.)",
+                "NAME": {
+                    "en": "banana",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "missiletoe"
+        ],
+        "objdata": {
+            "PlantBasedOn": "missiletoe",
+            "Properties": "RTID(missiletoe@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(missiletoe@.)",
+                "NAME": {
+                    "en": "missiletoe",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "cherry_bomb"
+        ],
+        "objdata": {
+            "PlantBasedOn": "cherry_bomb",
+            "Properties": "RTID(cherry_bomb@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(cherry_bomb@.)",
+                "NAME": {
+                    "en": "cherry_bomb",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "armamint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "armamint",
+            "Properties": "RTID(armamint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(armamint@.)",
+                "NAME": {
+                    "en": "armamint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "containmint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "containmint",
+            "Properties": "RTID(containmint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(containmint@.)",
+                "NAME": {
+                    "en": "containmint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "filamint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "filamint",
+            "Properties": "RTID(filamint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(filamint@.)",
+                "NAME": {
+                    "en": "filamint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "reinforcemint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "reinforcemint",
+            "Properties": "RTID(reinforcemint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(reinforcemint@.)",
+                "NAME": {
+                    "en": "reinforcemint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "bombardmint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "bombardmint",
+            "Properties": "RTID(bombardmint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(bombardmint@.)",
+                "NAME": {
+                    "en": "bombardmint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "enchantmint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "enchantmint",
+            "Properties": "RTID(enchantmint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(enchantmint@.)",
+                "NAME": {
+                    "en": "enchantmint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "ailmint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "ailmint",
+            "Properties": "RTID(ailmint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(ailmint@.)",
+                "NAME": {
+                    "en": "ailmint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "concealmint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "concealmint",
+            "Properties": "RTID(concealmint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(concealmint@.)",
+                "NAME": {
+                    "en": "concealmint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "peppermint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "peppermint",
+            "Properties": "RTID(peppermint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(peppermint@.)",
+                "NAME": {
+                    "en": "peppermint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "enforcemint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "enforcemint",
+            "Properties": "RTID(enforcemint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(enforcemint@.)",
+                "NAME": {
+                    "en": "enforcemint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "enlightenmint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "enlightenmint",
+            "Properties": "RTID(enlightenmint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(enlightenmint@.)",
+                "NAME": {
+                    "en": "enlightenmint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "wintermint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "wintermint",
+            "Properties": "RTID(wintermint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(wintermint@.)",
+                "NAME": {
+                    "en": "wintermint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "spearmint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "spearmint",
+            "Properties": "RTID(spearmint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(spearmint@.)",
+                "NAME": {
+                    "en": "spearmint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "appeasemint"
+        ],
+        "objdata": {
+            "PlantBasedOn": "appeasemint",
+            "Properties": "RTID(appeasemint@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(appeasemint@.)",
+                "NAME": {
+                    "en": "appeasemint",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "doomshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "doomshroom",
+            "Properties": "RTID(doomshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(doomshroom@.)",
+                "NAME": {
+                    "en": "doomshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "cranjelly"
+        ],
+        "objdata": {
+            "PlantBasedOn": "cranjelly",
+            "Properties": "RTID(cranjelly@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(cranjelly@.)",
+                "NAME": {
+                    "en": "cranjelly",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "dragonbabybruit"
+        ],
+        "objdata": {
+            "PlantBasedOn": "dragonbabybruit",
+            "Properties": "RTID(dragonbabybruit@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(dragonbabybruit@.)",
+                "NAME": {
+                    "en": "dragonbabybruit",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "torchwood"
+        ],
+        "objdata": {
+            "PlantBasedOn": "torchwood",
+            "Properties": "RTID(torchwood@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(torchwood@.)",
+                "NAME": {
+                    "en": "torchwood",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "jalapeno"
+        ],
+        "objdata": {
+            "PlantBasedOn": "jalapeno",
+            "Properties": "RTID(jalapeno@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(jalapeno@.)",
+                "NAME": {
+                    "en": "jalapeno",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "puffshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "puffshroom",
+            "Properties": "RTID(puffshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(puffshroom@.)",
+                "NAME": {
+                    "en": "puffshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "gloomvine"
+        ],
+        "objdata": {
+            "PlantBasedOn": "gloomvine",
+            "Properties": "RTID(gloomvine@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(gloomvine@.)",
+                "NAME": {
+                    "en": "gloomvine",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "vamporcini"
+        ],
+        "objdata": {
+            "PlantBasedOn": "vamporcini",
+            "Properties": "RTID(vamporcini@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(vamporcini@.)",
+                "NAME": {
+                    "en": "vamporcini",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "primalpotatomine"
+        ],
+        "objdata": {
+            "PlantBasedOn": "primalpotatomine",
+            "Properties": "RTID(primalpotatomine@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(primalpotatomine@.)",
+                "NAME": {
+                    "en": "primalpotatomine",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "cactus"
+        ],
+        "objdata": {
+            "PlantBasedOn": "cactus",
+            "Properties": "RTID(cactus@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(cactus@.)",
+                "NAME": {
+                    "en": "cactus",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "powerlily"
+        ],
+        "objdata": {
+            "PlantBasedOn": "powerlily",
+            "Properties": "RTID(powerlily@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(powerlily@.)",
+                "NAME": {
+                    "en": "powerlily",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "coconutcannon"
+        ],
+        "objdata": {
+            "PlantBasedOn": "coconutcannon",
+            "Properties": "RTID(coconutcannon@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(coconutcannon@.)",
+                "NAME": {
+                    "en": "coconutcannon",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "peapod"
+        ],
+        "objdata": {
+            "PlantBasedOn": "peapod",
+            "Properties": "RTID(peapod@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(peapod@.)",
+                "NAME": {
+                    "en": "peapod",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "snapdragon"
+        ],
+        "objdata": {
+            "PlantBasedOn": "snapdragon",
+            "Properties": "RTID(snapdragon@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(snapdragon@.)",
+                "NAME": {
+                    "en": "snapdragon",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "gatling"
+        ],
+        "objdata": {
+            "PlantBasedOn": "gatling",
+            "Properties": "RTID(gatling@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(gatling@.)",
+                "NAME": {
+                    "en": "gatling",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "splitpea"
+        ],
+        "objdata": {
+            "PlantBasedOn": "splitpea",
+            "Properties": "RTID(splitpea@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(splitpea@.)",
+                "NAME": {
+                    "en": "splitpea",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "chilibean"
+        ],
+        "objdata": {
+            "PlantBasedOn": "chilibean",
+            "Properties": "RTID(chilibean@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(chilibean@.)",
+                "NAME": {
+                    "en": "chilibean",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tallnut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tallnut",
+            "Properties": "RTID(tallnut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tallnut@.)",
+                "NAME": {
+                    "en": "tallnut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "hurrikale"
+        ],
+        "objdata": {
+            "PlantBasedOn": "hurrikale",
+            "Properties": "RTID(hurrikale@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(hurrikale@.)",
+                "NAME": {
+                    "en": "hurrikale",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "stallia"
+        ],
+        "objdata": {
+            "PlantBasedOn": "stallia",
+            "Properties": "RTID(stallia@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(stallia@.)",
+                "NAME": {
+                    "en": "stallia",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "electricpeashooter"
+        ],
+        "objdata": {
+            "PlantBasedOn": "electricpeashooter",
+            "Properties": "RTID(electricpeashooter@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(electricpeashooter@.)",
+                "NAME": {
+                    "en": "electricpeashooter",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "squash"
+        ],
+        "objdata": {
+            "PlantBasedOn": "squash",
+            "Properties": "RTID(squash@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(squash@.)",
+                "NAME": {
+                    "en": "squash",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "gloomshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "gloomshroom",
+            "Properties": "RTID(gloomshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(gloomshroom@.)",
+                "NAME": {
+                    "en": "gloomshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "magnifyinggrass"
+        ],
+        "objdata": {
+            "PlantBasedOn": "magnifyinggrass",
+            "Properties": "RTID(magnifyinggrass@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(magnifyinggrass@.)",
+                "NAME": {
+                    "en": "magnifyinggrass",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "celerystalker"
+        ],
+        "objdata": {
+            "PlantBasedOn": "celerystalker",
+            "Properties": "RTID(celerystalker@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(celerystalker@.)",
+                "NAME": {
+                    "en": "celerystalker",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "sapfling"
+        ],
+        "objdata": {
+            "PlantBasedOn": "sapfling",
+            "Properties": "RTID(sapfling@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(sapfling@.)",
+                "NAME": {
+                    "en": "sapfling",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "parsnip"
+        ],
+        "objdata": {
+            "PlantBasedOn": "parsnip",
+            "Properties": "RTID(parsnip@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(parsnip@.)",
+                "NAME": {
+                    "en": "parsnip",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "explodeonut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "explodeonut",
+            "Properties": "RTID(explodeonut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(explodeonut@.)",
+                "NAME": {
+                    "en": "explodeonut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "grapeshot"
+        ],
+        "objdata": {
+            "PlantBasedOn": "grapeshot",
+            "Properties": "RTID(grapeshot@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(grapeshot@.)",
+                "NAME": {
+                    "en": "grapeshot",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "plantern"
+        ],
+        "objdata": {
+            "PlantBasedOn": "plantern",
+            "Properties": "RTID(plantern@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(plantern@.)",
+                "NAME": {
+                    "en": "plantern",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "peach"
+        ],
+        "objdata": {
+            "PlantBasedOn": "peach",
+            "Properties": "RTID(peach@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(peach@.)",
+                "NAME": {
+                    "en": "peach",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "jackolantern"
+        ],
+        "objdata": {
+            "PlantBasedOn": "jackolantern",
+            "Properties": "RTID(jackolantern@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(jackolantern@.)",
+                "NAME": {
+                    "en": "jackolantern",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "pyrevine"
+        ],
+        "objdata": {
+            "PlantBasedOn": "pyrevine",
+            "Properties": "RTID(pyrevine@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(pyrevine@.)",
+                "NAME": {
+                    "en": "pyrevine",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "shinevine"
+        ],
+        "objdata": {
+            "PlantBasedOn": "shinevine",
+            "Properties": "RTID(shinevine@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(shinevine@.)",
+                "NAME": {
+                    "en": "shinevine",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "dandelion"
+        ],
+        "objdata": {
+            "PlantBasedOn": "dandelion",
+            "Properties": "RTID(dandelion@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(dandelion@.)",
+                "NAME": {
+                    "en": "dandelion",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "chardguard"
+        ],
+        "objdata": {
+            "PlantBasedOn": "chardguard",
+            "Properties": "RTID(chardguard@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(chardguard@.)",
+                "NAME": {
+                    "en": "chardguard",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "hypnoshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "hypnoshroom",
+            "Properties": "RTID(hypnoshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(hypnoshroom@.)",
+                "NAME": {
+                    "en": "hypnoshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "electriccurrant"
+        ],
+        "objdata": {
+            "PlantBasedOn": "electriccurrant",
+            "Properties": "RTID(electriccurrant@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(electriccurrant@.)",
+                "NAME": {
+                    "en": "electriccurrant",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "escaperoot"
+        ],
+        "objdata": {
+            "PlantBasedOn": "escaperoot",
+            "Properties": "RTID(escaperoot@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(escaperoot@.)",
+                "NAME": {
+                    "en": "escaperoot",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "imitater"
+        ],
+        "objdata": {
+            "PlantBasedOn": "imitater",
+            "Properties": "RTID(imitater@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(imitater@.)",
+                "NAME": {
+                    "en": "imitater",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "shadowshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "shadowshroom",
+            "Properties": "RTID(shadowshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(shadowshroom@.)",
+                "NAME": {
+                    "en": "shadowshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "magnetshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "magnetshroom",
+            "Properties": "RTID(magnetshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(magnetshroom@.)",
+                "NAME": {
+                    "en": "magnetshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "turnip"
+        ],
+        "objdata": {
+            "PlantBasedOn": "turnip",
+            "Properties": "RTID(turnip@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(turnip@.)",
+                "NAME": {
+                    "en": "turnip",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "empea"
+        ],
+        "objdata": {
+            "PlantBasedOn": "empea",
+            "Properties": "RTID(empea@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(empea@.)",
+                "NAME": {
+                    "en": "empea",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "citron"
+        ],
+        "objdata": {
+            "PlantBasedOn": "citron",
+            "Properties": "RTID(citron@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(citron@.)",
+                "NAME": {
+                    "en": "citron",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "laser_bean"
+        ],
+        "objdata": {
+            "PlantBasedOn": "laser_bean",
+            "Properties": "RTID(laser_bean@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(laser_bean@.)",
+                "NAME": {
+                    "en": "laser_bean",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "solartomato"
+        ],
+        "objdata": {
+            "PlantBasedOn": "solartomato",
+            "Properties": "RTID(solartomato@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(solartomato@.)",
+                "NAME": {
+                    "en": "solartomato",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "powerplant_alpha"
+        ],
+        "objdata": {
+            "PlantBasedOn": "powerplant_alpha",
+            "Properties": "RTID(powerplant_alpha@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(powerplant_alpha@.)",
+                "NAME": {
+                    "en": "powerplant_alpha",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "powerplant_beta"
+        ],
+        "objdata": {
+            "PlantBasedOn": "powerplant_beta",
+            "Properties": "RTID(powerplant_beta@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(powerplant_beta@.)",
+                "NAME": {
+                    "en": "powerplant_beta",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "powerplant_gamma"
+        ],
+        "objdata": {
+            "PlantBasedOn": "powerplant_gamma",
+            "Properties": "RTID(powerplant_gamma@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(powerplant_gamma@.)",
+                "NAME": {
+                    "en": "powerplant_gamma",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "powerplant_delta"
+        ],
+        "objdata": {
+            "PlantBasedOn": "powerplant_delta",
+            "Properties": "RTID(powerplant_delta@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(powerplant_delta@.)",
+                "NAME": {
+                    "en": "powerplant_delta",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "powerplant_epsilon"
+        ],
+        "objdata": {
+            "PlantBasedOn": "powerplant_epsilon",
+            "Properties": "RTID(powerplant_epsilon@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(powerplant_epsilon@.)",
+                "NAME": {
+                    "en": "powerplant_epsilon",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "holonut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "holonut",
+            "Properties": "RTID(holonut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(holonut@.)",
+                "NAME": {
+                    "en": "holonut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "powerplant"
+        ],
+        "objdata": {
+            "PlantBasedOn": "powerplant",
+            "Properties": "RTID(powerplant@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(powerplant@.)",
+                "NAME": {
+                    "en": "powerplant",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "marigold"
+        ],
+        "objdata": {
+            "PlantBasedOn": "marigold",
+            "Properties": "RTID(marigold@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(marigold@.)",
+                "NAME": {
+                    "en": "marigold",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "marigold_red"
+        ],
+        "objdata": {
+            "PlantBasedOn": "marigold_red",
+            "Properties": "RTID(marigold_red@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(marigold_red@.)",
+                "NAME": {
+                    "en": "marigold_red",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "marigold_orange"
+        ],
+        "objdata": {
+            "PlantBasedOn": "marigold_orange",
+            "Properties": "RTID(marigold_orange@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(marigold_orange@.)",
+                "NAME": {
+                    "en": "marigold_orange",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "marigold_yellow"
+        ],
+        "objdata": {
+            "PlantBasedOn": "marigold_yellow",
+            "Properties": "RTID(marigold_yellow@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(marigold_yellow@.)",
+                "NAME": {
+                    "en": "marigold_yellow",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "marigold_green"
+        ],
+        "objdata": {
+            "PlantBasedOn": "marigold_green",
+            "Properties": "RTID(marigold_green@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(marigold_green@.)",
+                "NAME": {
+                    "en": "marigold_green",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "marigold_blue"
+        ],
+        "objdata": {
+            "PlantBasedOn": "marigold_blue",
+            "Properties": "RTID(marigold_blue@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(marigold_blue@.)",
+                "NAME": {
+                    "en": "marigold_blue",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "marigold_pink"
+        ],
+        "objdata": {
+            "PlantBasedOn": "marigold_pink",
+            "Properties": "RTID(marigold_pink@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(marigold_pink@.)",
+                "NAME": {
+                    "en": "marigold_pink",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "marigold_purple"
+        ],
+        "objdata": {
+            "PlantBasedOn": "marigold_purple",
+            "Properties": "RTID(marigold_purple@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(marigold_purple@.)",
+                "NAME": {
+                    "en": "marigold_purple",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "applemortar"
+        ],
+        "objdata": {
+            "PlantBasedOn": "applemortar",
+            "Properties": "RTID(applemortar@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(applemortar@.)",
+                "NAME": {
+                    "en": "applemortar",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "redstinger"
+        ],
+        "objdata": {
+            "PlantBasedOn": "redstinger",
+            "Properties": "RTID(redstinger@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(redstinger@.)",
+                "NAME": {
+                    "en": "redstinger",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "skyshooter"
+        ],
+        "objdata": {
+            "PlantBasedOn": "skyshooter",
+            "Properties": "RTID(skyshooter@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(skyshooter@.)",
+                "NAME": {
+                    "en": "skyshooter",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "sunbean"
+        ],
+        "objdata": {
+            "PlantBasedOn": "sunbean",
+            "Properties": "RTID(sunbean@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(sunbean@.)",
+                "NAME": {
+                    "en": "sunbean",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "peanut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "peanut",
+            "Properties": "RTID(peanut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(peanut@.)",
+                "NAME": {
+                    "en": "peanut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "zombiepotion_speed"
+        ],
+        "objdata": {
+            "PlantBasedOn": "zombiepotion_speed",
+            "Properties": "RTID(zombiepotion_speed@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(zombiepotion_speed@.)",
+                "NAME": {
+                    "en": "zombiepotion_speed",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "zombiepotion_toughness"
+        ],
+        "objdata": {
+            "PlantBasedOn": "zombiepotion_toughness",
+            "Properties": "RTID(zombiepotion_toughness@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(zombiepotion_toughness@.)",
+                "NAME": {
+                    "en": "zombiepotion_toughness",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "zombiepotion_invisibility"
+        ],
+        "objdata": {
+            "PlantBasedOn": "zombiepotion_invisibility",
+            "Properties": "RTID(zombiepotion_invisibility@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(zombiepotion_invisibility@.)",
+                "NAME": {
+                    "en": "zombiepotion_invisibility",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tanglekelp"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tanglekelp",
+            "Properties": "RTID(tanglekelp@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tanglekelp@.)",
+                "NAME": {
+                    "en": "tanglekelp",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "bowlingbulb"
+        ],
+        "objdata": {
+            "PlantBasedOn": "bowlingbulb",
+            "Properties": "RTID(bowlingbulb@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(bowlingbulb@.)",
+                "NAME": {
+                    "en": "bowlingbulb",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowlingbulb1"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowlingbulb1",
+            "Properties": "RTID(tool_projectile_bowlingbulb1@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowlingbulb1@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowlingbulb1",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowlingbulb2"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowlingbulb2",
+            "Properties": "RTID(tool_projectile_bowlingbulb2@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowlingbulb2@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowlingbulb2",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowlingbulb3"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowlingbulb3",
+            "Properties": "RTID(tool_projectile_bowlingbulb3@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowlingbulb3@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowlingbulb3",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowlingbulb_explode"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowlingbulb_explode",
+            "Properties": "RTID(tool_projectile_bowlingbulb_explode@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowlingbulb_explode@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowlingbulb_explode",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "guacodile"
+        ],
+        "objdata": {
+            "PlantBasedOn": "guacodile",
+            "Properties": "RTID(guacodile@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(guacodile@.)",
+                "NAME": {
+                    "en": "guacodile",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowling_wallnut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowling_wallnut",
+            "Properties": "RTID(tool_projectile_bowling_wallnut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowling_wallnut@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowling_wallnut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowling_explodeonut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowling_explodeonut",
+            "Properties": "RTID(tool_projectile_bowling_explodeonut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowling_explodeonut@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowling_explodeonut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowling_holonut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowling_holonut",
+            "Properties": "RTID(tool_projectile_bowling_holonut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowling_holonut@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowling_holonut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowling_primalwallnut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowling_primalwallnut",
+            "Properties": "RTID(tool_projectile_bowling_primalwallnut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowling_primalwallnut@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowling_primalwallnut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowlingbulb_iceburg"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowlingbulb_iceburg",
+            "Properties": "RTID(tool_projectile_bowlingbulb_iceburg@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowlingbulb_iceburg@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowlingbulb_iceburg",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "tool_projectile_bowling_tallnut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "tool_projectile_bowling_tallnut",
+            "Properties": "RTID(tool_projectile_bowling_tallnut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(tool_projectile_bowling_tallnut@.)",
+                "NAME": {
+                    "en": "tool_projectile_bowling_tallnut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "ghostpepper"
+        ],
+        "objdata": {
+            "PlantBasedOn": "ghostpepper",
+            "Properties": "RTID(ghostpepper@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(ghostpepper@.)",
+                "NAME": {
+                    "en": "ghostpepper",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "sweetpotato"
+        ],
+        "objdata": {
+            "PlantBasedOn": "sweetpotato",
+            "Properties": "RTID(sweetpotato@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(sweetpotato@.)",
+                "NAME": {
+                    "en": "sweetpotato",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "pepperpult"
+        ],
+        "objdata": {
+            "PlantBasedOn": "pepperpult",
+            "Properties": "RTID(pepperpult@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(pepperpult@.)",
+                "NAME": {
+                    "en": "pepperpult",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "hotpotato"
+        ],
+        "objdata": {
+            "PlantBasedOn": "hotpotato",
+            "Properties": "RTID(hotpotato@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(hotpotato@.)",
+                "NAME": {
+                    "en": "hotpotato",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "stunion"
+        ],
+        "objdata": {
+            "PlantBasedOn": "stunion",
+            "Properties": "RTID(stunion@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(stunion@.)",
+                "NAME": {
+                    "en": "stunion",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "goldleaf"
+        ],
+        "objdata": {
+            "PlantBasedOn": "goldleaf",
+            "Properties": "RTID(goldleaf@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(goldleaf@.)",
+                "NAME": {
+                    "en": "goldleaf",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "akee"
+        ],
+        "objdata": {
+            "PlantBasedOn": "akee",
+            "Properties": "RTID(akee@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(akee@.)",
+                "NAME": {
+                    "en": "akee",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "endurian"
+        ],
+        "objdata": {
+            "PlantBasedOn": "endurian",
+            "Properties": "RTID(endurian@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(endurian@.)",
+                "NAME": {
+                    "en": "endurian",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "toadstool"
+        ],
+        "objdata": {
+            "PlantBasedOn": "toadstool",
+            "Properties": "RTID(toadstool@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(toadstool@.)",
+                "NAME": {
+                    "en": "toadstool",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "lavaguava"
+        ],
+        "objdata": {
+            "PlantBasedOn": "lavaguava",
+            "Properties": "RTID(lavaguava@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(lavaguava@.)",
+                "NAME": {
+                    "en": "lavaguava",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "phatbeet"
+        ],
+        "objdata": {
+            "PlantBasedOn": "phatbeet",
+            "Properties": "RTID(phatbeet@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(phatbeet@.)",
+                "NAME": {
+                    "en": "phatbeet",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "strawburst"
+        ],
+        "objdata": {
+            "PlantBasedOn": "strawburst",
+            "Properties": "RTID(strawburst@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(strawburst@.)",
+                "NAME": {
+                    "en": "strawburst",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "thymewarp"
+        ],
+        "objdata": {
+            "PlantBasedOn": "thymewarp",
+            "Properties": "RTID(thymewarp@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(thymewarp@.)",
+                "NAME": {
+                    "en": "thymewarp",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "phatbeet_rhythm"
+        ],
+        "objdata": {
+            "PlantBasedOn": "phatbeet_rhythm",
+            "Properties": "RTID(phatbeet_rhythm@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(phatbeet_rhythm@.)",
+                "NAME": {
+                    "en": "phatbeet_rhythm",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "seashroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "seashroom",
+            "Properties": "RTID(seashroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(seashroom@.)",
+                "NAME": {
+                    "en": "seashroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "garlic"
+        ],
+        "objdata": {
+            "PlantBasedOn": "garlic",
+            "Properties": "RTID(garlic@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(garlic@.)",
+                "NAME": {
+                    "en": "garlic",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "electricblueberry"
+        ],
+        "objdata": {
+            "PlantBasedOn": "electricblueberry",
+            "Properties": "RTID(electricblueberry@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(electricblueberry@.)",
+                "NAME": {
+                    "en": "electricblueberry",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "caulipower"
+        ],
+        "objdata": {
+            "PlantBasedOn": "caulipower",
+            "Properties": "RTID(caulipower@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(caulipower@.)",
+                "NAME": {
+                    "en": "caulipower",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "gumnut"
+        ],
+        "objdata": {
+            "PlantBasedOn": "gumnut",
+            "Properties": "RTID(gumnut@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(gumnut@.)",
+                "NAME": {
+                    "en": "gumnut",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "sporeshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "sporeshroom",
+            "Properties": "RTID(sporeshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(sporeshroom@.)",
+                "NAME": {
+                    "en": "sporeshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "intensivecarrot"
+        ],
+        "objdata": {
+            "PlantBasedOn": "intensivecarrot",
+            "Properties": "RTID(intensivecarrot@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(intensivecarrot@.)",
+                "NAME": {
+                    "en": "intensivecarrot",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "primalsunflower"
+        ],
+        "objdata": {
+            "PlantBasedOn": "primalsunflower",
+            "Properties": "RTID(primalsunflower@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(primalsunflower@.)",
+                "NAME": {
+                    "en": "primalsunflower",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "moonbean"
+        ],
+        "objdata": {
+            "PlantBasedOn": "moonbean",
+            "Properties": "RTID(moonbean@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(moonbean@.)",
+                "NAME": {
+                    "en": "moonbean",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "coldsnapdragon"
+        ],
+        "objdata": {
+            "PlantBasedOn": "coldsnapdragon",
+            "Properties": "RTID(coldsnapdragon@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(coldsnapdragon@.)",
+                "NAME": {
+                    "en": "coldsnapdragon",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "nightshade"
+        ],
+        "objdata": {
+            "PlantBasedOn": "nightshade",
+            "Properties": "RTID(nightshade@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(nightshade@.)",
+                "NAME": {
+                    "en": "nightshade",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "asparagus"
+        ],
+        "objdata": {
+            "PlantBasedOn": "asparagus",
+            "Properties": "RTID(asparagus@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(asparagus@.)",
+                "NAME": {
+                    "en": "asparagus",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "anthurium"
+        ],
+        "objdata": {
+            "PlantBasedOn": "anthurium",
+            "Properties": "RTID(anthurium@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(anthurium@.)",
+                "NAME": {
+                    "en": "anthurium",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "pineapple"
+        ],
+        "objdata": {
+            "PlantBasedOn": "pineapple",
+            "Properties": "RTID(pineapple@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(pineapple@.)",
+                "NAME": {
+                    "en": "pineapple",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "dusklobber"
+        ],
+        "objdata": {
+            "PlantBasedOn": "dusklobber",
+            "Properties": "RTID(dusklobber@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(dusklobber@.)",
+                "NAME": {
+                    "en": "dusklobber",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "grimrose"
+        ],
+        "objdata": {
+            "PlantBasedOn": "grimrose",
+            "Properties": "RTID(grimrose@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(grimrose@.)",
+                "NAME": {
+                    "en": "grimrose",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "goldbloom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "goldbloom",
+            "Properties": "RTID(goldbloom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(goldbloom@.)",
+                "NAME": {
+                    "en": "goldbloom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "bloominghearts"
+        ],
+        "objdata": {
+            "PlantBasedOn": "bloominghearts",
+            "Properties": "RTID(bloominghearts@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(bloominghearts@.)",
+                "NAME": {
+                    "en": "bloominghearts",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "shrinkingviolet"
+        ],
+        "objdata": {
+            "PlantBasedOn": "shrinkingviolet",
+            "Properties": "RTID(shrinkingviolet@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(shrinkingviolet@.)",
+                "NAME": {
+                    "en": "shrinkingviolet",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "hotdate"
+        ],
+        "objdata": {
+            "PlantBasedOn": "hotdate",
+            "Properties": "RTID(hotdate@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(hotdate@.)",
+                "NAME": {
+                    "en": "hotdate",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "firegourd"
+        ],
+        "objdata": {
+            "PlantBasedOn": "firegourd",
+            "Properties": "RTID(firegourd@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(firegourd@.)",
+                "NAME": {
+                    "en": "firegourd",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "bambooshoot"
+        ],
+        "objdata": {
+            "PlantBasedOn": "bambooshoot",
+            "Properties": "RTID(bambooshoot@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(bambooshoot@.)",
+                "NAME": {
+                    "en": "bambooshoot",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "snowdrop"
+        ],
+        "objdata": {
+            "PlantBasedOn": "snowdrop",
+            "Properties": "RTID(snowdrop@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(snowdrop@.)",
+                "NAME": {
+                    "en": "snowdrop",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "lychee"
+        ],
+        "objdata": {
+            "PlantBasedOn": "lychee",
+            "Properties": "RTID(lychee@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(lychee@.)",
+                "NAME": {
+                    "en": "lychee",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "perfumeshroom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "perfumeshroom",
+            "Properties": "RTID(perfumeshroom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(perfumeshroom@.)",
+                "NAME": {
+                    "en": "perfumeshroom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "solarsage"
+        ],
+        "objdata": {
+            "PlantBasedOn": "solarsage",
+            "Properties": "RTID(solarsage@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(solarsage@.)",
+                "NAME": {
+                    "en": "solarsage",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "bamboozle"
+        ],
+        "objdata": {
+            "PlantBasedOn": "bamboozle",
+            "Properties": "RTID(bamboozle@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(bamboozle@.)",
+                "NAME": {
+                    "en": "bamboozle",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "aloe"
+        ],
+        "objdata": {
+            "PlantBasedOn": "aloe",
+            "Properties": "RTID(aloe@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(aloe@.)",
+                "NAME": {
+                    "en": "aloe",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "hollyknight"
+        ],
+        "objdata": {
+            "PlantBasedOn": "hollyknight",
+            "Properties": "RTID(hollyknight@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(hollyknight@.)",
+                "NAME": {
+                    "en": "hollyknight",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "hollybarrierleaf"
+        ],
+        "objdata": {
+            "PlantBasedOn": "hollybarrierleaf",
+            "Properties": "RTID(hollybarrierleaf@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(hollybarrierleaf@.)",
+                "NAME": {
+                    "en": "hollybarrierleaf",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "hollybarrierleafplantfood"
+        ],
+        "objdata": {
+            "PlantBasedOn": "hollybarrierleafplantfood",
+            "Properties": "RTID(hollybarrierleafplantfood@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(hollybarrierleafplantfood@.)",
+                "NAME": {
+                    "en": "hollybarrierleafplantfood",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "bamboobusket"
+        ],
+        "objdata": {
+            "PlantBasedOn": "bamboobusket",
+            "Properties": "RTID(bamboobusket@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(bamboobusket@.)",
+                "NAME": {
+                    "en": "bamboobusket",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "cantaloupe"
+        ],
+        "objdata": {
+            "PlantBasedOn": "cantaloupe",
+            "Properties": "RTID(cantaloupe@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(cantaloupe@.)",
+                "NAME": {
+                    "en": "cantaloupe",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "iceweed"
+        ],
+        "objdata": {
+            "PlantBasedOn": "iceweed",
+            "Properties": "RTID(iceweed@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(iceweed@.)",
+                "NAME": {
+                    "en": "iceweed",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "pinkstarfruit"
+        ],
+        "objdata": {
+            "PlantBasedOn": "pinkstarfruit",
+            "Properties": "RTID(pinkstarfruit@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(pinkstarfruit@.)",
+                "NAME": {
+                    "en": "pinkstarfruit",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "icebloom"
+        ],
+        "objdata": {
+            "PlantBasedOn": "icebloom",
+            "Properties": "RTID(icebloom@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(icebloom@.)",
+                "NAME": {
+                    "en": "icebloom",
+                    "zh": "..."
+                }
+            }
+        }
+    },
+    {
+        "objclass": "PlantType",
+        "aliases": [
+            "zoybeanpod"
+        ],
+        "objdata": {
+            "PlantBasedOn": "zoybeanpod",
+            "Properties": "RTID(zoybeanpod@.)",
+            "ShiftedPlantFeatures": {
+                "ALMANAC": "RTID(zoybeanpod@.)",
+                "NAME": {
+                    "en": "zoybeanpod",
+                    "zh": "..."
+                }
+            }
+        }
+    }
+]
+}

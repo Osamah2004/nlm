@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+#root {
+  color: black;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.button {
+  @apply text-left text-black cursor-pointer rounded transition-colors text-sm bg-cyan-200 hover:bg-cyan-400
+}
+.button.text-lg{
+  @apply text-lg
+}
+.button.red {
+  @apply bg-red-600 hover:bg-red-800 text-white
+}
+.button.green {
+  @apply bg-green-400 hover:bg-green-600 text-white
+}
+.button.gray {
+  @apply bg-gray-600 hover:bg-gray-800 text-white
+}
+.button.centered {
+  @apply text-center
+}
+.button.focus {
+  @apply focus:bg-cyan-500
+}
+.button.left-capsule {
+  @apply rounded-l rounded-r-none
+}
+.button.right-capsule {
+  @apply rounded-l-none rounded-r
+}
+.button.rounded-none {
+  @apply rounded-none
+}
+
+.details {
+  @apply mb-4 bg-cyan-100 cursor-pointer transition-colors w-full
+}
+
+.summary {
+  @apply cursor-pointer p-4 font-semibold text-gray-800 hover:bg-cyan-500 transition-colors duration-300
+}
+
+input {
+  @apply mr-0 h-6 ml-auto bg-gray-500/30 border-black outline-0 border-2 transition-colors duration-200 group-hover:border-cyan-400 px-4 py-1 max-w-32 rounded-xl
+}
+
+input.no-group {
+  @apply group-hover:border-black hover:border-cyan-400 rounded-sm p-0
+}
+
+input.width-limitless{
+  @apply max-w-[100vw]
+}
+
+input.full {
+  @apply max-w-full w-15/20 ml-auto mr-0
+}
+
+.transition {
+  @apply transition-colors duration-300
+}
+
+.v-button > .button {
+  @apply w-full block text-lg
+}
+
+.react-flow__node.always-on-top {
+  z-index: 9999 !important; /* A high value to ensure it's always on top */
+}
+
