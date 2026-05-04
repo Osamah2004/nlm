@@ -117,7 +117,8 @@ const handleCellRightClick = (e, row, column) => {
                 {boardItem.length > 0 ? `board item: ${boardItem}` : ''}
             </header>
             {/* 5x9 Grid */}
-            <div className="p-3">
+            <p className="pl-3 mb-1 text-gray-400">Left click to add a board item, Right click to remove it.</p>
+            <div className="px-3 pb-3">
                 <div className="grid grid-cols-9 gap-2">
 {Array(5).fill(0).map((_, row) => (
     Array(9).fill(0).map((_, column) => {
