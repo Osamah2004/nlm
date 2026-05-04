@@ -3,7 +3,9 @@ import TextInput from "../Inputs/TextInput";
 import { useEffect, useState } from "react";
 import PlantList from "../SeedBank/PlantList";
 import Checkbox from "../Inputs/CheckboxInput";
-//  h-18 overflow-y-auto nowheel checked={JSON.parse(localStorage.getItem('potions')?.includes(e))} 
+
+// This component is unfinished
+
 const Gray = ({msg}) => <p className="text-lg pl-1 w-full bg-gray-200 hover:bg-gray-400 transition mb-1">{msg}</p>
 const CheckboxCurrent = ({ 
   label = "Checkbox", 
