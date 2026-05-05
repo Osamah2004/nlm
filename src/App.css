@@ -70,9 +70,16 @@
 .button.rounded-none {
   @apply rounded-none
 }
+.disabled {
+  @apply text-gray-300 bg-gray-400 cursor-default hover:bg-gray-400
+}
 
 .details {
   @apply mb-4 bg-cyan-100 cursor-pointer transition-colors w-full
+}
+
+.header {
+  @apply bg-cyan-500 p-1 text-2xl w-full font-bold
 }
 
 .summary {

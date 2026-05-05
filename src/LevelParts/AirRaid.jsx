@@ -114,10 +114,6 @@ const AirRaid = () => {
         sessionStorage.setItem('AtNight', atNight);
     }, [atNight]);
 
-    const refreshCustomPlants = () => {
-        setCustomPlants(getFromStorage('customPlants') || []);
-    };
-
     const addFighterToTeam = (teamIndex, fighterType) => {
         setTeams(prev => {
             const newTeams = [...prev];
@@ -185,69 +181,69 @@ const AirRaid = () => {
     };
 
     return (
-        <div className="flex gap-6 w-250">
-            {/* LEFT SIDE - Custom Plants Palette */}
-            <div className="w-96 shrink-0">
-                    <Checkbox
-                        label="Enable air raid"
-                        checked={sessionStorage.getItem('Enable air raid') == 'true'}
-                    />
-                <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-semibold text-cyan-800">Custom Plants</h3>
-                    <button
-                        className="button text-sm bg-cyan-500 text-white px-3 py-1 rounded hover:bg-cyan-600 transition-colors"
-                        onClick={refreshCustomPlants}
-                    >
-                        Refresh
-                    </button>
-                </div>
-                <div className="bg-cyan-50 rounded-lg p-0.5 mb-4">
-                    <div className="grid grid-cols-2 gap-2 p-0.5 max-h-92 overflow-y-auto nowheel">
-                        {customPlants.map((plant, idx) => (
-                            <button
+        <>
+            <header className="text-2xl bg-cyan-500 font-bold text-black p-1">
+                Air Raid
+            </header>
+            <div className="flex gap-6 w-250 text-black">
+                {/* LEFT SIDE - Custom Plants Palette */}
+                <div className="w-96 shrink-0">
+                        <Checkbox
+                            label="Enable air raid"
+                            checked={sessionStorage.getItem('Enable air raid') == 'true'}
+                            />
+                    <div className="flex items-center justify-between mb-3">
+                        <h3 className="font-semibold text-cyan-800">Custom Plants</h3>
+                    </div>
+                    <div className="bg-cyan-50 rounded-lg p-0.5 mb-4">
+                        <div className="grid grid-cols-2 gap-2 p-0.5 max-h-92 overflow-y-auto nowheel">
+                            {customPlants.map((plant, idx) => (
+                                <button
                                 key={idx}
-                                onClick={() => {
-                                    if (selectedTeam !== null) {
-                                        addFighterToTeam(selectedTeam, plant);
-                                    } else {
-                                        alert("Please select a team first by clicking on its card.");
-                                    }
-                                }}
-                                className="button"
-                            >
-                                {plant}
-                            </button>
-                        ))}
-                        {customPlants.length === 0 && (
-                            <div className="text-gray-400 text-sm italic p-2">Add custom plants by going into seed bank</div>
-                        )}
+                                    onClick={() => {
+                                        if (selectedTeam !== null) {
+                                            addFighterToTeam(selectedTeam, plant);
+                                        } else {
+                                            alert("Please select a team first by clicking on its card.");
+                                        }
+                                    }}
+                                    className="button"
+                                    >
+                                    {plant}
+                                </button>
+                            ))}
+                            {customPlants.length === 0 && (
+                                <p className="text-gray-400 w-80 italic p-2">
+                                    Empty custom plant list, go to seedbank node to add custom plants
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                    <div className="text-sm text-gray-500 italic">
+                        Click a team card to select it, then click any plant above to add it to that team.
                     </div>
                 </div>
-                <div className="text-xs text-gray-500 italic">
-                    Click a team card to select it, then click any plant above to add it to that team.
-                </div>
-            </div>
 
-            {/* RIGHT SIDE - Teams */}
-            <div className="flex-1 min-w-0">
-                <div className="mb-3 flex items-center gap-4">
-                    <Checkbox
-                        label='AtNight'
-                        checked={atNight}
-                        onChange={setAtNight}
-                    />
-                    <NumberInput
-                        label={"TargetPoint"}
-                        step={500}
-                        default={10000}
-                        value={targetPoint}
-                        setter={setTargetPoint}
-                    />
-                    Team: {selectedTeam + 1}
-                </div>
-                <div className="space-y-3">
-                    {teams.map((team, idx) => (
-                        <TeamCard
+                {/* RIGHT SIDE - Teams */}
+                <div className="flex-1 min-w-0">
+                    <div className="mb-3 flex items-center gap-4">
+                        <Checkbox
+                            label='AtNight'
+                            checked={atNight}
+                            onChange={setAtNight}
+                            />
+                        <NumberInput
+                            label={"TargetPoint"}
+                            step={500}
+                            default={10000}
+                            value={targetPoint}
+                            setter={setTargetPoint}
+                            />
+                        Team: {selectedTeam + 1}
+                    </div>
+                    <div className="space-y-3">
+                        {teams.map((team, idx) => (
+                            <TeamCard
                             key={idx}
                             team={team}
                             teamIndex={idx}
@@ -257,11 +253,12 @@ const AirRaid = () => {
                             onUpdateDifficulty={updateTeamDifficulty}
                             isSelected={selectedTeam === idx}
                             onSelect={() => setSelectedTeam(idx)}
-                        />
-                    ))}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

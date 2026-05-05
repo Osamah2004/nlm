@@ -284,6 +284,8 @@ const BoardGroup = ({ group, summary }) => {
             <BoardGroup group={plants.map(e=>`SOS_${e}`)} summary="Endangered plants" />
             <BoardGroup group={plants.map(e=>`F_${e}`)} summary="Frozen plants" />
             <BoardGroup group={zombies.objects.map(e=>e.aliases[0]).map(e=>`FZ_${e}`)} summary="Frozen zombies" />
+            <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','point-1')}>SplinePoints</button>
+            <p className="text-gray-500 p-1">pressing it again will reset it to 1</p>
           </div>
           </>
         )
@@ -740,7 +742,7 @@ const handleDrop = (e) => {
     <ReactFlowProvider>
       <div onDragOver={handleDragOver} onDrop={(e) => handleDrop(e)} style={{ width: '100vw', height: '100vh' }} className='overflow-hidden'>
         <header className={`absolute space-x-2 ${headerVisibility ? 'flex' : 'hidden'} z-10 pl-2 py-2 bg-gray-950/70 w-full`}>
-          <h1 className='text-white font-mono'>NLM v0.9</h1>
+          <h1 className='text-white font-mono'>NLM v0.9.9</h1>
           <input
             type="file"
             accept=".json"

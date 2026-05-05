@@ -185,6 +185,18 @@ const boardToAmbush = (codeAmbush,ambushSetter,ambushName = 'none',pickedAmbushe
                 ambushSetter(JSON.stringify(temp,null,2))
             }
             break;
+        case 'Path':
+            {
+                let temp = {...JSON.parse(codeAmbush)}
+                temp.SplinePoints = ambushList.map(e =>
+                    // x:(e.x * 65) + 230,y:(e.y * 77.5) + 200
+                    ({
+                        x:((e.x - 1) * 65) + 230,y:((e.y - 1) * 77.5) + 200
+                    })
+                )
+                ambushSetter(JSON.stringify(temp,null,2))
+            }
+            break;
         default:
             alert(`Not compatible with this ambush`)
             break;
@@ -550,7 +562,7 @@ export default function LevelEvents() {
                 </header>
                 
                 <MonacoEditor
-                    height="600px"
+                    height="560px"
                     defaultLanguage="json"
                     theme="vs-dark"
                     className='nokey'
@@ -561,6 +573,7 @@ export default function LevelEvents() {
                     formatOnPaste: true,
                     fontSize: 12,
                     lineNumbers: 'on',
+                    wordWrap: 'on',
                     formatOnType: true,
                     automaticLayout: true,
                     scrollBeyondLastLine: false

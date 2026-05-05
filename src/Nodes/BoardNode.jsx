@@ -18,11 +18,17 @@ const [cellItems, setCellItems] = useState(cellStorage ? cellStorage : {})
 
 const handleCellClick = (e, row, column) => {
     e.preventDefault() // Prevent default behavior
+    const boardItem = localStorage.getItem('board-item')
     const cellKey = `${row}-${column}`
+
+    if (boardItem.startsWith('point')) {
+        const getNum = Number(boardItem.slice(6))
+        localStorage.setItem('board-item',`point-${getNum+1}`)
+    }
     
     setCellItems(prev => ({
         ...prev,
-        [cellKey]: [...(prev[cellKey] || []), localStorage.getItem('board-item')]
+        [cellKey]: [...(prev[cellKey] || []), boardItem]
     }))
 }
 // Add this after your other useEffects

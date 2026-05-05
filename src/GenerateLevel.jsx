@@ -10,6 +10,7 @@ import paog from './assets/PlantAlmanac_original.json'
 
 const getSession = (key) => {return sessionStorage.getItem(key)}
 const getLocal = (key) => {return localStorage.getItem(key)}
+const tf = key => JSON.parse(getSession(key)) === true
 
 /**
  * 
@@ -34,6 +35,7 @@ const getLocal = (key) => {return localStorage.getItem(key)}
  */
 
 const GenerateLevel = () => {
+    let levelObjects = []
 
     const wave = Number(getSession('Wave Count')) || 10
     const interval = Number(getSession('Flag Interval')) || 5
@@ -104,13 +106,69 @@ const GenerateLevel = () => {
         "RTID(NewWaves@CurrentLevel)",
     ]
 
+    const pushModuleObject = (alias,objclass,objdata) => {
+        modules.push(`RTID(${alias}@CurrentLevel)`);
+        levelObjects.push({'aliases':[alias],'objclass':objclass,'objdata':objdata})
+    }
+
     if (mowers !== 'none') modules.push(`RTID(${mowers}@LevelModules)`)
 
+    const is25sunMeta = JSON.parse(getSession('25 sun meta')) === true
+
+    const sunDropperObject = (...values) => ({
+      "objclass": "SunDropperProperties",
+      "aliases": [
+        values[0]
+      ],
+      "objdata": {
+        "InitialSunDropDelay": values[1],
+        "SunCountdownBase": values[2],
+        "SunCountdownRange": values[3],
+        "SunCountdownIncreasePerSun": values[4],
+        "SunCountdownMax": values[5],
+        "Value": values[6] || 25,
+      }
+    })
+
+    const customSunDropperArray = [
+        Number(getSession('InitialSunDropDelay')) || 0,
+        Number(getSession('SunCountdownBase')) || 0,
+        Number(getSession('SunCountdownRange')) || 0,
+        Number(getSession('SunCountdownIncreasePerSun')) || 0,
+        Number(getSession('SunCountdownMax')) || 0,
+        Number(getSession('SunValue')) || 0,
+    ]
+
+    const sunBombArray = ({
+        PlantBombExplosionRadius:Number(getSession('PlantBombExplosionRadius')) || 25,
+        PlantDamage:Number(getSession('PlantDamage')) || 1000,
+        ZombieBombExplosionRadius:Number(getSession('ZombieBombExplosionRadius')) || 80,
+        ZombieDamage:Number(getSession('ZombieDamage')) || 50,
+    })
+
+
+    const isCustomSunDropper = tf('enable custom sun dropper')
     
     const sunDropper = sessionStorage.getItem('SunDropper') || 'DefaultSunDropper';
-    if (sunDropper !== 'none' && !isConveyor) {
-        modules.push(`RTID(${sunDropper}@LevelModules)`);
+
+    if (isCustomSunDropper) {
+        modules.push('RTID(CustomSunDropper@CurrentLevel)')
+        levelObjects.push(sunDropperObject('CustomSunDropper',...customSunDropperArray))
     }
+    else if (sunDropper !== 'none' && !isConveyor) {
+        modules.push(`RTID(${sunDropper}@${is25sunMeta ? 'CurrentLevel': 'LevelModules'})`);
+        if (is25sunMeta) {
+            switch (sunDropper) {
+                case 'VerySlowSunDropper':levelObjects.push(sunDropperObject(sunDropper,4,10,5,0.5,20));break;
+                case 'SlowSunDropper'    :levelObjects.push(sunDropperObject(sunDropper,3,8,4,0.25,16));break;
+                case 'DefaultSunDropper' :levelObjects.push(sunDropperObject(sunDropper,2,6,3,0.1,12));break;
+                case 'FastSunDropper'    :levelObjects.push(sunDropperObject(sunDropper,4,2,3,0.1,8));break;
+                case 'VeryFastSunDropper':levelObjects.push(sunDropperObject(sunDropper,0.5,0.5,1,0.01,3));break;
+            }
+        }
+    }
+
+    if (tf('enable sun bomb')) pushModuleObject('sunbomb','SunBombChallengeProperties',sunBombArray)
     
     if (isPinata) {
         modules.unshift("RTID(LevelOfTheDayModule@CurrentLevel)")
@@ -126,13 +184,12 @@ const GenerateLevel = () => {
     let frozenZombies = []
     let rails = {}
     let carts = {}
-    let otherObjects = []
 
-    if (isConveyor) otherObjects.push(...conveyorArray)
+    if (isConveyor) levelObjects.push(...conveyorArray)
 
     if (initialTide !== -1){
         modules.push('RTID(Tide@.)')
-        otherObjects.push({
+        levelObjects.push({
       "aliases": [
         "Tide"
       ],
@@ -144,7 +201,7 @@ const GenerateLevel = () => {
     }
     if (stage === 'PirateStage'){
         modules.push("RTID(Planks@.)")
-        otherObjects.push({
+        levelObjects.push({
             "aliases": [
                 "Planks"
                 ],
@@ -157,10 +214,6 @@ const GenerateLevel = () => {
 
     const potions = JSON.parse(getSession('enable potions')) ?? false
 
-    const pushModuleObject = (alias,objclass,objdata) => {
-        modules.push(`RTID(${alias}@CurrentLevel)`);
-        otherObjects.push({'aliases':[alias],'objclass':objclass,'objdata':objdata})
-    }
     if (potions) pushModuleObject('potions','ZombiePotionModuleProperties',
         {
             InitialPotionCount: Number(getSession('InitialPotionCount')) || 2,
@@ -220,7 +273,7 @@ const _upperFirst = (string) =>string.slice(0, 1).toUpperCase() + string.slice(1
     }
     Object.keys(carts).forEach(e => {
         modules.push(`RTID(${_snakeToPascal(e)}@CurrentLevel)`)
-        otherObjects.push({
+        levelObjects.push({
             'aliases':[_snakeToPascal(e)],
             'objclass':'RailcartProperties',
             'objdata': {
@@ -258,7 +311,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const sunProductionTarget = getSession('Sun production target');
         if(sunProductionTarget != 0 && sunProductionTarget !== null){
             challenges.push("RTID(ProduceSunChallenge@CurrentLevel)")
-            otherObjects.push(
+            levelObjects.push(
         {
             "aliases": [
                 "ProduceSunChallenge"
@@ -274,7 +327,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const sunSpendingLimit = getSession('Sun spending limit');
         if(sunSpendingLimit != 0 && sunSpendingLimit !== null){
             challenges.push("RTID(SunLimit@CurrentLevel)")
-            otherObjects.push(
+            levelObjects.push(
         {
             "aliases": [
                 "SunLimit"
@@ -290,7 +343,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const sunHoldoutSeconds = getSession('Sun holdout seconds');
         if(sunHoldoutSeconds != 0 && sunHoldoutSeconds !== null){
             challenges.push("RTID(SunHoldout@CurrentLevel)")
-            otherObjects.push(
+            levelObjects.push(
         {
             "aliases": [
                 "SunHoldout"
@@ -306,7 +359,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const maxPlantLoss = getSession('Max plant loss');
         if(maxPlantLoss != 0 && maxPlantLoss !== null){
             challenges.push("RTID(PlantsLost@CurrentLevel)")
-            otherObjects.push(
+            levelObjects.push(
         {
             "aliases": [
                 "PlantsLost"
@@ -322,7 +375,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const plantLimit = getSession('Plant limit');
         if(plantLimit != 0 && plantLimit !== null){
             challenges.push("RTID(SimultaneousPlants@CurrentLevel)")
-            otherObjects.push(
+            levelObjects.push(
         {
             "aliases": [
                 "SimultaneousPlants"
@@ -338,7 +391,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const flowerColumn = getSession('Flower column');
         if(flowerColumn != 0 && flowerColumn !== null){
             challenges.push("RTID(FlowerLine@CurrentLevel)")
-            otherObjects.push(
+            levelObjects.push(
         {
             "aliases": [
                 "FlowerLine"
@@ -354,7 +407,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const zombiesToKill = getSession('Zombies to kill');
         if(zombiesToKill != 0 && zombiesToKill !== null){
             challenges.push("RTID(KillZombiesTimer@CurrentLevel)")
-            otherObjects.push(
+            levelObjects.push(
         {
             "aliases": [
                 "KillZombiesTimer"
@@ -371,7 +424,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const startingPf = getSession('Starting pf');
         if(startingPf != 0 && startingPf !== null){
             challenges.push("RTID(LastStand@CurrentLevel)")
-            otherObjects.push(
+            levelObjects.push(
         {
             "aliases": [
                 "LastStand"
@@ -398,19 +451,19 @@ if (getLocal('Add challenge to level moduels') == 'true'){
             }
         }
 
-        otherObjects.push(challengeModule)
+        levelObjects.push(challengeModule)
     }
     
     const pool = JSON.parse(getSession('zombiePool')) || [];
     pool.forEach(e => {
         if (e.timestamp){
             const x = JSON.parse(getLocal(e.code))
-            if (x) otherObjects.push(...x)
+            if (x) levelObjects.push(...x)
         }
     })
     
     // Create the base level object
-    customPlants.forEach(e => otherObjects.push(...JSON.parse(getLocal(`customPlant-${e}`))))
+    customPlants.forEach(e => levelObjects.push(...JSON.parse(getLocal(`customPlant-${e}`))))
 
     //Air Raid
     let skyMiniGame = {
@@ -438,7 +491,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         modules = modules.filter(e => !e.includes('SunDropper'))
         modules = modules.filter(e => !e.includes('StandardIntro'))
 
-        otherObjects.push(...[
+        levelObjects.push(...[
     skyMiniGame,
     {
       "objclass": "LawnType",
@@ -489,7 +542,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
     }
 
     if (getLocal('Enable custom ship') == 'true'){
-        otherObjects.push({
+        levelObjects.push({
         "objclass": "SkyCityShipProperties",
         "aliases": [
             "SkyCityShipDefault"
@@ -507,7 +560,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         modules.push('RTID(SkyCityShipDefault@.)')
     }
 
-    if (isSeedbank) otherObjects.push(seedBank)
+    if (isSeedbank) levelObjects.push(seedBank)
 
     let introNarrative = JSON.parse(getLocal('introNarrative')) || []
 
@@ -523,7 +576,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
             delete obj.id;
         });
 
-        otherObjects.push({
+        levelObjects.push({
             "aliases": [
                 "INTRO"
             ],
@@ -548,7 +601,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
             delete obj.id;
         });
 
-        otherObjects.push({
+        levelObjects.push({
             "aliases": [
                 "OUTRO"
             ],
@@ -565,7 +618,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         let f = JSON.parse(getLocal(`${e.id}-${e.ambushName}`))
         if (f){
             f.aliases = [`Ambush${e.id}-${e.ambushName}`]
-            otherObjects.push({
+            levelObjects.push({
                 aliases: f.aliases,
                 objclass: f.objclass,
                 objdata: f.objdata
@@ -625,7 +678,7 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const start = Number(e.at(-3))
         const count = Number(e.at(3))
         const zombie = e.slice(5,-5)
-        otherObjects.push({
+        levelObjects.push({
 aliases:[e],
 "objclass": "StormZombieSpawnerProps",
 "objdata": {
@@ -680,26 +733,26 @@ aliases:[e],
                 break;
             case 'RP':
                 if (hasRaidParty) return
-                otherObjects.push(raidParty(3,1.34,'RP_3'))
-                otherObjects.push(raidParty(5,1,'RP_5'))
-                otherObjects.push(raidParty(10,0.5,'RP_10'))
-                otherObjects.push(raidParty(15,0.3,'RP_15'))
+                levelObjects.push(raidParty(3,1.34,'RP_3'))
+                levelObjects.push(raidParty(5,1,'RP_5'))
+                levelObjects.push(raidParty(10,0.5,'RP_10'))
+                levelObjects.push(raidParty(15,0.3,'RP_15'))
                 hasRaidParty = true
                 break;
             case 'SR':
                 if (hasSpiderRain) return
-                otherObjects.push(spiderRain(3 ,1.34,2  ,6,8,'SR_3_c6_8',ambushName))
-                otherObjects.push(spiderRain(5 ,1   ,1.5,5,7,'SR_5_c5_7',ambushName))
-                otherObjects.push(spiderRain(10,0.5 ,1  ,4,7,'SR_10_c4_7',ambushName))
-                otherObjects.push(spiderRain(13,0.25,0.5,3,6,'SR_13_c3_6',ambushName))
+                levelObjects.push(spiderRain(3 ,1.34,2  ,6,8,'SR_3_c6_8',ambushName))
+                levelObjects.push(spiderRain(5 ,1   ,1.5,5,7,'SR_5_c5_7',ambushName))
+                levelObjects.push(spiderRain(10,0.5 ,1  ,4,7,'SR_10_c4_7',ambushName))
+                levelObjects.push(spiderRain(13,0.25,0.5,3,6,'SR_13_c3_6',ambushName))
                 hasSpiderRain = true
                 break;
             case 'PR':
                 if (hasParachuteRain) return
-                otherObjects.push(spiderRain(3 ,1.34,2  ,6,8,'PR_3_c6_8',ambushName))
-                otherObjects.push(spiderRain(5 ,1   ,1.5,5,7,'PR_5_c5_7',ambushName))
-                otherObjects.push(spiderRain(10,0.5 ,1  ,4,7,'PR_10_c4_7',ambushName))
-                otherObjects.push(spiderRain(13,0.25,0.5,3,6,'PR_13_c3_6',ambushName))
+                levelObjects.push(spiderRain(3 ,1.34,2  ,6,8,'PR_3_c6_8',ambushName))
+                levelObjects.push(spiderRain(5 ,1   ,1.5,5,7,'PR_5_c5_7',ambushName))
+                levelObjects.push(spiderRain(10,0.5 ,1  ,4,7,'PR_10_c4_7',ambushName))
+                levelObjects.push(spiderRain(13,0.25,0.5,3,6,'PR_13_c3_6',ambushName))
                 hasParachuteRain = true
                 break;
             default:
@@ -749,7 +802,7 @@ aliases:[e],
 
     if (hasDino) {
         for (let i = 0; i < 5; i++) {
-            otherObjects.push(...[ 
+            levelObjects.push(...[ 
                                 {
                                 "aliases":[`raptor${i+1}`], 
                                 "objclass": "DinoWaveActionProps",
@@ -796,7 +849,7 @@ aliases:[e],
 
     if (hasFrostWinds) {
         for (let i = 0; i < 5; i++) {
-            otherObjects.push(...[ 
+            levelObjects.push(...[ 
                                 {
                                 "aliases":[`RightWindRow${i+1}`], 
                                 "objclass": "FrostWindWaveActionProps",
@@ -813,7 +866,7 @@ aliases:[e],
         }
     }
 
-    usedTideChanges.filter(e => e !== -1).forEach(e => otherObjects.push(
+    usedTideChanges.filter(e => e !== -1).forEach(e => levelObjects.push(
         {
         "aliases": [`TideTo${e}`],
         "objclass": "TidalChangeWaveActionProps",
@@ -825,11 +878,11 @@ aliases:[e],
         }
         }))
 
-    otherObjects.push(...wavesData)
+    levelObjects.push(...wavesData)
 
 
     if (getLocal('add one hit kill') == 'true' || debug){
-        otherObjects.push(...[
+        levelObjects.push(...[
   {
     "objclass": "PlantType",
     "aliases": [
@@ -935,7 +988,7 @@ aliases:[e],
 
 
     if (isPinata) {
-        otherObjects.push({
+        levelObjects.push({
             "aliases": [
                 "LevelOfTheDayModule"
 			],
@@ -960,7 +1013,6 @@ aliases:[e],
     const mm = String(now.getMonth() + 1).padStart(2, '0'); // January is 0!
     const yyyy = now.getFullYear();
 
-    const tf = key => JSON.parse(getSession(key)) === true
 
     const checkNum = key => 
         sessionStorage.getItem(key) !== null &&
@@ -976,35 +1028,38 @@ aliases:[e],
 
     if (hasPlantModifications) {
         let list = [...pProps.objects].map(e => ({
-                    Type:e.aliases[0],
-                    NewObjdata:{
-                        ...(plantModifications[0] && {Toughness:e.objdata.Toughness * Number(getSession('plant health multiplier'))}),
-                        ...(plantModifications[1] && {Cooldown:e.objdata.Cooldown * Number(getSession('plant recharge multiplier'))}),
-                        ...(plantModifications[2] && {SunCost:e.objdata.SunCost * 2}),
-                    }
-                }))
+                Type:e.aliases[0],
+                NewObjdata:{
+                    ...(plantModifications[0] && {Toughness:e.objdata.Toughness * Number(getSession('plant health multiplier'))}),
+                    ...(plantModifications[1] && {Cooldown:e.objdata.Cooldown * Number(getSession('plant recharge multiplier'))}),
+                    ...(plantModifications[2] && {SunCost:e.objdata.SunCost * 2}),
+                }
+            }))
 
         // to do: 25 sun meta for sun producers when there's a plant modification ticked
 
-        // list.forEach((e,i) => {
-        //     const plant = e.Type
-        //     switch (plant) {
-        //         case 'goldbloom':
-        //             list[i].NewObjdata.ProduceValue0 = 50;
-        //             list[i].NewObjdata.ProduceValue1 = 62.5;
-        //             list[i].NewObjdata.ProduceValue2 = 75;
-        //             break;
-        //         case 'sunshroom':list[i].NewObjdata.SunValue = 12.5; list[i].NewObjdata.SunValueList=[12.5,25,37.5]; break;
-        //         case 'primalsunflower':list[i].NewObjdata.SunValue = 37.5;break;
-        //         case 'enlightenmint':list[i].NewObjdata.SunProduction = 75;break;
-        //         case 'sunflower':list[i].NewObjdata.SunValue = 25;break;
-        //         case 'solartomato':list[i].NewObjdata.SunValuePerZombie = 25;break;
-        //         case 'marigold_yellow':list[i].NewObjdata.SunValuePerZombie = 25;break;
-        //         case 'twinsunflower':list[i].NewObjdata.SunValue = 50;break;
-        //         case 'shinevine':list[i].NewObjdata.ProduceSunValue = 25;break;
-        //         case 'solarsage':list[i].NewObjdata.EnlightenSunValue = 25;break;
-        //     }
-        // })
+        if (is25sunMeta){
+            list.forEach((e,i) => {
+                const plant = e.Type
+                switch (plant) {
+                    case 'goldbloom':
+                        list[i].NewObjdata.ProduceValue0 = 50;
+                        list[i].NewObjdata.ProduceValue1 = 62.5;
+                        list[i].NewObjdata.ProduceValue2 = 75;
+                        break;
+                    case 'sunshroom':list[i].NewObjdata.SunValue = 12.5; list[i].NewObjdata.SunValueList=[12.5,25,37.5]; break;
+                    case 'primalsunflower':list[i].NewObjdata.SunValue = 37.5;break;
+                    case 'enlightenmint':list[i].NewObjdata.SunProduction = 75;break;
+                    case 'sunflower':list[i].NewObjdata.SunValue = 25;break;
+                    case 'solartomato':list[i].NewObjdata.SunValuePerZombie = 25;break;
+                    case 'marigold_yellow':list[i].NewObjdata.SunDropValue = 75;break;
+                    case 'twinsunflower':list[i].NewObjdata.SunValue = 50;break;
+                    case 'shinevine':list[i].NewObjdata.ProduceSunValue = 25;break;
+                    case 'solarsage':list[i].NewObjdata.EnlightenSunValue = 25;break;
+                    case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
+                    }
+                })
+            }
         let PlantModifications = {
             "HidePlantfood": true,
             "SuppressParticle": true,
@@ -1018,6 +1073,43 @@ aliases:[e],
                 // }
         }
         pushModuleObject('PlantModifications','PlantModifierProperties',PlantModifications)
+    }
+
+    /*
+case 'primalsunflower':list[i].NewObjdata.SunValue = 37.5;break;
+case 'enlightenmint':list[i].NewObjdata.SunProduction = 75;break;
+case 'sunflower':list[i].NewObjdata.SunValue = 25;break;
+case 'solartomato':list[i].NewObjdata.SunValuePerZombie = 25;break;
+case 'marigold_yellow':list[i].NewObjdata.SunDropValue = 75;break;
+case 'twinsunflower':list[i].NewObjdata.SunValue = 50;break;
+case 'shinevine':list[i].NewObjdata.ProduceSunValue = 25;break;
+case 'solarsage':list[i].NewObjdata.EnlightenSunValue = 25;break;
+case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
+    */
+
+    const newObjdata = (type,key,value) => ({Type:type,NewObjdata:{[key]:[value]}})
+
+    if (is25sunMeta && !hasPlantModifications){
+        const modificationsList = {
+            HidePlantfood:true,
+            SuppressParticle:true,
+            List:[
+                newObjdata('primalsunflower','SunValue',37.5),
+                newObjdata('enlightenmint','SunProduction',75),
+                newObjdata('sunflower','SunValue',25),
+                newObjdata('solartomato','SunValuePerZombie',25),
+                newObjdata('marigold_yellow','SunDropValue',75),
+                newObjdata('twinsunflower','SunValue',50),
+                newObjdata('shinevine','ProduceSunValue',25),
+                newObjdata('solarsage','EnlightenSunValue',25),
+                newObjdata('toadstool','SunProducePerZombie',25),
+                newObjdata('toadstool','SunProducePerZombie',25),
+                newObjdata('toadstool','SunProducePerZombie',25),
+                {"Type": "sunshroom","NewObjdata": {"SunCost": 50,"SunValue": 12.5,"SunValueList": [12.5,25,37.5]}},
+                {"Type": "goldbloom","NewObjdata": {"SunCost": 0,"ProduceValue0": 50,"ProduceValue1": 62.5,"ProduceValue2": 75}}
+            ]
+        }
+        pushModuleObject('PlantModifications','PlantModifierProperties',modificationsList)
     }
 
     let zombieModifications = [
@@ -1058,9 +1150,9 @@ aliases:[e],
             if (zombieModifications[4]) {
                 zombie[1].objdata.EatDPS = zombie[1].objdata.EatDPS * Number(getSession('zombie eatDPS multiplier'))
             }
-            otherObjects.push(...zombie)
+            levelObjects.push(...zombie)
         })
-        if (zombieModifications[0]) otherObjects.push(...[{
+        if (zombieModifications[0]) levelObjects.push(...[{
   "objclass": "RectangleType",
   "aliases": [
     "InvisHitRect"
@@ -1086,7 +1178,7 @@ aliases:[e],
     }
 
     let CustomDescription = getSession('Custom objective text')
-    const toArray = CustomDescription.split('\\n').map(e => e.trim())
+    const toArray = CustomDescription?.split('\\n').map(e => e.trim())
     if (CustomDescription) pushModuleObject('BeatTheLevel','StarChallengeBeatTheLevelProps',{
         Descriptions:toArray,
         DescriptionsMultiLanguage:[{
@@ -1096,7 +1188,7 @@ aliases:[e],
     })
     //version
     let level = {
-        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 0.9.2'}),
+        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 0.9.9'}),
         ...(debug && {"Debug mode":true}),
         "Information": {
             Author:author,
@@ -1146,7 +1238,7 @@ aliases:[e],
                     "Waves": wavesArray
                 }
             },
-            ...otherObjects
+            ...levelObjects
         ]
     }
 

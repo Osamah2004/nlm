@@ -576,5 +576,32 @@
       "Countdown": 200,
       "Events": ["RTID(Deadline@CurrentLevel)"]
     }
+  },
+  "Path":{
+    "#Comment":[
+      "The only purpose of this ambush is to copy the walking route and put it into the desired zombie's props",
+      "DO NOT assign it to any wave",
+      "Board to ambush will automatically maps paths from Initial Board into SplinePoints here"
+    ],
+    "WalkingRoute": {
+        "LoopTime": 20,
+        "//LoopTimeComment":
+[ "means how many times the zombie",
+"will loop its spline path before dying" ],
+        "BufferDistance": 1,
+        "//BufferDistanceComment":
+["generally decides how smooth and loop-like",
+"the movement is, it CANNOT be 0;",
+"1 is very rigid;",
+"20 is rigid;",
+"50 is smooth;",
+"80 is very smooth;",
+"120 is overly smooth (pretty much makes circles)" ],
+        "Speed": {
+          "Min": 1.5,
+          "Max": 1.5
+        },
+        "SplinePoints": []
+      }
   }
 }

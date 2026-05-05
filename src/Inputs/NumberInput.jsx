@@ -31,6 +31,10 @@ export default function NumberInput(props) {
             props.setter(value);
             return;
         }
+        if(props.noDebounce) {
+            props.setter(value)
+            return;
+        }
         const timeout = setTimeout(() => {
             props.setter(value)
         }, 500) // wait 500ms after typing stops

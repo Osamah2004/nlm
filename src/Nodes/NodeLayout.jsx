@@ -2,7 +2,6 @@ import { useReactFlow, ReactFlowProvider } from '@xyflow/react';
 import Checkbox from '../Inputs/CheckboxInput';
 import { displayPosition } from '../Atom';
 import { useSetAtom } from 'jotai';
-import { useState,useEffect } from 'react';
 import NumberInput from '../Inputs/NumberInput';
 
 const NodesLayout = () => {
@@ -63,7 +62,7 @@ const NodesLayout = () => {
             {nodes
               .filter((f) => !f.id.startsWith("wave"))
               .map((e,i) => (
-                <tr key={e.id} className="border-b even:bg-cyan-100 even:hover:bg-cyan-200 transition-colors duration-300">
+                <tr key={e.id} className="border-b odd:hover:bg-gray-400 even:bg-cyan-100 even:hover:bg-cyan-400 transition-colors duration-300">
                     <td className="text-left">{e.data.label}</td>
                     <td className="text-left">{Math.ceil(e.position.x)}</td>
                     <td className="text-left">{Math.ceil(e.position.y)}</td>
@@ -92,7 +91,7 @@ const NodesLayout = () => {
             <NumberInput local={true} step={50} default={200} label={'Node wave 1 y position'}/>
             <NumberInput local={true} step={1} default={5} min={1} label={'nodes per group'}/>
             <NumberInput local={true} step={50} default={-350} label={'distance between groups'}/>
-            <NumberInput local={true} step={50} default={-250} label={'distance between nodes inside group'}/>
+            <NumberInput local={true} step={50} default={250} label={'distance between nodes inside group'}/>
         </div>
 
         <footer className='absolute flex bg-gray-300 bottom-0 py-2 w-full'>

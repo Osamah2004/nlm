@@ -157,9 +157,9 @@ const GameCode = () => {
   }, [jsonFiles]);
 
   return (
-    <div className="flex flex-col h-150 w-200 bg-white rounded-lg shadow-lg">
+    <div className="flex flex-col h-250 w-350 bg-white text-black rounded-lg shadow-lg">
       {/* Header */}
-      <div className="bg-cyan-500 px-4 py-3 border-b rounded-t-lg">
+      <div className="bg-cyan-500 px-4 py-3 border-b rounded-t">
         <h2 className="text-lg font-semibold">
           {selectedFile ? `Viewing: ${selectedFile}` : 'JSON Files Viewer'}
         </h2>
@@ -169,7 +169,6 @@ const GameCode = () => {
       <div className="flex flex-1 min-h-0">
         {/* Left column - File list */}
         <div className="w-1/3 border-r overflow-y-auto p-2">
-          <h3 className="font-medium mb-2 px-2 text-black">Available Files ({jsonFiles.length})</h3>
           {jsonFiles.length === 0 ? (
             <p className="text-gray-500 px-2">No JSON files found</p>
           ) : (
@@ -178,10 +177,10 @@ const GameCode = () => {
                 <li key={filename}>
                   <button
                     onClick={() => fetchFileContent(filename)}
-                    className={`w-full text-left cursor-pointer bg-cyan-100 px-3 text-black py-2 rounded transition-colors text-sm ${
+                    className={`button w-full p-1 text-lg ${
                       selectedFile === filename
-                        ? 'bg-cyan-500 hover:bg-cyan-400 text-white'
-                        : 'hover:bg-cyan-200'
+                        ? 'gray'
+                        : ''
                     }`}
                   >
                     {filename}
@@ -216,7 +215,7 @@ const GameCode = () => {
               options={{
                 readOnly: true,
                 minimap: { enabled: true },
-                fontSize: 12,
+                fontSize: 20,
                 wordWrap: 'on',
                 scrollBeyondLastLine: false,
                 automaticLayout: true,
@@ -236,22 +235,14 @@ const GameCode = () => {
         <button
           onClick={downloadSingleFile}
           disabled={!selectedFile || loading}
-          className={`px-4 py-2 cursor-pointer rounded transition-colors text-sm ${
-            selectedFile && !loading
-              ? 'bg-blue-500 hover:bg-blue-600 text-white'
-              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-          }`}
+          className={`px-4 text-lg button`}
         >
           Download {selectedFile || 'selected file'}
         </button>
         <button
           onClick={downloadAllAsZip}
           disabled={jsonFiles.length === 0 || loading}
-          className={`px-4 py-2 cursor-pointer rounded transition-colors text-sm ${
-            jsonFiles.length > 0 && !loading
-              ? 'bg-green-500 hover:bg-green-600 text-white'
-              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-          }`}
+          className={`px-4 text-lg button gray`}
         >
           Download all as ZIP
         </button>
