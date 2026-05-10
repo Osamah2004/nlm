@@ -5,6 +5,7 @@ import PlantList from "../SeedBank/PlantList";
 import Checkbox from "../Inputs/CheckboxInput";
 import AirRaid from "./AirRaid";
 import ZombossModal from "./Zomboss";
+import AllAlone from "../MiniGames/AllAlone";
 
 // This component is unfinished
 
@@ -98,7 +99,7 @@ const Miscellaneous = ({modalFunction}) => {
             <button className="button" onClick={() => modalFunction(<AirRaid/>)}>Air raid</button>
             <button className="button disabled" disabled>Not ok Corral</button>
             <button className="button disabled" disabled>Powder Keg</button>
-            <button className="button disabled" disabled>All alone</button>
+            <button className="button" onClick={() => modalFunction(<AllAlone />)}>All alone</button>
             <button className="button disabled" disabled>Bowling</button>
             <button className="button disabled" disabled>beghouled</button>
             <button className="button disabled" disabled>vasebraker</button>
@@ -115,9 +116,9 @@ const Miscellaneous = ({modalFunction}) => {
             <button className="button" onClick={() => modalFunction(<ZombossModal ZombossTypeName={"dark"}/>)}>dark</button>
             <button className="button" onClick={() => modalFunction(<ZombossModal ZombossTypeName={"beach"}/>)}>beach</button>
             <button className="button" onClick={() => modalFunction(<ZombossModal ZombossTypeName={"iceage"}/>)}>iceage</button>
-            <button className="button disabled" disabled onClick={() => modalFunction(<ZombossModal ZombossTypeName={"lostcity"}/>)}>lostcity - crashes the app</button>
-            <button className="button disabled" disabled onClick={() => modalFunction(<ZombossModal ZombossTypeName={"eighties"}/>)}>eighties - crashes the app</button>
-            <button className="button disabled" disabled onClick={() => modalFunction(<ZombossModal ZombossTypeName={"dino"}/>)}>dino - crashes the app</button>
+            <button className="button" onClick={() => modalFunction(<ZombossModal ZombossTypeName={"lostcity"}/>)}>lostcity</button>
+            <button className="button" onClick={() => modalFunction(<ZombossModal ZombossTypeName={"eighties"}/>)}>eighties</button>
+            <button className="button" onClick={() => modalFunction(<ZombossModal ZombossTypeName={"dino"}/>)}>dino</button>
           </div>
         </details>
         <details className="details">

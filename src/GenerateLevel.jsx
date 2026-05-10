@@ -105,6 +105,7 @@ const GenerateLevel = () => {
         "RTID(DefaultZombieWinCondition@LevelModules)",
         "RTID(NewWaves@CurrentLevel)",
     ]
+    const removeSunDropper = () => modules = modules.filter(f => !f.includes('SunDropper'))
 
     const pushModuleObject = (alias,objclass,objdata) => {
         modules.push(`RTID(${alias}@CurrentLevel)`);
@@ -234,6 +235,18 @@ const GenerateLevel = () => {
     let molds = Array.from({length:5}).map(e => Array.from({length:9}).map(e => "0"))
     let isMold = false
 
+    const addAllAlone = (e) => {
+        console.log('all alone detected')
+        const {x,y} = e
+        const temp = {
+            Position:{mX:x,mY:y},
+            PlantUpgradeList: JSON.parse(getLocal('allAloneObjects'))
+        }
+        pushModuleObject('allAlone','FutureMinigameProperties',temp)
+        isSeedbank = false
+        removeSunDropper();
+    }
+
     Object.keys(board).forEach(e => {
         boardItems.push(...board[e].map(f=>({'x':e.at(2),'y':e.at(0),'name':f})))
     })
@@ -248,6 +261,7 @@ const GenerateLevel = () => {
             case 'F':frozenPlants.push({'TypeName':e.name.slice(2),'GridX':e.x,'GridY':e.y,'Condition':'icecubed'});break;
             case 'P':initialPlants.push({'TypeName':e.name.slice(2),'GridX':e.x,'GridY':e.y,});break;
             case 'molds':molds[e.y][e.x] = '1';isMold = true;break;
+            case 'all-alone':addAllAlone(e);break;
             default: otherGi.push({'GridX':e.x,'GridY':e.y,'TypeName':e.name})
         }
     })

@@ -188,7 +188,7 @@ const boardToAmbush = (codeAmbush,ambushSetter,ambushName = 'none',pickedAmbushe
         case 'Path':
             {
                 let temp = {...JSON.parse(codeAmbush)}
-                temp.SplinePoints = ambushList.map(e =>
+                temp.WalkingRoute.SplinePoints = ambushList.map(e =>
                     // x:(e.x * 65) + 230,y:(e.y * 77.5) + 200
                     ({
                         x:((e.x - 1) * 65) + 230,y:((e.y - 1) * 77.5) + 200

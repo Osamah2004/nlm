@@ -76,6 +76,8 @@ const ZombossModal = ({ZombossTypeName}) => {
         setZombossCode(temp)
     }
 
+    console.log(currentStages)
+
     return (
       <div className="w-400 h-240 text-black flex">
         <div className="w-5/12 space-y-1 text-xl h-full overflow-y-auto">
@@ -94,8 +96,7 @@ const ZombossModal = ({ZombossTypeName}) => {
                     <details className="details space-y-1">
                         <summary className="summary">Stage {index + 1}</summary>
                         {Object.keys(stage).map((key) => {
-                        let type = typeof(stage[key])
-                        return type == 'number' ? (
+                        return key !== 'Actions' ? (
                             <>
                                 <label htmlFor={`stage-${index + 1}-${key}`} className="flex justify-between items-center hover:bg-cyan-500 transition-colors duration-300">
                                     {key}

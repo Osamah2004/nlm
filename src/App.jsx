@@ -286,6 +286,7 @@ const BoardGroup = ({ group, summary }) => {
             <BoardGroup group={zombies.objects.map(e=>e.aliases[0]).map(e=>`FZ_${e}`)} summary="Frozen zombies" />
             <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','point-1')}>SplinePoints</button>
             <p className="text-gray-500 p-1">pressing it again will reset it to 1</p>
+            <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','all-alone_')}>all alone position</button>
           </div>
           </>
         )
