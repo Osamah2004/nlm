@@ -6,6 +6,9 @@ import Checkbox from "../Inputs/CheckboxInput";
 import AirRaid from "./AirRaid";
 import ZombossModal from "./Zomboss";
 import AllAlone from "../MiniGames/AllAlone";
+import Beghouled from "../MiniGames/Beghouled";
+import CannonsAway from "../MiniGames/CannonsAway";
+import NotOkCorral from "../MiniGames/NotOkCorral";
 
 // This component is unfinished
 
@@ -95,14 +98,11 @@ const Miscellaneous = ({modalFunction}) => {
         <details className="details">
           <summary className="summary">Mini games</summary>
           <div className="w-full grid grid-cols-2 gap-1 border-b pb-1">
-            <button className="button disabled" disabled>Cannons away</button>
+            <button className="button" onClick={() => modalFunction(<CannonsAway />)}>Cannons away</button>
             <button className="button" onClick={() => modalFunction(<AirRaid/>)}>Air raid</button>
-            <button className="button disabled" disabled>Not ok Corral</button>
-            <button className="button disabled" disabled>Powder Keg</button>
+            <button className="button" onClick={() => modalFunction(<NotOkCorral />)}>Not ok Corral</button>
             <button className="button" onClick={() => modalFunction(<AllAlone />)}>All alone</button>
-            <button className="button disabled" disabled>Bowling</button>
-            <button className="button disabled" disabled>beghouled</button>
-            <button className="button disabled" disabled>vasebraker</button>
+            <button className="button" onClick={() => modalFunction(<Beghouled />)}>beghouled</button>
           </div>
         </details>
         <details className="details">
@@ -154,7 +154,7 @@ const Miscellaneous = ({modalFunction}) => {
               <NumberInput min={-1} default={3} label={"PotionSpawnTimerMax"}/>
               <NumberInput min={-1} default={1} label={"PotionSpawnTimerMin"}/>
           </div>
-          <Gray msg={(<>Potions | <label className="ml-4">filter: <input onChange={(e) => setSearch(e.target.value)} type="text" /></label><button className=" ml-4 button" onClick={() => setCustomPlants(JSON.parse(localStorage.getItem('customPlants')))}>fetch custom plants</button></>)}/>
+          <Gray msg={(<>Potions | <label className="ml-4">search: <input onChange={(e) => setSearch(e.target.value)} type="text" /></label><button className=" ml-4 button" onClick={() => setCustomPlants(JSON.parse(localStorage.getItem('customPlants')))}>fetch custom plants</button></>)}/>
           <div className="grid border-t grid-cols-3 h-50 overflow-y-auto overflow-x-hidden border-b">
             <CheckboxCurrent label="zombiepotion_speed"/>
             <CheckboxCurrent label="zombiepotion_invisibility"/>

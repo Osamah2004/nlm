@@ -219,13 +219,13 @@ const Conveyor = () => {
                 <header className="sticky top-0 p-1 bg-cyan-300">
                     <span className="text-xl font-medium">List of plants</span>
                     <label htmlFor="conveyor-filter" className=" block w-full group">
-                        filter: 
+                        search: 
                         <input onChange={(e) => setV(e.target.value)} type="text" className="nodrag transition-colors duration-300" id="conveyor-filter" />
                     </label>
                 </header>
                 <div className="*:block *:w-full space-y-1">
                     <button className="button gray" onClick={() => setCustomPlants(JSON.parse(localStorage.getItem('customPlants')))}>fetch custom plants</button>
-                    {customPlants.map(e => <button className={plantPool.find(f => f == e) ? 'button red' : 'button'} onClick={(f) => addToPlantPool(f.target.innerHTML)}>{e}</button>)}
+                    {customPlants?.map(e => <button className={plantPool.find(f => f == e) ? 'button red' : 'button'} onClick={(f) => addToPlantPool(f.target.innerHTML)}>{e}</button>)}
                     {statePlantList.map(e => <button className={plantPool.find(f => f == e) ? 'button red' : 'button'} onClick={(f) => addToPlantPool(f.target.innerHTML)}>{e}</button>)}
                 </div>
             </div>

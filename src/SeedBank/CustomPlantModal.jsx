@@ -184,7 +184,7 @@ const CustomPlantModal = () => {
                     <div className="sticky top-0">
                         <header className="bg-cyan-300 text-2xl  w-full font-medium h-8">Plant list</header>
                         <header className="bg-cyan-100 text-xl  w-full font-medium h-7 flex">
-                            <label htmlFor="plantFilterInput" className="w-1/2 group">filter:<input onChange={(e) => setSearchTerm(e.target.value)} className="group-hover:bg-cyan-500" id="plantFilterInput" type="text" /></label>
+                            <label htmlFor="plantFilterInput" className="w-1/2 group">search:<input onChange={(e) => setSearchTerm(e.target.value)} className="group-hover:bg-cyan-500" id="plantFilterInput" type="text" /></label>
                         </header>
                     </div>
                     <div className="h-185 space-y-1 overflow-y-auto">

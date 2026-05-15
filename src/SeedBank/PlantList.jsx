@@ -1,5 +1,5 @@
 import PlantTypes from '../assets/PlantFeatures.json'
 
-export const PlantList = PlantTypes.SEEDCHOOSERDEFAULTORDER;
+export const PlantList = PlantTypes.SANDBOX;
 
 export default PlantList;

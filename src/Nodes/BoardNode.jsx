@@ -12,9 +12,22 @@ export default function BoardNode({ data, id }) {
     const [error, setError] = useState("")
     const [hoveredCell, setHoveredCell] = useState(null);
     const [boardItem,setBoardItem] = useState(localStorage.getItem('board-item') || '')
+    const [rows,setRows] = useState(JSON.parse(localStorage.getItem('cannonsAwayPaths')) || [
+        [],
+        [],
+        [],
+        [],
+        [],
+    ])
 // Inside your BoardNode component:
 const cellStorage = JSON.parse(localStorage.getItem('initialBoard'))
-const [cellItems, setCellItems] = useState(cellStorage ? cellStorage : {})
+const [cellItems, setCellItems] = useState(cellStorage || {})
+
+const addToRow = (row,position) => {
+    let temp = [...rows]
+    temp[row-1].push(position)
+    setRows(temp)
+}
 
 const handleCellClick = (e, row, column) => {
     e.preventDefault() // Prevent default behavior
@@ -24,6 +37,13 @@ const handleCellClick = (e, row, column) => {
     if (boardItem.startsWith('point')) {
         const getNum = Number(boardItem.slice(6))
         localStorage.setItem('board-item',`point-${getNum+1}`)
+    }
+    
+    if (boardItem.startsWith('Row')) {
+        const getNum = Number(boardItem.slice(6))
+        const splineRow = boardItem.charAt(3)
+        localStorage.setItem('board-item',`Row${splineRow}_p${getNum+1}`)
+        addToRow(splineRow,{x:((column)*65)+230,y:((row)*77.5)+200})
     }
     
     setCellItems(prev => ({
@@ -87,7 +107,18 @@ useEffect(() => {
 }, [hoveredCell]);
 const clearBoard = () => {
     setCellItems({})
+    setRows([
+        [],
+        [],
+        [],
+        [],
+        [],
+    ])
 }
+
+useEffect(() => {
+    localStorage.setItem('cannonsAwayPaths', JSON.stringify(rows))
+}, [rows])
 
 const handleCellRightClick = (e, row, column) => {
     e.preventDefault() // Prevent context menu

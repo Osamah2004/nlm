@@ -45,6 +45,7 @@ const GenerateLevel = () => {
     const slotCount = getSession('OverrideSeedSlotsCount') || 0
     const author = getSession('Author') || 'blank'
     const initialTide = getSession('InitialTide') || -1
+    const BowlingFoulLine = getSession('BowlingFoulLine') || -1
     const isPinata = JSON.parse(getSession('Enable Pinata Party')) || false
     const pointIncrement = Number(getSession('Point increment')) || 0
     const initialPoints = Number(getSession('Starting points')) || 0
@@ -106,6 +107,7 @@ const GenerateLevel = () => {
         "RTID(NewWaves@CurrentLevel)",
     ]
     const removeSunDropper = () => modules = modules.filter(f => !f.includes('SunDropper'))
+    const removeFromModule = key => modules = modules.filter(f => !f.includes(key))
 
     const pushModuleObject = (alias,objclass,objdata) => {
         modules.push(`RTID(${alias}@CurrentLevel)`);
@@ -140,7 +142,7 @@ const GenerateLevel = () => {
         Number(getSession('SunValue')) || 0,
     ]
 
-    const sunBombArray = ({
+    const sunBombObject = ({
         PlantBombExplosionRadius:Number(getSession('PlantBombExplosionRadius')) || 25,
         PlantDamage:Number(getSession('PlantDamage')) || 1000,
         ZombieBombExplosionRadius:Number(getSession('ZombieBombExplosionRadius')) || 80,
@@ -169,7 +171,7 @@ const GenerateLevel = () => {
         }
     }
 
-    if (tf('enable sun bomb')) pushModuleObject('sunbomb','SunBombChallengeProperties',sunBombArray)
+    if (tf('enable sun bomb')) pushModuleObject('sunbomb','SunBombChallengeProperties',sunBombObject)
     
     if (isPinata) {
         modules.unshift("RTID(LevelOfTheDayModule@CurrentLevel)")
@@ -196,10 +198,12 @@ const GenerateLevel = () => {
       ],
       "objclass": "TideProperties",
       "objdata": {
-        "StartingWaveLocation": initialTide
+        "StartingWaveLocation": initialTide,
+        "ShowTideMarker":!tf('HideTideMarker')
       }
     })
-    }
+    };
+    if (BowlingFoulLine !== -1) pushModuleObject('bowlingMiniGame','BowlingMinigameProperties',({BowlingFoulLine:BowlingFoulLine}));
     if (stage === 'PirateStage'){
         modules.push("RTID(Planks@.)")
         levelObjects.push({
@@ -211,7 +215,7 @@ const GenerateLevel = () => {
                 "PlankRows": planks || []
                 }
             })
-    }
+    };
 
     const potions = JSON.parse(getSession('enable potions')) ?? false
 
@@ -246,10 +250,11 @@ const GenerateLevel = () => {
         isSeedbank = false
         removeSunDropper();
     }
-
     Object.keys(board).forEach(e => {
         boardItems.push(...board[e].map(f=>({'x':e.at(2),'y':e.at(0),'name':f})))
     })
+    let tntWires = []
+    let isTdMode = false
     boardItems.forEach(e => {
         const gridType = eStarter(e.name)
         switch(gridType){
@@ -262,9 +267,33 @@ const GenerateLevel = () => {
             case 'P':initialPlants.push({'TypeName':e.name.slice(2),'GridX':e.x,'GridY':e.y,});break;
             case 'molds':molds[e.y][e.x] = '1';isMold = true;break;
             case 'all-alone':addAllAlone(e);break;
+            case 'wire':tntWires.push(Number(e.x)+1);break;
+            case 'Row1':
+            case 'Row2':
+            case 'Row3':
+            case 'Row4':
+            case 'Row5':
+                if (Number(e.x) < 2) isTdMode = true;
+                break;
             default: otherGi.push({'GridX':e.x,'GridY':e.y,'TypeName':e.name})
         }
     })
+    if (tntWires.length > 0) {
+        const temp = {
+            "Speed": 0.5,
+            "TriggerGameLose": true,
+            "DamagesToZombies": false,
+            "DamagesToPlants": true,
+            "SpawnData":tntWires.map((e,i) => ({
+                        "Speed": 0.5,
+                        "WireLength": e,
+                        "GridX": -1,
+                        "GridY": i
+                    }))
+        }
+        pushModuleObject('tnt','KongfuTNTProperties',temp)
+        removeFromModule('Mowers')
+    }
     molds = molds.map(e => e.join(""))
     Object.keys(rails).forEach(e=>{
         if(rails[e].length === 4 && !(rails[e].includes(2))){
@@ -572,6 +601,101 @@ if (getLocal('Add challenge to level moduels') == 'true'){
             }
         })
         modules.push('RTID(SkyCityShipDefault@.)')
+    }
+
+    const cannonsAway = JSON.parse(getLocal('cannonsAwayPaths')) || [[],[],[],[],[]]
+    if (cannonsAway.some(e => e.length > 0)) {
+        // if (tf('Enable advanced settings'))
+        let temp = {
+        "BaseMovementRate": Number(getSession('BaseMovementRate')) || 100,
+        "BaseZombieKillScore": Number(getSession('BaseZombieKillScore')) || 100,
+        "BufferDistance": Number(getSession('BufferDistance')) || 50,
+        "ComboBrackets": [
+          {
+            "AudioCue": "Play_CrazyDave_Short",
+            "Exclamations": [
+              "[DAVE_CANNONMINIGAME_3_KILLED_1]",
+              "[DAVE_CANNONMINIGAME_3_KILLED_2]",
+              "[DAVE_CANNONMINIGAME_3_KILLED_3]"
+            ],
+            "MessageColor": {
+              "mAlpha": 255,
+              "mBlue": 220,
+              "mGreen": 255,
+              "mRed": 220
+            },
+            "ScoreMultiplier": 2,
+            "ZombiesKilled": 3
+          },
+          {
+            "AudioCue": "Play_CrazyDave_Scream",
+            "Exclamations": [
+              "[DAVE_CANNONMINIGAME_5_KILLED_1]",
+              "[DAVE_CANNONMINIGAME_5_KILLED_2]",
+              "[DAVE_CANNONMINIGAME_5_KILLED_3]"
+            ],
+            "MessageColor": {
+              "mAlpha": 255,
+              "mBlue": 255,
+              "mGreen": 220,
+              "mRed": 220
+            },
+            "ScoreMultiplier": 3,
+            "ZombiesKilled": 5
+          },
+          {
+            "AudioCue": "Play_CrazyDave_Scream2",
+            "Exclamations": [
+              "[DAVE_CANNONMINIGAME_8_KILLED_1]",
+              "[DAVE_CANNONMINIGAME_8_KILLED_2]",
+              "[DAVE_CANNONMINIGAME_8_KILLED_3]"
+            ],
+            "MessageColor": {
+              "mAlpha": 255,
+              "mBlue": 220,
+              "mGreen": 240,
+              "mRed": 255
+            },
+            "ScoreMultiplier": 4,
+            "ZombiesKilled": 8
+          },
+          {
+            "AudioCue": "Play_CrazyDave_Crazy",
+            "Exclamations": [
+              "[DAVE_CANNONMINIGAME_12_KILLED_1]",
+              "[DAVE_CANNONMINIGAME_12_KILLED_2]",
+              "[DAVE_CANNONMINIGAME_12_KILLED_3]"
+            ],
+            "MessageColor": {
+              "mAlpha": 255,
+              "mBlue": 200,
+              "mGreen": 200,
+              "mRed": 255
+            },
+            "ScoreMultiplier": 5,
+            "ZombiesKilled": 12
+          }
+        ],
+        "Lanes": cannonsAway.map(e => ({SplinePoints:e})),
+		"MaxRewardGold": Number(getSession('MaxRewardGold')) || 50,
+        "MinRewardGold": Number(getSession('MinRewardGold')) || 0,
+        "MinScore": Number(getSession('MinScore')) || 30000,
+        "ResourceGroupNames": [],
+        "RowHasCannon": [1,1,1,1,1],
+        "SlowdownMovementRate": Number(getSession('SlowdownMovementRate')) || 60
+        }
+        if (isTdMode) {
+            temp.BufferDistance = 1
+            temp.BaseMovementRate = 50
+            temp.SlowdownMovementRate = 50
+            temp.RowHasCannon = []
+        }
+        else {
+            removeFromModule('StandardIntro')
+            removeFromModule('SeedBank')
+            removeSunDropper()
+        }
+        pushModuleObject('CannonMinigame','CannonMinigameProperties',temp)
     }
 
     if (isSeedbank) levelObjects.push(seedBank)
@@ -1200,9 +1324,25 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
             zh:'...'
         }]
     })
+    if (tf('is_noc')) {
+        pushModuleObject('noc','CowboyMinigameProperties',{BeginString:'[COWBOY_MINIGAME_TUTORIAL_1]'})
+    }
+    const beghouled = JSON.parse(getLocal('beghouled')) || []
+    if (beghouled.length > 0) {
+        pushModuleObject('BeghouledProps','BeghouledPresetProperties',beghouled[0].objdata)
+        pushModuleObject('BeghouledSpawner','BeghouledZombieSpawnerProperties',beghouled[1].objdata)
+        removeFromModule('Intro')
+        removeFromModule('SeedBank')
+        removeFromModule('SunDropper')
+        removeFromModule('Mowers')
+        removeFromModule('ZombiesDeadWinCon')
+        removeFromModule('NewWaves')
+        modules.push('RTID(BeghouledIntro@LevelModules)')
+        modules.push('RTID(BeghouledArcade@LevelModules)')
+    }
     //version
     let level = {
-        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 0.9.9'}),
+        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.0'}),
         ...(debug && {"Debug mode":true}),
         "Information": {
             Author:author,
@@ -1228,6 +1368,8 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
                     ...(isPinata && {"IsLevelOfTheDay": true}),
                     ...(introNarrative.length > length && {'FirstIntroNarrative':'INTRO'}),
                     ...(outroNarrative.length > length && {'FirstOutroNarrative':'OUTRO'}),
+                    ...(outroNarrative.length > length && {'ReplayOutroNarrative':'OUTRO'}),
+                    ...(introNarrative.length > length && {'ReplayIntroNarrative':'INTRO'}),
                 }
             },
             {

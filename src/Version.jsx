@@ -1,6 +1,121 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.0",
+      date: "2026/5/15",
+      title: "Miscellaneous",
+      description: "NLM Full release.",
+      changes: [
+        <>
+          <p className="text-black font-bold text-3xl mb-4">Miscellaneous</p>
+          <div className="space-y-4 *:text-lg">
+            <p>
+              For other types of modifications in your custom level, this node might come in handy
+            </p>
+            <p>It comes with the following</p>
+              <ol className="list-decimal list-inside *:text-black *:font-medium">
+                <li>
+                  A debug mode
+                  <p>
+                    For those who quickly want to test their level, this button changes the first wave delay to be 0 seconds, with 9900 starting sun, and one-hit-kill to preset plants
+                  </p>
+                </li>
+                <li>
+                  25 sun meta
+                  <p>
+                    If you want extra spice to your level, this button is for you
+                  </p>
+                </li>
+                <li>
+                  Mini games
+                  <p>
+                    Air Raid is moved inside Miscellaneous
+                  </p>
+                  <p>
+                    For All Alone, you have to set the plant's position in Initial Board
+                  </p>
+                  <p>
+                    And for cannons away, you have to set the path of each row in Initial Board as well, but you don't have to go into Miscellaneous to enable it, as explained in Board Items
+                  </p>
+                  <p>
+                    You can find Powerder keg's wire in 'Other grid items' under Board Items
+                  </p>
+                  <p>
+                    For bowling, search for 'tool' in conveyor plants, and add them to conveyor's initial plant list
+                  </p>
+                  <p>
+                    To disable beghouled, just clear initial plants
+                  </p>
+                </li>
+                <li>
+                  Custom zombosses
+                  <p>
+                    I tried to make a custom zomboss one time for RFL, and sure as hell it wasn't fun
+                    , so why not streamline making him?
+                  </p>
+                  <p>
+                    quickly set up the number of stages your custom zomboss have
+                    and quickly set the zombies per each stage.
+                  </p>
+                </li>
+                <li>
+                  Custom sun dropper + Sun bomb
+                </li>
+                <li>
+                  Dark Alchemy
+                  <p>With plants as potions of course, (I hate how they suddenly appear without an animation).</p>
+                </li>
+                <li>
+                  Custom objective text 
+                  <p>can't wait to see brainrot slangs the second i open a gardendless custom level.</p>
+                </li>
+                <li>
+                    Zombies/Plants modifications
+                    <p>
+                      stats/speed/cost/hp/etc...
+                    </p>
+                </li>
+              </ol>
+          </div>
+        </>,
+        <>
+          <p className="text-black font-bold text-3xl mb-4">Page layout</p>
+          <div className="text-lg text-black">
+            <p>Customize which node appears and which doesn't</p>
+            <p>And customize their on page load locations as well</p>
+          </div>
+        </>,
+        <>
+          <p className="text-black font-bold text-3xl mb-4">Board Items</p>
+          <div className="text-lg text-black">
+            <p>Spline Points</p>
+            <li>
+              <p>
+                For zombies who you want to follow a specific path
+                Draw the path in Initial Board using SplinePoints,
+              </p>
+              <p>
+                Go to events/ambushes after drawing your path, at the bottom of list of ambushes, you will find a path.
+              </p>
+              <p>
+                Upon selecting the path ambush and pressing 'Board to ambush' button, you will see a WalkingRoute.
+              </p>
+            </li>
+            <p>Cannons Away</p>
+            <li>
+              <p>Draw your path per each row for cannons away and the level will make your seagulls follow</p>
+              <p>And plants a column of coconuts at x1</p>
+              <p>Putting a path at x1 or x0 will turn it into something similar to Altroz's Fright Theaters</p>
+            </li>
+          </div>
+        </>,
+        <p className="text-lg text-black">VERSION 1.0 AT LASSST (insert celebration voices)</p>,
+        <p>ik there's still some missing things, but they are few and will come soon in post v1.0 updates</p>,
+        <p>and if you find any bugs, or want any features, go to this <a href="https://discord.com/channels/1265377295846346803/1481226047797198868">this gardendless thread</a></p>,
+        <p>or dm me in discord, this is my username: osamah_o</p>
+      ],
+    },
+    {
       version: "v0.9.2",
       date: "2026/4/30",
       title: "Enhancements",
@@ -43,7 +158,7 @@ const Version = () => {
           <p className="text-gray-400">
             Emptying the InitialPlantList will enable seedbank and sundroppers.
           </p>
-          </>,
+        </>,
         "Delete button for individual ambushes in picked ambushes",
         "Minor design changes",
       ],
@@ -260,20 +375,20 @@ const Version = () => {
 
   return (
     <div 
-      className="space-y-4 overflow-y-auto p-4 w-3xl nowheel"
+      className="space-y-4 overflow-y-auto p-4 w-5xl nowheel"
     >
       {versions.map((version, index) => (
-        <div key={index} className="bg-white rounded-lg border border-gray-200 shadow-sm hover:bg-cyan-100 transition-colors p-4">
+        <div key={index} className="bg-white rounded-lg border border-gray-200 shadow-sm hover:bg-cyan-50 transition-colors p-4">
           {/* Version number and date */}
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-mono bg-blue-100 text-blue-800 px-2 py-1 rounded">
               {version.version}
             </span>
-            <span className="text-xs text-gray-500">{version.date}</span>
+            <span className="text-black">{version.date}</span>
           </div>
           
           {/* Title */}
-          <h3 className="text-2xl font-bold mb-3 text-black">
+          <h3 className="text-4xl font-bold mb-3 text-black">
             {version.title}
           </h3>
           

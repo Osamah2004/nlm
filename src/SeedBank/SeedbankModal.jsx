@@ -74,7 +74,7 @@ const SeedbankModal = ({ listType }) => {
                     <div className="sticky top-0">
                         <header className="bg-cyan-300 text-2xl  w-full font-medium h-8">Plant list</header>
                         <header className="bg-cyan-100 text-xl  w-full font-medium h-7 flex">
-                            <label htmlFor="plantFilterInput" className="w-1/2 group">filter:<input onChange={(e) => setSearchTerm(e.target.value)} className="group-hover:bg-cyan-500" id="plantFilterInput" type="text" /></label>
+                            <label htmlFor="plantFilterInput" className="w-1/2 group">search:<input onChange={(e) => setSearchTerm(e.target.value)} className="group-hover:bg-cyan-500" id="plantFilterInput" type="text" /></label>
                             {listType === 2 && <button onClick={() => setSelectedPlants([...customPlantsArray,...PlantList])} className="border rounded p-1 text-sm hover:bg-cyan-500 transition-colors duration-300 cursor-pointer">add all</button>}
                             {listType === 3 && (
                                 <label htmlFor="addByFamily" className="w-1/2 text-sm pt-0.5">Add by family:

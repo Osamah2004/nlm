@@ -45,7 +45,7 @@ const reset = () => {
   sessionStorage.clear()
 
   //version
-  localStorage.setItem('nlm-version',9.2)
+  localStorage.setItem('nlm-version',1)
   sessionStorage.setItem('fontSize',fontSize)
   window.location.reload()
 }
@@ -64,7 +64,7 @@ export default function App() {
 
   useEffect(() => {
   //version
-    localStorage.setItem('nlm-version',9.2);
+    localStorage.setItem('nlm-version',1);
     localStorage.setItem('has mowers',true);
     sessionStorage.setItem('SunDropper','DefaultSunDropper');
   },[])
@@ -90,7 +90,7 @@ export default function App() {
     )
   }
   // Function to generate wave nodes based on count and interval
-const BoardGroup = ({ group, summary }) => {
+const BoardGroup = ({ group, summary, color }) => {
   const [searchTerm, setSearchTerm] = useState('')
   
   const filteredGroup = useMemo(() => {
@@ -102,8 +102,9 @@ const BoardGroup = ({ group, summary }) => {
 
   return (
     <details className='details'>
-      <summary className='summary'>
-        {summary} {searchTerm && `(filtered: ${filteredGroup.length}/${group.length})`}
+      <summary className={`summary`}>
+          {summary}
+        {searchTerm && `(filtered: ${filteredGroup.length}/${group.length})`}
       </summary>
       
       <div className="p-2">
@@ -221,6 +222,12 @@ const BoardGroup = ({ group, summary }) => {
               default={-1}
               min={-1}
             />
+            <NumberInput
+              label={'BowlingFoulLine'}
+              default={-1}
+              min={-1}
+            />
+            <Checkbox label='HideTideMarker'/>
           </>
         )
       }
@@ -276,17 +283,30 @@ const BoardGroup = ({ group, summary }) => {
         children: (
           <>
           <div className="max-h-96 nowheel w-xl overflow-y-auto">
-            <BoardGroup group={SelectLists.GridItems.filter(e=>e.startsWith('gravestone'))} summary="Gravestones" />
-            <BoardGroup group={SelectLists.GridItems.filter(e=>e.startsWith('rail'))} summary="Rails/Carts" />
-            <BoardGroup group={SelectLists.GridItems.filter(e=>e.startsWith('powertile'))} summary="Powertiles" />
-            <BoardGroup group={SelectLists.GridItems.filter(e=>!(e.startsWith('rail') || e.startsWith('gravestone') || e.startsWith('powertile')))} summary="Other grid items" />
-            <BoardGroup group={plants.map(e=>`P_${e}`)} summary="Initial plants" />
-            <BoardGroup group={plants.map(e=>`SOS_${e}`)} summary="Endangered plants" />
-            <BoardGroup group={plants.map(e=>`F_${e}`)} summary="Frozen plants" />
-            <BoardGroup group={zombies.objects.map(e=>e.aliases[0]).map(e=>`FZ_${e}`)} summary="Frozen zombies" />
+            <BoardGroup color={'borad-group1'} group={SelectLists.GridItems.filter(e=>e.startsWith('gravestone'))} summary="Gravestones" />
+            <BoardGroup color={'borad-group2'} group={SelectLists.GridItems.filter(e=>e.startsWith('rail'))} summary="Rails/Carts" />
+            <BoardGroup color={'borad-group3'} group={SelectLists.GridItems.filter(e=>e.startsWith('powertile'))} summary="Powertiles" />
+            <BoardGroup color={'borad-group4'} group={SelectLists.GridItems.filter(e=>!(e.startsWith('rail') || e.startsWith('gravestone') || e.startsWith('powertile')))} summary="Other grid items" />
+            <BoardGroup color={'borad-group5'} group={plants.map(e=>`P_${e}`)} summary="Initial plants" />
+            <BoardGroup color={'borad-group6'} group={plants.map(e=>`SOS_${e}`)} summary="Endangered plants" />
+            <BoardGroup color={'borad-group7'} group={plants.map(e=>`F_${e}`)} summary="Frozen plants" />
+            <BoardGroup color={'borad-group8'} group={zombies.objects.map(e=>e.aliases[0]).map(e=>`FZ_${e}`)} summary="Frozen zombies" />
             <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','point-1')}>SplinePoints</button>
             <p className="text-gray-500 p-1">pressing it again will reset it to 1</p>
-            <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','all-alone_')}>all alone position</button>
+            <hr />
+            <button className="button w-full p-2 text-2xl mt-2" onClick={() => localStorage.setItem('board-item','all-alone_')}>all alone position</button>
+            <button className="button w-full p-2 text-2xl mt-2" onClick={() => localStorage.setItem('board-item','wire_')}>TNT wire</button>
+            <p className="py-2 font-bold bg-cyan-300 my-2">Cannons away paths</p>
+            <p className="text-gray-500 mb-2">Will automatically enable cannons away</p>
+            <p className="text-gray-500 mb-2">TD mode instead if a point is behind x3</p>
+            <p className="text-gray-500 mb-2">For advanced settings, go to Miscellaneous.</p>
+            <div className="space-y-1">
+              <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','Row1_p1')}>Row 1</button>
+              <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','Row2_p1')}>Row 2</button>
+              <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','Row3_p1')}>Row 3</button>
+              <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','Row4_p1')}>Row 4</button>
+              <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','Row5_p1')}>Row 5</button>
+            </div>
           </div>
           </>
         )
@@ -743,7 +763,7 @@ const handleDrop = (e) => {
     <ReactFlowProvider>
       <div onDragOver={handleDragOver} onDrop={(e) => handleDrop(e)} style={{ width: '100vw', height: '100vh' }} className='overflow-hidden'>
         <header className={`absolute space-x-2 ${headerVisibility ? 'flex' : 'hidden'} z-10 pl-2 py-2 bg-gray-950/70 w-full`}>
-          <h1 className='text-white font-mono'>NLM v0.9.9</h1>
+          <h1 className='text-white font-mono'>NLM v1.0</h1>
           <input
             type="file"
             accept=".json"
