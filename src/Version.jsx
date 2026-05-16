@@ -1,6 +1,15 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.0.1",
+      date: "2026/5/16",
+      title: "All Alone enhancement",
+      description: "Enhancement",
+      changes: [
+        "Search feature added.",
+      ],
+    },
+    {
       version: "v1.0",
       date: "2026/5/15",
       title: "Miscellaneous",
@@ -403,7 +412,7 @@ const Version = () => {
               {version.changes.map((change, idx) => (
                 <li key={idx} className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">•</span>
-                  <span className="text-gray-600">{change}</span>
+                  <span className="text-gray-600 text-lg">{change}</span>
                 </li>
               ))}
             </ul>

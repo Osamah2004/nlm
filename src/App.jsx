@@ -45,7 +45,7 @@ const reset = () => {
   sessionStorage.clear()
 
   //version
-  localStorage.setItem('nlm-version',1)
+  localStorage.setItem('nlm-version','1.0.1')
   sessionStorage.setItem('fontSize',fontSize)
   window.location.reload()
 }
@@ -58,7 +58,7 @@ export default function App() {
   const [boardTracker, setBoardTracker] = useState([])
   const [selectedBoardItem, setSelectedBoardItem] = useState(null);
   const [headerVisibility,setHeaderVisibility] = useState(true)
-  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == 9.2 ? false : <Version/>));
+  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.0.1' ? false : <Version/>));
 
   const plants = plantTypes.objects.map(e=>e.aliases[0])
 

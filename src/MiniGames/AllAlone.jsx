@@ -21,10 +21,9 @@ const Bin = ({ size }) => (
   </svg>
 );
 const AllAlone = () =>{
-    const listWithCustom = structuredClone(
-    [...parsedLocal('customPlants'),
-    ...PlantList]);
+    const [plantList,setPlantList] = useState([...PlantList]);
     
+    const [search,setSearch] = useState('')
     const [selectedPlants,setSelectedPlants] = useState(parsedLocal('AllAlonePlants'));
     const [miniGameObjects,setMiniGameObjects] = useState(parsedLocal('allAloneObjects'))
 
@@ -35,6 +34,12 @@ const AllAlone = () =>{
     useEffect(() => {
         localStorage.setItem('AllAlonePlants',JSON.stringify(selectedPlants))
     },[selectedPlants])
+
+    useEffect(() => {
+        search.trim().length === 0 ?
+        setPlantList([...PlantList]) :
+        setPlantList(PlantList.filter(f => f.includes(search)))
+    },[search])
 
     const addToSelectedPlants = e => {
         let temp = [...miniGameObjects]
@@ -79,9 +84,17 @@ const AllAlone = () =>{
         </header>
         <div className="flex">
             <div className="w-75 overflow-y-auto h-140">
-                <header className="text-xl bg-cyan-400 font-medium sticky top-0">Plants</header>
+                <header className="text-xl bg-cyan-400 font-medium sticky top-0">
+                    Plants |
+                    <label> Search:<input onChange={(e) => setSearch(e.target.value)} type="text" /></label>
+                </header>
                 <div className="space-y-1 v-button">
-                    {listWithCustom.map(e => 
+                    {[...parsedLocal('customPlants')].map(e => 
+                        <button
+                            onClick={() => addToSelectedPlants(e)}
+                            className={`button ${isInList(e) ? 'red' : ''}`}>{e}</button>
+                    )}
+                    {plantList.map(e => 
                         <button
                             onClick={() => addToSelectedPlants(e)}
                             className={`button ${isInList(e) ? 'red' : ''}`}>{e}</button>
