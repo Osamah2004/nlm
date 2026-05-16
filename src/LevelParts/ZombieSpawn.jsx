@@ -330,7 +330,13 @@ const inputLookup = {
         type="checkbox"
         value={lookupValues.MustKillAllToNextWave}
         onValueChange={(val) => handleLookupValueChange('MustKillAllToNextWave', val)}
-    />
+    />,
+    dynamicPf:<>
+        <NumberInput min={0} label={`Wave ${wave} diff D pf`}/>
+        <NumberInput min={0} label={`Wave ${wave} diff C pf`}/>
+        <NumberInput min={0} label={`Wave ${wave} diff B pf`}/>
+        <NumberInput min={0} label={`Wave ${wave} diff A pf`}/>
+    </>
 };
     return (
         <div className="hover:h-fit">
@@ -339,6 +345,7 @@ const inputLookup = {
                 <button onClick={() => setLookup('tide')} className="button">tide change</button>
                 <button onClick={() => setLookup('jam')} className="button">jam</button>
                 <button onClick={() => setLookup('MustKillAllToNextWave')} className="button">MustKillAllToNextWave</button>
+                <button onClick={() => setLookup('dynamicPf')} className="button">dynamic pf</button>
             </header>
             {inputLookup[lookup]}
             {[1, 2, 3, 4, 5, 6].map((rowNum) => {

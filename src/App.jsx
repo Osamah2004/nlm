@@ -29,6 +29,7 @@ import Conveyor from './SeedBank/Conveyor';
 import CustomPlantModal from './SeedBank/CustomPlantModal';
 import Miscellaneous from './LevelParts/Miscellaneous';
 import NodesLayout from './Nodes/NodeLayout';
+import Escalation from './LevelParts/Escalation';
 
 const initialEdges = [];
 
@@ -45,7 +46,7 @@ const reset = () => {
   sessionStorage.clear()
 
   //version
-  localStorage.setItem('nlm-version','1.0.1')
+  localStorage.setItem('nlm-version','1.1')
   sessionStorage.setItem('fontSize',fontSize)
   window.location.reload()
 }
@@ -58,13 +59,13 @@ export default function App() {
   const [boardTracker, setBoardTracker] = useState([])
   const [selectedBoardItem, setSelectedBoardItem] = useState(null);
   const [headerVisibility,setHeaderVisibility] = useState(true)
-  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.0.1' ? false : <Version/>));
+  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.1' ? false : <Version/>));
 
   const plants = plantTypes.objects.map(e=>e.aliases[0])
 
   useEffect(() => {
   //version
-    localStorage.setItem('nlm-version',1);
+    localStorage.setItem('nlm-version','1.1');
     localStorage.setItem('has mowers',true);
     sessionStorage.setItem('SunDropper','DefaultSunDropper');
   },[])
@@ -514,6 +515,19 @@ label='Add challenge to level moduels'/>
         )
       }
     },
+    {
+      id: 'n16',
+      hidden: getVisibility(16),
+      //
+      position: positionFromLocal('16',2430,-450),
+      type: "custom",
+      data: {
+        label: 'Escalation',
+        children: (
+          <Escalation />
+        )
+      }
+    },
     ...generateWaveNodes(waveCount, flagInterval)
   ];
 
@@ -763,7 +777,7 @@ const handleDrop = (e) => {
     <ReactFlowProvider>
       <div onDragOver={handleDragOver} onDrop={(e) => handleDrop(e)} style={{ width: '100vw', height: '100vh' }} className='overflow-hidden'>
         <header className={`absolute space-x-2 ${headerVisibility ? 'flex' : 'hidden'} z-10 pl-2 py-2 bg-gray-950/70 w-full`}>
-          <h1 className='text-white font-mono'>NLM v1.0</h1>
+          <h1 className='text-white font-mono'>NLM v1.1</h1>
           <input
             type="file"
             accept=".json"

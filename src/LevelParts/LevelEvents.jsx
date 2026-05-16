@@ -93,7 +93,7 @@ const boardToAmbush = (codeAmbush,ambushSetter,ambushName = 'none',pickedAmbushe
         case 'none': console.log('no ambush set');break;
         case 'SpawnPlants': {
                 let temp = {...JSON.parse(codeAmbush)}
-                temp.objdata.Plants = ambushList.map(e => P(e.x,e.y,e.item))
+                temp.objdata.Plants = ambushList.map(e => P((e.x)-1,(e.y)-1,e.item))
                 ambushSetter(JSON.stringify(temp,null,2))
             };
             break;

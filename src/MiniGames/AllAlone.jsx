@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PlantList from "../SeedBank/PlantList";
 import { Editor } from "@monaco-editor/react";
+import Checkbox from "../Inputs/CheckboxInput";
 
 const parsedLocal = key => JSON.parse(localStorage.getItem(key)) || []
 
@@ -103,6 +104,7 @@ const AllAlone = () =>{
             </div>
             
             <div className="w-225 overflow-y-auto ">
+                <Checkbox label="disable StandardIntro"/>
                 <div className="flex w-225 mb-1">
                     <header className="text-xl w-full bg-cyan-400 font-medium sticky top-0">Selected Plants</header>
                     <button className="button rounded-none red" onClick={() => {
@@ -118,13 +120,13 @@ const AllAlone = () =>{
                             <div className="bg-cyan-200 w-225 hover:bg-cyan-300 transition-colors duration-300 p-1">
                                 <p className="text-xl font-medium">{e}</p>
                                 <div className="flex">
-                                    <label className="w-60 text-lg flex">FullPoint:         <input onChange={(f) => fullPoints(e,f.target.value)} min={0} step={500} defaultValue={miniGameObjects.find(f => f.Type === e).FullPoint || 0} type="number" name="" /></label>
+                                    <label className="w-60 text-lg flex">FullPoint:         <input onChange={(f) => fullPoints(e,f.target.value)} min={0} step={100} defaultValue={miniGameObjects.find(f => f.Type === e).FullPoint || 0} type="number" name="" /></label>
                                     <label className="w-70 text-lg flex">DamageScale:       <input onChange={(f) => upgradeDetail(e,'DamageScale',f.target.value)} min={0} step={0.25} defaultValue={miniGameObjects.find(f => f.Type === e).UpgradeDetails.DamageScale || 1} type="number" name="" /></label>
                                     <label className="w-80 text-lg flex">ShootIntervalScale:<input onChange={(f) => upgradeDetail(e,'ShootIntervalScale',f.target.value)} min={0} step={0.2} defaultValue={miniGameObjects.find(f => f.Type === e).UpgradeDetails.ShootIntervalScale || 1} type="number" name="" /></label>
                                 </div>
                             </div>
                             <button onClick={() => addToSelectedPlants(e)} className="button red rounded-none px-1">
-                                <Bin size={8}/>
+                                <Bin size={6}/>
                             </button>
                         </div>
                     )}

@@ -1,6 +1,18 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.1",
+      date: "2026/5/17",
+      title: "Escalation",
+      description: "New node",
+      changes: [
+        "Added dynamic escalation for difficulties.",
+        "Fixed SpawnPlant board to ambush incorrect positioning.",
+        "Added an option to remove StandardIntro from module, within All Alone pop up.",
+        "Added dynamic pf in waves nodes.",
+      ],
+    },
+    {
       version: "v1.0.1",
       date: "2026/5/16",
       title: "All Alone enhancement",

@@ -1,12 +1,7 @@
-import pTypes from './assets/PlantTypes.json'
 import pProps from './assets/PlantProps.json'
 import zTypes from './assets/ZombieTypes.json'
 import zProps from './assets/ZombieProps.json'
 import PlantList from './SeedBank/PlantList'
-
-import ptog from './assets/PlantTypes_original.json'
-import ppog from './assets/PlantProps_original.json'
-import paog from './assets/PlantAlmanac_original.json'
 
 const getSession = (key) => {return sessionStorage.getItem(key)}
 const getLocal = (key) => {return localStorage.getItem(key)}
@@ -789,6 +784,20 @@ if (getLocal('Add challenge to level moduels') == 'true'){
         const {pf,tide,jam,MustKillAllToNextWave} = JSON.parse(getLocal(`wave-${i+1}-lookupValues`))
         const temp = e.objdata.Zombies;
         delete e.objdata.Zombies
+        const dynamicPf = [
+            1,
+            1,
+            1,
+            Number(getSession(`Wave ${i+1} diff D pf`) || 0),
+            Number(getSession(`Wave ${i+1} diff C pf`) || 0),
+            Number(getSession(`Wave ${i+1} diff B pf`) || 0),
+            Number(getSession(`Wave ${i+1} diff A pf`) || 0),
+        ]
+        console.log(dynamicPf.slice(3))
+
+        if (dynamicPf.slice(3).some(e => e > 0)) {
+            e.objdata.DynamicPlantFood = dynamicPf;
+        }
 
         if (pf > 0) e.objdata.AdditionalPlantfood = pf
         if (jam !== 'none') e.objdata.NotificationEvents = [jam]
@@ -1340,9 +1349,16 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
         modules.push('RTID(BeghouledIntro@LevelModules)')
         modules.push('RTID(BeghouledArcade@LevelModules)')
     }
+    if (tf('disable StandardIntro')) removeFromModule('StandardIntro');
+    const getDynamicDifficulty = char => ({
+        PointIncrementPerWave: Number(getSession(`(${char}) PointIncrementPerWave`)) || 0,
+        StartingPoints: Number(getSession(`(${char}) StartingPoints`)) || 0,
+        StartingWave: Number(getSession(`(${char}) StartingWave`)) || 0,
+        ZombiePool:JSON.parse(getLocal(`${char} pool`))?.map(e=>`RTID(${e}@ZombieTypes)`) || []
+    })
     //version
     let level = {
-        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.0'}),
+        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.1'}),
         ...(debug && {"Debug mode":true}),
         "Information": {
             Author:author,
@@ -1378,6 +1394,15 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
                 ],
                 "objclass": "WaveManagerModuleProperties",
                 "objdata": {
+                    "DynamicZombies": [
+                        {},
+                        {},
+                        {},
+                        getDynamicDifficulty('D'),
+                        getDynamicDifficulty('C'),
+                        getDynamicDifficulty('B'),
+                        getDynamicDifficulty('A'),
+                    ],
                     "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
                 }
             },
