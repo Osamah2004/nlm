@@ -235,7 +235,6 @@ const GenerateLevel = () => {
     let isMold = false
 
     const addAllAlone = (e) => {
-        console.log('all alone detected')
         const {x,y} = e
         const temp = {
             Position:{mX:x,mY:y},
@@ -761,7 +760,6 @@ if (getLocal('Add challenge to level moduels') == 'true'){
 
     wavesArray.forEach((e,i) => {
         const waveAmbush = JSON.parse(getLocal(`wave${i+1}-ambushes`))
-        // console.log(`wave ${i+1}`)
         waveAmbush?.forEach((f) => {
             // const foundAmbush = JSON.parse(getLocal(`${f.id}-${f.ambushName}`))
             e.push(`RTID(Ambush${f.id}-${f.ambushName}@.)`)
@@ -793,7 +791,6 @@ if (getLocal('Add challenge to level moduels') == 'true'){
             Number(getSession(`Wave ${i+1} diff B pf`) || 0),
             Number(getSession(`Wave ${i+1} diff A pf`) || 0),
         ]
-        console.log(dynamicPf.slice(3))
 
         if (dynamicPf.slice(3).some(e => e > 0)) {
             e.objdata.DynamicPlantFood = dynamicPf;
@@ -1356,6 +1353,8 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
         StartingWave: Number(getSession(`(${char}) StartingWave`)) || 0,
         ZombiePool:JSON.parse(getLocal(`${char} pool`))?.map(e=>`RTID(${e}@ZombieTypes)`) || []
     })
+    const rewardType = getSession('FirstRewardType') || 0
+    const rewardParam = getSession('FirstRewardParam') || 0
     //version
     let level = {
         ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.1'}),
@@ -1372,11 +1371,13 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
                 "objdata": {
                     "Name": name,
                     "Description": description,
+                    ...(rewardType != 0 && {FirstRewardType:rewardType}),
+                    ...(rewardType != 0 && {FirstRewardParam:rewardParam}),
                     "StageModule": stage ? `RTID(${stage}@${stageModule})` : 'RTID(TutorialStage@LevelModules)',
                     "LevelNumber": 1,
                     "Loot": "RTID(DefaultLoot@LevelModules)",
                     "Modules": modules,
-                    StartingSun: Number(startSun),
+                    "StartingSun": Number(startSun),
                     "NormalPresentTable": "egypt_normal_01",
                     "ShinyPresentTable": "egypt_shiny_01",
                     "WritenBy": author,

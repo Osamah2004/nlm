@@ -1,6 +1,15 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.1.1",
+      date: "2026/5/17",
+      title: "FirstReward support",
+      description: "Node enhancement",
+      changes: [
+        "FirstRewardType + FirstRewardParam support, within Miscellaneous.",
+      ],
+    },
+    {
       version: "v1.1",
       date: "2026/5/17",
       title: "Escalation",

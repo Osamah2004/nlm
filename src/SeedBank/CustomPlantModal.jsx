@@ -165,7 +165,6 @@ const CustomPlantModal = () => {
         let temp = [...selectedPlants]
         let target = temp.findIndex(f => f.customName === e)
         localStorage.removeItem(`customPlant-${temp[target].customId}`)
-        console.log(`customPlant-${temp[target].customId}`)
         temp.splice(target,1)
         setSelectedPlants(temp)
         setSelectedCustomPlant(null)

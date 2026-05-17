@@ -75,9 +75,7 @@ const ZombossModal = ({ZombossTypeName}) => {
         temp[1].objdata.ZombossStages[stageIndex].Actions.find(f => f.actionName === 'summon').summonProps[key] = Number(value);
         setZombossCode(temp)
     }
-
-    console.log(currentStages)
-
+    
     return (
       <div className="w-400 h-240 text-black flex">
         <div className="w-5/12 space-y-1 text-xl h-full overflow-y-auto">

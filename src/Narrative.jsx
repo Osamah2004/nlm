@@ -72,12 +72,10 @@ const Narrative = () => {
   // Save to localStorage whenever arrays change
   useEffect(() => {
     localStorage.setItem('introNarrative', JSON.stringify(intro))
-    console.log(intro)
   }, [intro])
 
   useEffect(() => {
     localStorage.setItem('outroNarrative', JSON.stringify(outro))
-    console.log(outro)
   }, [outro])
 
   // Save narrativeId to localStorage whenever it changes

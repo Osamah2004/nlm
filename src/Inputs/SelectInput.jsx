@@ -16,7 +16,6 @@ export default function SelectInput(props){
         return; // Skip the effect's logic for this run
         }
         
-        console.log(props.label)
         sessionStorage.setItem(props.label,value)
     }, [value])
     return (

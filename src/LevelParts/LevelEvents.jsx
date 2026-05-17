@@ -51,7 +51,6 @@ const helperAddAmbush = (arr,pickedAmbushesSetter) => {
         //addTopickedambushes
     })
     pickedAmbushesSetter(Object.keys(zombiesCount).length)
-    // console.log(lowTides)
 }
 
 const boardToAmbush = (codeAmbush,ambushSetter,ambushName = 'none',pickedAmbushesSetter) => {
@@ -90,7 +89,7 @@ const boardToAmbush = (codeAmbush,ambushSetter,ambushName = 'none',pickedAmbushe
       })
     
     switch (ambushName) {
-        case 'none': console.log('no ambush set');break;
+        case 'none': alert('select an ambush');break;
         case 'SpawnPlants': {
                 let temp = {...JSON.parse(codeAmbush)}
                 temp.objdata.Plants = ambushList.map(e => P((e.x)-1,(e.y)-1,e.item))
@@ -332,7 +331,6 @@ export default function LevelEvents() {
 
 
     const clear = () => {
-        console.log(pickedAmbushes)
         pickedAmbushes.forEach(e => localStorage.removeItem(`${e.id}-${e.ambushName}`))
         setPickedAmbushes([])
         setHoverAmbushes([])
@@ -346,7 +344,6 @@ export default function LevelEvents() {
     }
 
     const addToPickedAmbushes = (e) => {
-        console.log(e)
         const temp = [...pickedAmbushes]
         if (typeof(e) == 'number'){
             for (let i = 0; i < e; i++) {

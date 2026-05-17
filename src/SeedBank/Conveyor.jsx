@@ -128,7 +128,6 @@ const Conveyor = () => {
             return
         }
         let index = temp[0].objdata.SpeedConditions.findIndex(f => f.MaxPackets === i)
-        console.log(index)
         if (index === -1) temp[0].objdata.SpeedConditions.push({MaxPackets:i,Speed:e})
         else temp[0].objdata.SpeedConditions[index] = {MaxPackets:i,Speed:e}
         if (e == 0) temp[0].objdata.SpeedConditions = temp[0].objdata.SpeedConditions.filter(f => f.MaxPackets !== i)
@@ -144,7 +143,6 @@ const Conveyor = () => {
             return
         }
         let index = temp[0].objdata.DropDelayConditions.findIndex(f => f.MaxPackets === i)
-        console.log(index)
         if (index === -1) temp[0].objdata.DropDelayConditions.push({MaxPackets:i,Delay:e})
         else temp[0].objdata.DropDelayConditions[index] = {MaxPackets:i,Delay:e}
         if (e == 0) temp[0].objdata.DropDelayConditions = temp[0].objdata.DropDelayConditions.filter(f => f.MaxPackets !== i)

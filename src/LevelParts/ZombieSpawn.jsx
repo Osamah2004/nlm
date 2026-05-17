@@ -147,7 +147,7 @@ export default function ZombieSpawn({ wave }) {
             if (hotkeyAssignments[key]) {
                 spawnZombie(key, hoveredRow);
             } else {
-                console.log(`No zombie assigned to key '${key}'`);
+                return;
             }
         }
     }, { enableOnFormTags: true});

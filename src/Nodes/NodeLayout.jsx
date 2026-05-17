@@ -13,7 +13,6 @@ const NodesLayout = () => {
         let temp = [...nodes].filter(f => !f.id.startsWith('wave'))
         temp[i].data.isHidden = e
         localStorage.setItem(`n${i+1}-invisibility`,e)
-        console.log(temp)
     }
 
     const hiddenNodes = (e) => {
