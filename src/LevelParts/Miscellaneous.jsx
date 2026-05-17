@@ -368,7 +368,7 @@ const Miscellaneous = ({modalFunction}) => {
           />
         </div>
         <Checkbox label="2x sun cost" />
-        <Gray msg={"First reward:"} />
+        <Gray msg={"First completion reward:"} />
         <label>
           FirstRewardType:
           <select
