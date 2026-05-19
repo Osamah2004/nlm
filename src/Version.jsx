@@ -8,7 +8,7 @@ const Version = () => {
       changes: [
         "Manually writing invalid JSON in the conveyor code will throw a warning and prevent the changes to be saved, thus, preventing the black screen error.",
         "Now you don't have to open the 'Initial plants' when setting the initial plants from Plant pool.",
-        "Plants that aren't in InitialPlantList will be painted in gray.",
+        "Plants that aren't in InitialPlantList will have their buttons painted in gray in plant pool.",
       ],
     },
     {
