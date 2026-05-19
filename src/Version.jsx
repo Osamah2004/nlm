@@ -1,6 +1,17 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.1.2",
+      date: "2026/5/19",
+      title: "Conveyor fix",
+      description: "Minor UI changes + bug fix",
+      changes: [
+        "Manually writing invalid JSON in the conveyor code will throw a warning and prevent the changes to be saved, thus, preventing the black screen error.",
+        "Now you don't have to open the 'Initial plants' when setting the initial plants from Plant pool.",
+        "Plants that aren't in InitialPlantList will be painted in gray.",
+      ],
+    },
+    {
       version: "v1.1.1",
       date: "2026/5/17",
       title: "FirstReward support",

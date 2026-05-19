@@ -1,7 +1,7 @@
 import TextInput from "../Inputs/TextInput";
 import PlantList from "./PlantList";
 import MonacoEditor from '@monaco-editor/react';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const parsedLocal = (key) => JSON.parse(localStorage.getItem(key))
 const setLocal = (key,val) => localStorage.setItem(key,JSON.stringify(val))
@@ -18,6 +18,15 @@ const Refresh = () => (
 </svg>
 )
 
+const isValidJson = (str) => {
+    try {
+        JSON.parse(str);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
 const Conveyor = () => {
     const [plantPool,setPlantPool] = useState(parsedLocal('conveyor-pool') || [])
     const [statePlantList,setPlantList] = useState(PlantList)
@@ -29,32 +38,56 @@ const Conveyor = () => {
     const [selectedWave,setSelectedWave] = useState(null)
     const [customPlants,setCustomPlants] = useState(JSON.parse(localStorage.getItem('customPlants')) || [])
     const [plantPoolText,setPoolText] = useState('Plant pool')
+    const [isInvalidJson,setIsInvalidJson] = useState(false)
     const [conveyorArray,setConveyorArray] = useState(parsedLocal('conveyor') || [
-        {
-        "aliases": ["Conveyor"],
+    {
+        "aliases": [
+        "Conveyor"
+        ],
         "objclass": "ConveyorSeedBankProperties",
         "objdata": {
-                "DropDelayConditions": [],
-                "SpeedConditions": [],
-                "InitialPlantList": []
+        "DropDelayConditions": [
+            {
+            "MaxPackets": 0,
+            "Delay": 4
             }
+        ],
+        "SpeedConditions": [],
+        "InitialPlantList": []
         }
+    }
     ])
+    const editorRef = useRef(null);
+
+    const handleEditorDidMount = (editor, monaco) => {
+        editorRef.current = editor;
+    }
 
     const resetConveyor = () => {
-        setConveyorArray([{
-        "aliases": ["Conveyor"],
-        "objclass": "ConveyorSeedBankProperties",
-        "objdata": {
-                "DropDelayConditions": [],
+        const newConveyor = [{
+            "aliases": ["Conveyor"],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                    "MaxPackets": 0,
+                    "Delay": 4
+                    }
+                ],
                 "SpeedConditions": [],
                 "InitialPlantList": []
-                }
             }
-        ]);
-        localStorage.removeItem('conveyor')
-        setInitialPlantsArray([])
-        setPlantPool([])
+        }];
+        setConveyorArray(newConveyor);
+        localStorage.removeItem('conveyor');
+        setInitialPlantsArray([]);
+        setPlantPool([]);
+        setIsInvalidJson(false);
+        
+        // Force update the editor
+        if (editorRef.current) {
+            editorRef.current.setValue(JSON.stringify(newConveyor, null, 2));
+        }
     }
 
     useEffect(() => {
@@ -102,13 +135,13 @@ const Conveyor = () => {
     }
 
     // plant pool click
-    const handlePlantPoolClick = (e) => {
-        if (isInitialPlantsOpen) {
-            if (!initialPlantsArray.includes(e)) {
-                setInitialPlantsArray([...initialPlantsArray,e])
-            }
-        }
+    const handlePlantPoolClick = e => {
+        initialPlantsArray.includes(e) ?
+            setInitialPlantsArray(initialPlantsArray.filter(f => f !== e)) :
+            setInitialPlantsArray([...initialPlantsArray,e]);
     }
+
+    const isInInitial = e => initialPlantsArray.includes(e);
 
     useEffect(() => {
         let temp = [...conveyorArray];
@@ -206,8 +239,14 @@ const Conveyor = () => {
     const addToWave = (plant, wave) => modifyWave(plant, wave, 'add')
     const removeFromWave = (plant, wave) => modifyWave(plant, wave, 'remove')
 
-    const handleEditorChange = (value, event) => {
-        localStorage.setItem('conveyor',value)
+    
+
+    const handleEditorChange = (value) => {
+        if (isValidJson(value)) {
+            localStorage.setItem(`conveyor`,value)
+            setIsInvalidJson(false)
+        }
+        else setIsInvalidJson(true)
     }
 
     return (
@@ -223,8 +262,8 @@ const Conveyor = () => {
                 </header>
                 <div className="*:block *:w-full space-y-1">
                     <button className="button gray" onClick={() => setCustomPlants(JSON.parse(localStorage.getItem('customPlants')))}>fetch custom plants</button>
-                    {customPlants?.map(e => <button className={plantPool.find(f => f == e) ? 'button red' : 'button'} onClick={(f) => addToPlantPool(f.target.innerHTML)}>{e}</button>)}
-                    {statePlantList.map(e => <button className={plantPool.find(f => f == e) ? 'button red' : 'button'} onClick={(f) => addToPlantPool(f.target.innerHTML)}>{e}</button>)}
+                    { customPlants?.map(e =>  <button className={plantPool.find(f => f == e) ? 'button red' : 'button'} onClick={() => addToPlantPool(e)}>{e}</button>)}
+                    {statePlantList.map(e => <button className={plantPool.find(f => f == e) ? 'button red' : 'button'} onClick={() => addToPlantPool(e)}>{e}</button>)}
                 </div>
             </div>
 
@@ -237,7 +276,6 @@ const Conveyor = () => {
                         </header>
                         <button title="clear plant pool" className='button w-1/19 rounded-none red ml-auto mr-0' onClick={() => {
                             setPlantPool([])
-                            setInitialPlantsOpen(false)
                         }}><Bin/></button>
                     </div>
                     
@@ -246,8 +284,7 @@ const Conveyor = () => {
                             <div className="grid grid-cols-3 gap-1 p-0.5">
                                 {plantPool.map(e => 
                                 <div className="flex w-full">
-                                    <button title={`Add ${e} to plant pool`} className="w-9/10 text-left text-black cursor-pointer rounded-tl rounded-bl
-                                    transition-colors bg-cyan-200 hover:bg-cyan-400"
+                                    <button title={`Add ${e} to plant pool`} className={`button w-full ${isInInitial(e) ? '' : 'gray'}`}
                                     onClick={() => handlePlantPoolClick(e)}>{e}</button>
                                     <button onClick={() => setPlantPool(plantPool.filter(f => f !== e))} title={`Remove ${e} from plant pool`} className="text-left text-white cursor-pointer rounded-tr rounded-br
                                     transition-colors bg-red-600 hover:bg-red-800"><Bin/></button>
@@ -263,7 +300,7 @@ const Conveyor = () => {
                 <header className="sticky top-0 p-1 bg-cyan-300 text-xl font-medium">Conveyor settings</header>
 
                     {/* Initial plants */}
-                    <details open={isInitialPlantsOpen} onToggle={(e) => setInitialPlantsOpen(e.target.open)} className='bg-cyan-50 my-2 cursor-pointer transition-colors w-full'>
+                    <details open={isInitialPlantsOpen} className='bg-cyan-50 my-2 cursor-pointer transition-colors w-full'>
                         <summary className='cursor-pointer p-1 font-semibold text-gray-800 hover:bg-cyan-500 transition-colors duration-300'>
                             Initial plants
                         </summary>
@@ -403,9 +440,12 @@ const isInConveyor = conveyorArray[conveyorIndex]?.objdata?.Add?.some(
             {/* Conveyor code */}
             <div className="w-100 nodrag">
                 <div className="flex">
-                    <header className="w-14/15 sticky top-0 p-1 bg-cyan-300 text-xl font-medium overflow-y-auto overflow-x-hidden">
-                        Conveyor code
-                    </header>
+                        <header className={`text-2xl  font-medium h-8 w-full transition-colors duration-300 ${isInvalidJson ? 'bg-red-500' : 'bg-cyan-300'}`}>
+                            Conveyor code
+                            <span className={`transition-opacity duration-300 ${isInvalidJson ? 'opacity-100' : 'opacity-0'}`}>
+                                {' | invalid json'}
+                            </span>
+                        </header>
                     <button
                         className="button red rounded-none w-1/15"
                         title="reset conveyor"
@@ -420,6 +460,7 @@ const isInConveyor = conveyorArray[conveyorIndex]?.objdata?.Add?.some(
                     className='nokey'
                     value={JSON.stringify(conveyorArray,null,2)}
                     onChange={handleEditorChange}
+                    onMount={handleEditorDidMount} 
                     options={{
                     minimap: { enabled: false },
                     formatOnPaste: true,

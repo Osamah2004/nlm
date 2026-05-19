@@ -46,7 +46,7 @@ const reset = () => {
   sessionStorage.clear()
 
   //version
-  localStorage.setItem('nlm-version','1.1.1')
+  localStorage.setItem('nlm-version','1.1.2')
   sessionStorage.setItem('fontSize',fontSize)
   window.location.reload()
 }
@@ -59,13 +59,13 @@ export default function App() {
   const [boardTracker, setBoardTracker] = useState([])
   const [selectedBoardItem, setSelectedBoardItem] = useState(null);
   const [headerVisibility,setHeaderVisibility] = useState(true)
-  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.1.1' ? false : <Version/>));
+  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.1.2' ? false : <Version/>));
 
   const plants = plantTypes.objects.map(e=>e.aliases[0])
 
   useEffect(() => {
   //version
-    localStorage.setItem('nlm-version','1.1.1');
+    localStorage.setItem('nlm-version','1.1.2');
     localStorage.setItem('has mowers',true);
     sessionStorage.setItem('SunDropper','DefaultSunDropper');
   },[])
