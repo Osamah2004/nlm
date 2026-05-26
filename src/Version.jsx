@@ -1,6 +1,16 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.2",
+      date: "2026/5/26",
+      title: "Campaign levels",
+      description: "",
+      changes: [
+        "All adventure/epic quest levels are available to view, and download.",
+        "with modifications to make it difficult.",
+      ],
+    },
+    {
       version: "v1.1.2",
       date: "2026/5/19",
       title: "Conveyor fix",

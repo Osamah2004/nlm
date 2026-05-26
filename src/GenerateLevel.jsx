@@ -1357,7 +1357,7 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
     const rewardParam = getSession('FirstRewardParam') || 0
     //version
     let level = {
-        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.1'}),
+        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.2'}),
         ...(debug && {"Debug mode":true}),
         "Information": {
             Author:author,

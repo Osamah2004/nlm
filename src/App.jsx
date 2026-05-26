@@ -30,6 +30,7 @@ import CustomPlantModal from './SeedBank/CustomPlantModal';
 import Miscellaneous from './LevelParts/Miscellaneous';
 import NodesLayout from './Nodes/NodeLayout';
 import Escalation from './LevelParts/Escalation';
+import Campaign from './Campaign';
 
 const initialEdges = [];
 
@@ -46,7 +47,7 @@ const reset = () => {
   sessionStorage.clear()
 
   //version
-  localStorage.setItem('nlm-version','1.1.2')
+  localStorage.setItem('nlm-version','1.2')
   sessionStorage.setItem('fontSize',fontSize)
   window.location.reload()
 }
@@ -59,13 +60,13 @@ export default function App() {
   const [boardTracker, setBoardTracker] = useState([])
   const [selectedBoardItem, setSelectedBoardItem] = useState(null);
   const [headerVisibility,setHeaderVisibility] = useState(true)
-  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.1.2' ? false : <Version/>));
+  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.2' ? false : <Version/>));
 
   const plants = plantTypes.objects.map(e=>e.aliases[0])
 
   useEffect(() => {
   //version
-    localStorage.setItem('nlm-version','1.1.2');
+    localStorage.setItem('nlm-version','1.2');
     localStorage.setItem('has mowers',true);
     sessionStorage.setItem('SunDropper','DefaultSunDropper');
   },[])
@@ -772,7 +773,7 @@ const handleDrop = (e) => {
     <ReactFlowProvider>
       <div onDragOver={handleDragOver} onDrop={(e) => handleDrop(e)} style={{ width: '100vw', height: '100vh' }} className='overflow-hidden'>
         <header className={`absolute space-x-2 ${headerVisibility ? 'flex' : 'hidden'} z-10 pl-2 py-2 bg-gray-950/70 w-full`}>
-          <h1 className='text-white font-mono'>NLM v1.1</h1>
+          <h1 className='text-white font-mono'>NLM v1.2</h1>
           <input
             type="file"
             accept=".json"
@@ -788,9 +789,8 @@ const handleDrop = (e) => {
           <button className='px-0.5 button' onClick={() => setChildModal(<Narrative/>)}>Dialogue<span className='block text-xs text-center opacity-70'>F6</span></button>
           <button className='px-0.5 button' onClick={() => downloadJson([storageToObject(localStorage),storageToObject(sessionStorage)],`${levelName || 'blank'}Data`)}>Export Data<span className='block text-xs text-center opacity-70'></span></button>
           <button className='px-0.5 button' onClick={() => document.getElementById('json-upload').click()}>Import Data<span className='block text-xs text-center opacity-70'></span></button>
-          <button className='px-0.5 button' onClick={() => setChildModal(
-              <NodesLayout/>
-          )}>Page layout</button>
+          <button className='px-0.5 button' onClick={() => setChildModal(<NodesLayout/>)}>Page layout</button>
+          <button className='px-0.5 button' onClick={() => setChildModal(<Campaign/>)}>Campaign levels</button>
           <button className='px-0.5 bg-red-600 hover:bg-red-800 transition-colors rounded text-white cursor-pointer' onClick={reset}>clear data<span className='block text-xs text-center opacity-70'>F7</span></button>
         </header>
         

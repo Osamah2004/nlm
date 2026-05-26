@@ -284,10 +284,10 @@ const Conveyor = () => {
                             <div className="grid grid-cols-3 gap-1 p-0.5">
                                 {plantPool.map(e => 
                                 <div className="flex w-full">
-                                    <button title={`Add ${e} to plant pool`} className={`button w-full ${isInInitial(e) ? '' : 'gray'}`}
+                                    <button title={`Add ${e} to plant pool`} className={`button left-capsule w-full ${isInInitial(e) ? '' : 'gray'}`}
                                     onClick={() => handlePlantPoolClick(e)}>{e}</button>
-                                    <button onClick={() => setPlantPool(plantPool.filter(f => f !== e))} title={`Remove ${e} from plant pool`} className="text-left text-white cursor-pointer rounded-tr rounded-br
-                                    transition-colors bg-red-600 hover:bg-red-800"><Bin/></button>
+                                    <button onClick={() => setPlantPool(plantPool.filter(f => f !== e))} title={`Remove ${e} from plant pool`}
+                                    className="button red right-capsule"><Bin/></button>
                                 </div>
                                 )}
                             </div>

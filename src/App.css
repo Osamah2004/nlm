@@ -137,3 +137,7 @@ button.text-center {
 li > p {
   @apply font-normal text-gray-600 text-sm
 }
+
+details > label {
+  @apply w-full flex hover:bg-cyan-50 transition-colors duration-300 p-0.5
+}
