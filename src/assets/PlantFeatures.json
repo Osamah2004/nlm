@@ -5074,7 +5074,31 @@
         "Disabled": "Anthurium",
         "Plant": "Anthurium"
       }
+    },
+    {
+    "ID": 207,
+    "_CARDSPRITENAME": "darkmatterdragonfruit",
+    "CODENAME": "darkmatterdragonfruit",
+    "COSTUME": 0,
+    "OBTAINWORLD": "market",
+    "BOOST": 2,
+    "ALMANAC": "RTID(darkmatterdragonfruit@PlantAlmanac)",
+    "PROPS": "RTID(darkmatterdragonfruit@PlantProps)",
+    "NAME": {
+      "en": "Dark Matter Dragonfruit",
+      "zh": "暗物质火龙果"
+    },
+    "TYPE": [
+      "plant"
+    ],
+    "ZENGARDEN": {
+      "PlantPlace": "dirt"
+    },
+    "RES": {
+      "Disabled": "DarkMatterDragonfruit",
+      "Plant": "DarkMatterDragonfruit"
     }
+  }
   ],
   "SEEDCHOOSERDEFAULTORDER": [
     "sunflower",
@@ -5452,6 +5476,12 @@
     "filamint",
     "enchantmint",
     "concealmint",
-    "containmint"
+    "containmint",
+    "bulbkekengi",
+    "loquat",
+    "peacommando",
+    "poisonpeashooter",
+    "wasabiwhip",
+    "darkmatterdragonfruit"
   ]
 }

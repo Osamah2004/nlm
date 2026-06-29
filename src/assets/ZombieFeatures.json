@@ -3864,6 +3864,788 @@
         "en": "Lawn Rally Zombie",
         "zh": "场地大动员僵尸"
       }
+    }, {
+      "_CARDSPRITENAME": "birthdaybasic",
+      "CODENAME": "birthday",
+      "OBTAINWORLD": "birthday",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "BirthdayBasic",
+      "NAME": {
+        "en": "Birthdayz Zombie",
+        "zh": "派对僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "birthdaypharaohinner",
+      "CODENAME": "birthday_pharaoh_inner",
+      "OBTAINWORLD": "birthday",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(pharaoh_inner@ZombieProps)",
+      "RES": "BirthdayPharaohInner",
+      "NAME": {
+        "en": "Birthdayz Cake-faced Zombie",
+        "zh": "派对蛋糕脸僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "birthdaypharaoh",
+      "CODENAME": "birthday_pharaoh",
+      "OBTAINWORLD": "birthday",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(birthday_pharaoh@ZombieProps)",
+      "RES": "BirthdayPharaoh",
+      "NAME": {
+        "en": "Birthdayz Cake Zombie",
+        "zh": "派对蛋糕僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "piratebarrelpusher",
+      "CODENAME": "birthday_barrelroller",
+      "OBTAINWORLD": "birthday",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(birthday_barrelroller@ZombieProps)",
+      "RES": "PirateBarrelPusher",
+      "NAME": {
+        "en": "Birthdayz Barrel Roller Zombie",
+        "zh": "派对滚桶僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "birthdaybarrel",
+      "CODENAME": "birthday_barrel",
+      "OBTAINWORLD": "birthday",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(pirate_barrel@ZombieProps)",
+      "RES": "BirthdayBarrel",
+      "NAME": {
+        "en": "Birthdayz Pirate Barrel",
+        "zh": "派对木桶"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "birthdayjetpack",
+      "CODENAME": "birthday_jetpack",
+      "OBTAINWORLD": "birthday",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(future_jetpack@ZombieProps)",
+      "RES": "BirthdayJetpack",
+      "NAME": {
+        "en": "Birthdayz Jetpack Zombie",
+        "zh": "喷气派对僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "birthdayjester",
+      "CODENAME": "birthday_juggler",
+      "OBTAINWORLD": "birthday",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(dark_juggler@ZombieProps)",
+      "RES": "BirthdayJester",
+      "NAME": {
+        "en": "Birthdayz Jester Zombie",
+        "zh": "派对弄臣僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "iceagetroglobite",
+      "CODENAME": "birthday_troglobite",
+      "OBTAINWORLD": "birthday",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(iceage_troglobite@ZombieProps)",
+      "RES": "BirthdayTroglobite",
+      "NAME": {
+        "en": "Birthdayz Present Box Zombie",
+        "zh": "派对礼盒僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "sportzbasic",
+      "CODENAME": "sportzball",
+      "OBTAINWORLD": "sportz",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "SportzBasic",
+      "NAME": {
+        "en": "Sportz-ball Basic Zombie",
+        "zh": "运动节普通僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "sportzarmor1",
+      "CODENAME": "sportzball_armor1",
+      "OBTAINWORLD": "sportz",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(sportzball_armor1@ZombieProps)",
+      "RES": "SportzBasic",
+      "NAME": {
+        "en": "Sportz-ball Conehead Zombie",
+        "zh": "运动节路障僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "sportzarmor2",
+      "CODENAME": "sportzball_armor2",
+      "OBTAINWORLD": "sportz",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(sportzball_armor2@ZombieProps)",
+      "RES": "SportzBasic",
+      "NAME": {
+        "en": "Sportz-ball Buckethead Zombie",
+        "zh": "运动节铁桶僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "sportzflag",
+      "CODENAME": "sportzball_flag",
+      "OBTAINWORLD": "sportz",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_flag@ZombieProps)",
+      "RES": "SportzFlag",
+      "NAME": {
+        "en": "Sportz-ball Flag Zombie",
+        "zh": "运动节旗帜僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "sportzwizard",
+      "CODENAME": "sportzball_wizard",
+      "OBTAINWORLD": "sportz",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(dark_wizard@ZombieProps)",
+      "RES": "SportzWizard",
+      "NAME": {
+        "en": "Sportz-ball Referee",
+        "zh": "运动节裁判员"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "sportzballoon",
+      "CODENAME": "sportzball_balloon",
+      "OBTAINWORLD": "sportz",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(modern_balloon@ZombieProps)",
+      "RES": "SportzBalloon",
+      "NAME": {
+        "en": "Sportz-balloon Zombie",
+        "zh": "运动节气球僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "sportzimp",
+      "CODENAME": "sportzball_imp",
+      "OBTAINWORLD": "sportz",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(sportzball_imp@ZombieProps)",
+      "RES": "SportzImp",
+      "NAME": {
+        "en": "Soccer Imp",
+        "zh": "足球小鬼"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "sportzgargantuar",
+      "CODENAME": "sportzball_gargantuar",
+      "OBTAINWORLD": "sportz",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(sportzball_gargantuar@ZombieProps)",
+      "RES": "SportzGargantuar",
+      "NAME": {
+        "en": "Sportz-ball Gargantuar",
+        "zh": "运动节巨尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "valentinesbasic",
+      "CODENAME": "valentines",
+      "OBTAINWORLD": "valentines",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "ValentinesBasic",
+      "NAME": {
+        "en": "Valentines Zombie",
+        "zh": "情人节僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "valentinesarmor1",
+      "CODENAME": "valentines_armor1",
+      "OBTAINWORLD": "valentines",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_armor1@ZombieProps)",
+      "RES": "ValentinesBasic",
+      "NAME": {
+        "en": "Valentines Conehead",
+        "zh": "情人节路障僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "valentinesarmor2",
+      "CODENAME": "valentines_armor2",
+      "OBTAINWORLD": "valentines",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_armor2@ZombieProps)",
+      "RES": "ValentinesBasic",
+      "NAME": {
+        "en": "Valentines Buckethead",
+        "zh": "情人节铁桶僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "valentinesflag",
+      "CODENAME": "valentines_flag",
+      "OBTAINWORLD": "valentines",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_flag@ZombieProps)",
+      "RES": "ValentinesFlag",
+      "NAME": {
+        "en": "Valentines Flag",
+        "zh": "情人节旗帜僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "valentinesimp",
+      "CODENAME": "valentines_imp",
+      "OBTAINWORLD": "valentines",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_imp@ZombieProps)",
+      "RES": "ValentinesImp",
+      "NAME": {
+        "en": "Valentines Imp",
+        "zh": "情人节小鬼"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "valentinesgargantuar",
+      "CODENAME": "valentines_gargantuar",
+      "OBTAINWORLD": "valentines",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(valentines_gargantuar@ZombieProps)",
+      "RES": "ValentinesGargantuar",
+      "NAME": {
+        "en": "Valentines Gargantuar",
+        "zh": "情人节巨尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "stpatricksbasic",
+      "CODENAME": "stpatrick",
+      "OBTAINWORLD": "stpatricks",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "StPatricksBasic",
+      "NAME": {
+        "en": "St. Patrick's Zombie",
+        "zh": "圣帕特里克节僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "stpatricksarmor1",
+      "CODENAME": "stpatrick_armor1",
+      "OBTAINWORLD": "stpatricks",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(stpatrick_armor1@ZombieProps)",
+      "RES": "StPatricksBasic",
+      "NAME": {
+        "en": "St. Patrick's Conehead",
+        "zh": "圣帕特里克节路障僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "stpatricksarmor2",
+      "CODENAME": "stpatrick_armor2",
+      "OBTAINWORLD": "stpatricks",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(stpatrick_armor2@ZombieProps)",
+      "RES": "StPatricksBasic",
+      "NAME": {
+        "en": "St. Patrick's Buckethead",
+        "zh": "圣帕特里克节铁桶僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "stpatricksflag",
+      "CODENAME": "stpatrick_flag",
+      "OBTAINWORLD": "stpatricks",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_flag@ZombieProps)",
+      "RES": "StPatricksFlag",
+      "NAME": {
+        "en": "St. Patrick's Flag",
+        "zh": "圣帕特里克节僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "stpatricksdodo",
+      "CODENAME": "stpatrick_dodo",
+      "OBTAINWORLD": "stpatricks",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(iceage_dodo@ZombieProps)",
+      "RES": "StPatricksDodoRider",
+      "NAME": {
+        "en": "St. Patrick's Dodo Rider",
+        "zh": "圣帕特里克节渡渡鸟骑手"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "stpatricksimp",
+      "CODENAME": "stpatrick_imp",
+      "OBTAINWORLD": "stpatricks",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_imp@ZombieProps)",
+      "RES": "StPatricksImp",
+      "NAME": {
+        "en": "Leprechaun Imp",
+        "zh": "小矮妖小鬼"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "LNYbasic",
+      "CODENAME": "lunar",
+      "OBTAINWORLD": "lunar",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "LNYBasic",
+      "NAME": {
+        "en": "Lunar Year Zombie",
+        "zh": "新春僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "LNYarmor1",
+      "CODENAME": "lunar_armor1",
+      "OBTAINWORLD": "lunar",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(lunar_armor1@ZombieProps)",
+      "RES": "LNYBasic",
+      "NAME": {
+        "en": "Lunar Year Conehead",
+        "zh": "新春路障僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "LNYarmor2",
+      "CODENAME": "lunar_armor2",
+      "OBTAINWORLD": "lunar",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(lunar_armor2@ZombieProps)",
+      "RES": "LNYBasic",
+      "NAME": {
+        "en": "Lunar Year Buckethead",
+        "zh": "新春铁桶僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "LNYflag",
+      "CODENAME": "lunar_flag",
+      "OBTAINWORLD": "lunar",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_flag@ZombieProps)",
+      "RES": "LNYFlag",
+      "NAME": {
+        "en": "Lunar Year Flag",
+        "zh": "新春旗帜僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "LNYwall",
+      "CODENAME": "lunar_camel_segment",
+      "OBTAINWORLD": "lunar",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(lunar_camel_segment@ZombieProps)",
+      "RES": "LNYWall",
+      "NAME": {
+        "en": "Lunar Wall Zombie",
+        "zh": "年兽牌僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "LNYwallonehump",
+      "CODENAME": "lunar_camel_onehump",
+      "OBTAINWORLD": "lunar",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(lunar_camel_onehump@ZombieProps)",
+      "RES": "LNYWall",
+      "NAME": {
+        "en": "Lunar Wall Zombies",
+        "zh": "年兽牌僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easterbasic",
+      "CODENAME": "easter",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "EasterBasic",
+      "NAME": {
+        "en": "Easter Zombie",
+        "zh": "复活节僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easterarmor1",
+      "CODENAME": "easter_armor1",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(easter_armor1@ZombieProps)",
+      "RES": "EasterBasic",
+      "NAME": {
+        "en": "Easter Conehead",
+        "zh": "复活节路障僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easterarmor2",
+      "CODENAME": "easter_armor2",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(easter_armor2@ZombieProps)",
+      "RES": "EasterBasic",
+      "NAME": {
+        "en": "Easter Buckethead",
+        "zh": "复活节铁桶僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easterarmor4",
+      "CODENAME": "easter_armor4",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(easter_armor4@ZombieProps)",
+      "RES": "EasterBasic",
+      "NAME": {
+        "en": "Easter Brickhead Zombie",
+        "zh": "复活节砖头僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easterflag",
+      "CODENAME": "easter_flag",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_flag@ZombieProps)",
+      "RES": "EasterFlag",
+      "NAME": {
+        "en": "Easter Flag Zombie",
+        "zh": "复活节旗帜僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "eastercamel",
+      "CODENAME": "easter_camel_segment",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(easter_camel_segment@ZombieProps)",
+      "RES": "EasterCamel",
+      "NAME": {
+        "en": "Easter Panel Zombie",
+        "zh": "复活节牌僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "eastercamelonehump",
+      "CODENAME": "easter_camel_onehump",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(easter_camel_onehump@ZombieProps)",
+      "RES": "EasterCamel",
+      "NAME": {
+        "en": "Easter Panel Zombies",
+        "zh": "复活节牌僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easterponcho",
+      "CODENAME": "easter_poncho",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(poncho@ZombieProps)",
+      "RES": "EasterPoncho",
+      "NAME": {
+        "en": "Easter Poncho Zombie",
+        "zh": "复活节斗篷僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easterwizard",
+      "CODENAME": "easter_wizard",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(dark_wizard@ZombieProps)",
+      "RES": "EasterWizard",
+      "NAME": {
+        "en": "Easter Wizard",
+        "zh": "复活节巫师"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easteregg",
+      "CODENAME": "easter_egg",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(easter_egg@ZombieProps)",
+      "RES": "EasterEgg",
+      "NAME": {
+        "en": "Easter Egg",
+        "zh": "复活节彩蛋"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "easterimp",
+      "CODENAME": "easter_imp",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial_imp@ZombieProps)",
+      "RES": "EasterImp",
+      "NAME": {
+        "en": "Easter Imp",
+        "zh": "复活节小鬼"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "eastergargantuar",
+      "CODENAME": "easter_gargantuar",
+      "OBTAINWORLD": "easter",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(easter_gargantuar@ZombieProps)",
+      "RES": "EasterGargantuar",
+      "NAME": {
+        "en": "Easter Gargantuar",
+        "zh": "复活节巨尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "eightiespunkveteran",
+      "CODENAME": "eighties_punk_veteran",
+      "OBTAINWORLD": "eighties",
+      "ALMANAC": "RTID(eighties_punk_veteran@ZombieAlmanac)",
+      "PROPS": "RTID(eighties_punk_veteran@ZombieProps)",
+      "RES": "EightiesPunkVeteran",
+      "NAME": {
+        "en": "Skunk Punk",
+        "zh": "臭鼬朋克"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "eightiesskunk",
+      "CODENAME": "eighties_skunk",
+      "OBTAINWORLD": "eighties",
+      "ALMANAC": "RTID(eighties_skunk@ZombieAlmanac)",
+      "PROPS": "RTID(eighties_skunk@ZombieProps)",
+      "RES": "EightiesSkunk",
+      "NAME": {
+        "en": "Zombie Skunk",
+        "zh": "僵尸臭鼬"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "eightieszomboss",
+      "CODENAME": "zombossmech_eighties2",
+      "OBTAINWORLD": "eighties",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(zombossmech_eighties2@ZombieProps)",
+      "RES": "EightiesZombossMech",
+      "NAME": {
+        "en": "Zombot Multi-stage Masher",
+        "zh": "节奏引领者"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "skytwin",
+      "CODENAME": "sky_airraid_twin",
+      "OBTAINWORLD": "sky",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(sky_airraid_twin@ZombieProps)",
+      "RES": "SkyAirRaidTwin",
+      "NAME": {
+        "en": "Double-Cabin Aircraft",
+        "zh": "双舱飞行僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "skyarbiterx",
+      "CODENAME": "sky_arbiterx",
+      "OBTAINWORLD": "sky",
+      "ALMANAC": "RTID(sky_arbiterx@ZombieAlmanac)",
+      "PROPS": "RTID(sky_arbiterx@ZombieProps)",
+      "RES": "SkyArbiterX",
+      "NAME": {
+        "en": "Arbiter - Model X",
+        "zh": "仲裁者 - X 型"
+      },
+      "SubZombieList": [
+        "sky_airraid_arbiterx"
+      ]
+    },
+    {
+      "_CARDSPRITENAME": "skyarbiterx",
+      "CODENAME": "sky_airraid_arbiterx",
+      "OBTAINWORLD": "sky",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(sky_airraid_arbiterx@ZombieProps)",
+      "RES": "SkyAirRaidArbiterX",
+      "NAME": {
+        "en": "Arbiter - Model X",
+        "zh": "仲裁者 - X 型"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "skydronemaker",
+      "CODENAME": "sky_dronemaker",
+      "OBTAINWORLD": "sky",
+      "ALMANAC": "RTID(sky_dronemaker@ZombieAlmanac)",
+      "PROPS": "RTID(sky_dronemaker@ZombieProps)",
+      "RES": "SkyDroneMaker",
+      "NAME": {
+        "en": "Drone Engineer",
+        "zh": "无人机工程师"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "skydrone",
+      "CODENAME": "sky_drone",
+      "OBTAINWORLD": "sky",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(sky_drone@ZombieProps)",
+      "RES": "SkyDrone",
+      "NAME": {
+        "en": "Drone",
+        "zh": "无人机"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "skygargantuar",
+      "CODENAME": "sky_gargantuar_armor2_thrower",
+      "OBTAINWORLD": "sky",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(sky_gargantuar_armor2_thrower@ZombieProps)",
+      "RES": "SkyGargantuarArmor2Thrower",
+      "NAME": {
+        "en": "Airborne Gargantuar",
+        "zh": "飞行巨尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawnbasic",
+      "CODENAME": "lawn",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Basic Zombie",
+        "zh": "场地普通僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawnarmor1",
+      "CODENAME": "lawn_armor1",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Conehead Zombie",
+        "zh": "场地路障僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawnarmor2",
+      "CODENAME": "lawn_armor2",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Buckethead Zombie",
+        "zh": "场地铁桶僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawnarmor3",
+      "CODENAME": "lawn_armor3",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Helmet Zombie",
+        "zh": "场地铁盔僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawnarmor4",
+      "CODENAME": "lawn_armor4",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Brickhead Zombie",
+        "zh": "场地砖头僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawnflag",
+      "CODENAME": "lawn_flag",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Flag Zombie",
+        "zh": "场地旗帜僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawnrally",
+      "CODENAME": "lawn_flag_veteran",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Rally Zombie",
+        "zh": "场地大动员僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawnimp",
+      "CODENAME": "lawn_imp",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Imp Zombie",
+        "zh": "场地小鬼僵尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "lawngargantuar",
+      "CODENAME": "lawn_gargantuar",
+      "OBTAINWORLD": "",
+      "ALMANAC": "RTID(empty@ZombieAlmanac)",
+      "PROPS": "RTID(tutorial@ZombieProps)",
+      "RES": "Basic",
+      "NAME": {
+        "en": "Lawn Gargantuar Zombie",
+        "zh": "场地巨尸"
+      }
+    },
+    {
+      "_CARDSPRITENAME": "yeti",
+      "CODENAME": "treasureyeti",
+      "OBTAINWORLD": "market",
+      "ALMANAC": "RTID(treasureyeti@ZombieAlmanac)",
+      "PROPS": "RTID(treasureyeti@ZombieProps)",
+      "RES": "Yeti",
+      "NAME": {
+        "en": "Treasure Yeti",
+        "zh": "宝藏雪人"
+      }
     }
   ],
   "ALMANAC": [

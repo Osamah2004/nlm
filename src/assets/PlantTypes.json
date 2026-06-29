@@ -3444,6 +3444,66 @@
                 }
             }
         }
-    }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "wasabiwhip"
+      ],
+      "objdata": {
+        "PlantBasedOn": "wasabiwhip",
+        "Properties": "RTID(wasabiwhip@PlantProps)"
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "poisonpeashooter"
+      ],
+      "objdata": {
+        "PlantBasedOn": "poisonpeashooter",
+        "Properties": "RTID(poisonpeashooter@PlantProps)"
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "bulbkekengi"
+      ],
+      "objdata": {
+        "PlantBasedOn": "bulbkekengi",
+        "Properties": "RTID(bulbkekengi@PlantProps)"
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "loquat"
+      ],
+      "objdata": {
+        "PlantBasedOn": "loquat",
+        "Properties": "RTID(loquat@PlantProps)"
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "peacommando"
+      ],
+      "objdata": {
+        "PlantBasedOn": "peacommando",
+        "Properties": "RTID(peacommando@PlantProps)"
+      }
+    },
+    {
+  "objclass": "PlantType",
+  "aliases": [
+    "darkmatterdragonfruit"
+  ],
+  "objdata": {
+    "PlantBasedOn": "darkmatterdragonfruit",
+    "Properties": "RTID(darkmatterdragonfruit@PlantProps)"
+  }
+}
 ]
 }

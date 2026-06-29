@@ -54,7 +54,7 @@ const CustomPlantModal = () => {
         "CabbageType2", "BoomerangType", "SporeType", "PlantfoodGumProjectileType",
         "PeaFreezeType", "ButterType", "LiquidType", "MintLiquidType", "MeteorType",
         "SawType", "BananaType", "BambooshotType", "HollyProjectileType", "ProjectileType",
-        "HypnotizingProjectileType", "GrapeType", "TileType", "AttackProjectileType"
+        "HypnotizingProjectileType", "GrapeType", "TileType", "AttackProjectileType","PeaTypeShadow"
     ]
     const [headerText,setHeaderText] = useState(null)
 
@@ -91,7 +91,7 @@ const CustomPlantModal = () => {
                     ],
                 "objdata": {
                     "BriefIntroduction": {
-                        "en": PlantAlmanac.objects.find(f => f.aliases[0] === e).objdata.BriefIntroduction.en,
+                        "en": "Your custom description for seedbank.",
                         "zh": "..."
                     }
                 }
@@ -130,6 +130,7 @@ const CustomPlantModal = () => {
     }
 
     const handleWrenchButton = (e) => {
+        console.log(e)
         setHeaderText(e.customName)
         setSelectedCustomPlant(getParsedLocal(`customPlant-${e.customId}`))
         setSelectedCustomPlantId(e.customId)

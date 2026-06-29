@@ -1,4 +1,4 @@
-import React, { useState,useMemo, useCallback, useEffect } from 'react';
+import React, { useState,useMemo, useCallback, useEffect, useRef } from 'react';
 import { Background, ReactFlowProvider, BackgroundVariant, ReactFlow, applyNodeChanges, applyEdgeChanges, addEdge, Position } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import './App.css'
@@ -31,6 +31,7 @@ import Miscellaneous from './LevelParts/Miscellaneous';
 import NodesLayout from './Nodes/NodeLayout';
 import Escalation from './LevelParts/Escalation';
 import Campaign from './Campaign';
+import { RgbColorPicker } from 'react-colorful';
 
 const initialEdges = [];
 
@@ -47,11 +48,32 @@ const reset = () => {
   sessionStorage.clear()
 
   //version
-  localStorage.setItem('nlm-version','1.2')
+  localStorage.setItem('nlm-version','1.2.2')
   sessionStorage.setItem('fontSize',fontSize)
   window.location.reload()
 }
 
+const FogColorPicker = ({ fogColor, setFogColor, onClose }) => {
+  return (
+    <div className="h-74 w-60">
+      <div className="flex justify-between items-center mb-2">
+        <div className="flex space-x-1">
+          <strong className="text-red-500">R: {Math.round(fogColor.r)}</strong>
+          <strong className="text-green-500">G: {Math.round(fogColor.g)}</strong>
+          <strong className="text-blue-500">B: {Math.round(fogColor.b)}</strong>
+        </div>
+        <button 
+          onClick={onClose}
+          className="px-2 py-1 bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
+        >
+          ✕
+        </button>
+      </div>
+      <button className="button" onClick={() => setFogColor({r:255,g:255,b:255})}>default</button>
+      <RgbColorPicker className='m-4' color={fogColor} onChange={setFogColor}/>
+    </div>
+  );
+};
 export default function App() {
   //for every update, increment the version in reset/useEffect/setChildModal/generateLevel/index.html
   const [levelName, setLevelName] = useState(sessionStorage.getItem('Name') || 'blank');
@@ -60,13 +82,25 @@ export default function App() {
   const [boardTracker, setBoardTracker] = useState([])
   const [selectedBoardItem, setSelectedBoardItem] = useState(null);
   const [headerVisibility,setHeaderVisibility] = useState(true)
-  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.2' ? false : <Version/>));
+  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.2.2' ? false : <Version/>));
+  const [fogColor,setFogColor] = useState(JSON.parse(sessionStorage.getItem('fogColor')) || {r:0,g:0,b:0})
+  const [showColorPicker, setShowColorPicker] = useState(false);
+  const fogFirstRender = useRef(true)
 
   const plants = plantTypes.objects.map(e=>e.aliases[0])
 
   useEffect(() => {
+    if (fogFirstRender.current) {
+      fogFirstRender.current = false
+      return
+    }
+    sessionStorage.setItem('fogColor',JSON.stringify(fogColor))
+  }
+  ,[fogColor])
+
+  useEffect(() => {
   //version
-    localStorage.setItem('nlm-version','1.2');
+    localStorage.setItem('nlm-version','1.2.2');
     localStorage.setItem('has mowers',true);
     sessionStorage.setItem('SunDropper','DefaultSunDropper');
   },[])
@@ -308,6 +342,14 @@ const BoardGroup = ({ group, summary, color }) => {
               <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','Row4_p1')}>Row 4</button>
               <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','Row5_p1')}>Row 5</button>
             </div>
+            <button className="button w-full p-2 text-2xl mt-2" onClick={() => localStorage.setItem('board-item','fog_')}>fog</button>
+            <button 
+              className="button w-full p-2 text-2xl mt-2" 
+              onClick={() => setShowColorPicker(true)}
+            >
+              fog color
+            </button>
+            <Checkbox label='offscreen fog'/>
           </div>
           </>
         )
@@ -826,6 +868,22 @@ const handleDrop = (e) => {
     </div>
   </Modal>
         
+<Modal
+  isOpen={showColorPicker}
+  onRequestClose={() => setShowColorPicker(false)}
+  style={modalStyles}
+  contentLabel="Color Picker"
+  parentSelector={() => document.body}
+  ariaHideApp={false}
+>
+  <div className="bg-white">
+    <FogColorPicker 
+      fogColor={fogColor} 
+      setFogColor={setFogColor}
+      onClose={() => setShowColorPicker(false)}
+    />
+  </div>
+</Modal>
         {/* Aside with transition */}
         <aside 
           className={`absolute right-0 top-0 h-full bg-gray-200/30 pl-2 pt-18 transition-all duration-300 ease-in-out ${

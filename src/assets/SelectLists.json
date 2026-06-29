@@ -36,8 +36,14 @@
         "CircusStage",
         "SkyStage",
         "ArenaStage",
-        "PersuitStage"
-    ],
+        "PersuitStage",
+        "SpringStage",
+        "SportzballStage",
+        "ValentinesStage",
+        "FeastivusStage",
+        "FeastivusNightStage",
+        "BirthdayStage"
+      ],
     "GridItems": [
         "gravestone_tutorial",
         "gravestone_egypt",

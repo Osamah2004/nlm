@@ -2872,6 +2872,26 @@
         "ProjectileBasedOn": "mower_dino",
         "Props": "RTID(mower_dino@.)"
       }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "darkmatter"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "darkmatter",
+        "Props": "RTID(darkmatter@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "darkmatter_shadow"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "darkmatter_shadow",
+        "Props": "RTID(darkmatter_shadow@ProjectileProps)"
+      }
     }
   ]
 }

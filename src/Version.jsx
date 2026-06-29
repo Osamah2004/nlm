@@ -1,13 +1,42 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.2.2",
+      date: "2026/6/29",
+      title: "GE 0.10",
+      description: "",
+      changes: [
+        "Dark Matter Dragon fruit has been added to the plant arsenal.",
+        "More seasonal zombies (birthday/easter/lunar/sportzball/stpatrick/valentine).",
+        (<>
+        <strong>
+          "ChanceToReverse"
+        </strong> property will appear when making custom zombies (ranges from 0.0 to 1.0).</>),
+        <>
+        Initial fog support.
+          <p className="text-gray-400 text-sm">
+            You can color it as well
+          </p>
+        </>,
+      ],
+    },
+    {
+      version: "v1.2.1",
+      date: "2026/6/6",
+      title: "GE 0.9",
+      description: "",
+      changes: [
+        "Added Aerial Fortress part 2 plants and zombies.",
+      ],
+    },
+    {
       version: "v1.2",
-      date: "2026/5/26",
+      date: "2026/5/27",
       title: "Campaign levels",
       description: "",
       changes: [
         "All adventure/epic quest levels are available to view, and download.",
-        "with modifications to make it difficult.",
+        "with modifications to make it more or less difficult.",
       ],
     },
     {

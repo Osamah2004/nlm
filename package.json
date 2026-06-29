@@ -19,6 +19,7 @@
     "lodash": "^4.17.23",
     "react": "^19.2.0",
     "react-chrono": "^3.3.3",
+    "react-colorful": "^5.7.0",
     "react-dom": "^19.2.0",
     "react-hotkeys-hook": "^5.2.4",
     "react-modal": "^3.16.3",

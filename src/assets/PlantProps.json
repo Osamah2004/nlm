@@ -5470,6 +5470,258 @@
             "AlwaysShoots": false,
             "SpawnedScale": 1
         }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "poisonpeashooter"
+      ],
+      "objdata": {
+        "ShootInterval": 1.35,
+        "ShootIntervalAdditional": 0.15,
+        "Cooldown": 5,
+        "CooldownFrom": 1,
+        "SunCost": 150,
+        "BeghouledCost": 1500,
+        "Toughness": 300,
+        "PeaType": "pea_goo",
+        "PeaTypePlantfood": "pea_goo_pf",
+        "Family": "Poison",
+        "MintBoostedProps": {
+          "ResistanceMult": 1,
+          "SpeedMult": 2,
+          "Plantfood": false
+        }
+      }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "peacommando"
+      ],
+      "objdata": {
+        "Cooldown": 5,
+        "CooldownFrom": 1,
+        "SunCost": 450,
+        "BeghouledCost": 5000,
+        "Toughness": 300,
+        "PlantfoodRayDamage": 600,
+        "PeaType": "pea_commando",
+        "ShootCount": 2,
+        "ShootCountPlantfood": 2,
+        "HeadCountFactor": 1,
+        "HeadCountFactorPlantfood": 2,
+        "Family": "Peashooter",
+        "MintPlantfoodDamageFactor": 5,
+        "FlyTime": {
+          "Min": 3,
+          "Max": 4
+        },
+        "FlyToTargetTime": {
+          "Min": 1,
+          "Max": 2
+        },
+        "AttackInterval": {
+          "Min": 5,
+          "Max": 7
+        },
+        "MintBoostedProps": {
+          "ResistanceMult": 1,
+          "SpeedMult": 2,
+          "Plantfood": false
+        }
+      }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "asparagus"
+      ],
+      "objdata": {
+        "Cooldown": 5,
+        "CooldownFrom": 0.5,
+        "SunCost": 225,
+        "BeghouledCost": 3000,
+        "Toughness": 300,
+        "Family": "Lobber",
+        "Damage": 20,
+        "DamagePlantfood": 800,
+        "MaxClips": 7,
+        "IdleReloadClips": 3,
+        "ShootInterval": 1.75,
+        "ShootIntervalAdditional": 0.15,
+        "ReloadDuration": 6,
+        "MintDamageFactor": 5,
+        "MintBoostedProps": {
+          "ResistanceMult": 1,
+          "SpeedMult": 3,
+          "Plantfood": false
+        }
+      }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "pineapple"
+      ],
+      "objdata": {
+        "ArmorToughness": 6000,
+        "Cooldown": 20,
+        "CooldownFrom": 0.75,
+        "SunCost": 125,
+        "BeghouledCost": 2000,
+        "Toughness": 6000,
+        "Family": "Defence",
+        "SpinDuration": 2,
+        "PlantfoodDuration": 10,
+        "MintBoostedProps": {
+          "ResistanceMult": 3,
+          "SpeedMult": 1,
+          "Plantfood": true
+        }
+      }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "wasabiwhip"
+      ],
+      "objdata": {
+        "AttackDamage": 40,
+        "AttackInterval": 0.6,
+        "AttackSplashSamage": 20,
+        "PlantfoodDPS": 400,
+        "PlantfoodDuration": 5,
+        "MaxDistance": 2.5,
+        "Cooldown": 5,
+        "CooldownFrom": 1,
+        "SunCost": 225,
+        "BeghouledCost": 1500,
+        "Toughness": 300,
+        "Family": "Fire",
+        "MintDamageFactor": 3,
+        "ImmuneToIceblock": true,
+        "WarmingRadius": {
+          "PulseInitialDelay": 0.5,
+          "PulseCooldown": 6,
+          "GridItemDamage": 200
+        },
+        "WarmingRadiusPlantfood": {
+          "PulseInitialDelay": 0.25,
+          "PulseCooldown": 1.5,
+          "GridItemDamage": 100
+        },
+        "MintBoostedProps": {
+          "ResistanceMult": 1,
+          "SpeedMult": 2,
+          "Plantfood": false
+        }
+      }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "anthurium"
+      ],
+      "objdata": {
+        "ImmuneToLightningCharge": true,
+        "ShootInterval": 1.35,
+        "ShootIntervalAdditional": 0.15,
+        "Cooldown": 5,
+        "CooldownFrom": 0.5,
+        "SunCost": 150,
+        "BeghouledCost": 1000,
+        "Toughness": 300,
+        "Family": "Electricity",
+        "RedAttackStunDuration": 1,
+        "CallsElectricCurrant": true,
+        "MintDamageFactor": 3,
+        "BoltType": "anthurium_bolt",
+        "BigBoltType": "anthurium_bolt_big",
+        "PlantfoodLightningCount": 3,
+        "PlantfoodDamage": 1200,
+        "PlantfoodSplashDamage": 400,
+        "MintBoostedProps": {
+          "ResistanceMult": 1,
+          "SpeedMult": 2,
+          "Plantfood": false
+        }
+      }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "loquat"
+      ],
+      "objdata": {
+        "CannotBeSheepenedByWizard": true,
+        "Damage": 0,
+        "Cooldown": 20,
+        "CooldownFrom": 1,
+        "SunCost": 100,
+        "BeghouledCost": 1000,
+        "Toughness": 300,
+        "Family": "Slow",
+        "ImmuneToBoomBox": true,
+        "ImmuneToIceblock": true,
+        "TornadoDuration": 3.5,
+        "ZombieDraggingFactor": 4,
+        "MintDurationFactor": 2,
+        "MintBoostedProps": {
+          "ResistanceMult": 1,
+          "SpeedMult": 1,
+          "Plantfood": false
+        }
+      }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "bulbkekengi"
+      ],
+      "objdata": {
+        "Cooldown": 20,
+        "CooldownFrom": 1,
+        "SunCost": 75,
+        "BeghouledCost": 500,
+        "Toughness": 300,
+        "Family": "Nope",
+        "PlantfoodDuration": 15,
+        "MintBoostedProps": {
+          "ResistanceMult": 1,
+          "SpeedMult": 1,
+          "Plantfood": true
+        }
+      }
+    },
+    {
+  "objclass": "PlantProperties",
+  "aliases": [
+    "darkmatterdragonfruit"
+  ],
+  "objdata": {
+    "ShootInterval": 2.7,
+    "ShootIntervalAdditional": 0.15,
+    "Cooldown": 5,
+    "CooldownFrom": 1,
+    "SunCost": 350,
+    "BeghouledCost": 4000,
+    "Toughness": 300,
+    "PeaType": "darkmatter",
+    "PeaTypeShadow": "darkmatter_shadow",
+    "Family": "Shadow",
+    "MintDamageFactor": 3,
+    "PlantfoodKnockbackSPS": 1.5,
+    "PlantfoodDuration": 6,
+    "PlantFoodDPS": 400,
+    "PlantFoodSplashDPS": 100,
+    "DarkMatterEffectDuration": 6,
+    "MintBoostedProps": {
+      "ResistanceMult": 1,
+      "SpeedMult": 2,
+      "Plantfood": false
     }
+  }
+}
 ]
 }

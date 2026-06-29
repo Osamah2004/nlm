@@ -234,6 +234,9 @@ const GenerateLevel = () => {
     let molds = Array.from({length:5}).map(e => Array.from({length:9}).map(e => "0"))
     let isMold = false
 
+    let fog = Array.from({length:5}).map(e => Array.from({length:9}).map(e => '0'))
+    let isFog = false
+
     const addAllAlone = (e) => {
         const {x,y} = e
         const temp = {
@@ -260,6 +263,7 @@ const GenerateLevel = () => {
             case 'F':frozenPlants.push({'TypeName':e.name.slice(2),'GridX':e.x,'GridY':e.y,'Condition':'icecubed'});break;
             case 'P':initialPlants.push({'TypeName':e.name.slice(2),'GridX':e.x,'GridY':e.y,});break;
             case 'molds':molds[e.y][e.x] = '1';isMold = true;break;
+            case 'fog':fog[e.y][e.x] = '1';isFog = true;break;
             case 'all-alone':addAllAlone(e);break;
             case 'wire':tntWires.push(Number(e.x)+1);break;
             case 'Row1':
@@ -289,6 +293,11 @@ const GenerateLevel = () => {
         removeFromModule('Mowers')
     }
     molds = molds.map(e => e.join(""))
+    fog = fog.map(e => e.join(""))
+    console.log(fog)
+    if (tf('offscreen fog')){
+        fog = fog.map(e => e += '111111111')
+    }
     Object.keys(rails).forEach(e=>{
         if(rails[e].length === 4 && !(rails[e].includes(2))){
             rails[e] = [
@@ -337,8 +346,13 @@ const _upperFirst = (string) =>string.slice(0, 1).toUpperCase() + string.slice(1
 
     boardListToOtherObjects(otherGi,'GI',
     'InitialGridItemProperties',{'InitialGridItemPlacements':otherGi})
-
+    const fogColor = JSON.parse(getSession('fogColor'))
     if (isMold) pushModuleObject('molds','MoldColonyChallengeProps',{MoldMatrix:molds})
+    if (isFog) pushModuleObject('fog','LevelFogProperties',{Fogs:[{
+        BasePosition: {x:0,y:0},
+        FogMatrix:fog,
+        ...(fogColor && {Color:fogColor})
+    }]})
 
     let challenges = []
 
@@ -1357,7 +1371,7 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
     const rewardParam = getSession('FirstRewardParam') || 0
     //version
     let level = {
-        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.2'}),
+        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.2.2'}),
         ...(debug && {"Debug mode":true}),
         "Information": {
             Author:author,
@@ -1380,7 +1394,7 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
                     "StartingSun": Number(startSun),
                     "NormalPresentTable": "egypt_normal_01",
                     "ShinyPresentTable": "egypt_shiny_01",
-                    "WritenBy": author,
+                    "WrittenBy": author,
                     ...(isPinata && {"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)"}),
                     ...(isPinata && {"IsLevelOfTheDay": true}),
                     ...(introNarrative.length > length && {'FirstIntroNarrative':'INTRO'}),
