@@ -90,6 +90,19 @@ const boardToAmbush = (codeAmbush,ambushSetter,ambushName = 'none',pickedAmbushe
     
     switch (ambushName) {
         case 'none': alert('select an ambush');break;
+        case 'FogEvent': {
+                let temp = {...JSON.parse(codeAmbush)}
+                let fogMatrix = Array.from({length:5}).map(
+                    e => Array.from({length:9}).map(i => 0)
+                )
+                ambushList.forEach(e => {
+                    fogMatrix[e.y - 1][e.x - 1] = 1
+                })
+                fogMatrix = fogMatrix.map(e => e.join(''))
+                temp.objdata.Fogs[0].FogMatrix = fogMatrix
+                ambushSetter(JSON.stringify(temp,null,2))
+            };
+            break;
         case 'SpawnPlants': {
                 let temp = {...JSON.parse(codeAmbush)}
                 temp.objdata.Plants = ambushList.map(e => P((e.x)-1,(e.y)-1,e.item))

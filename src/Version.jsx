@@ -1,6 +1,17 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.3",
+      date: "2026/7/14",
+      title: "Vasebreaker",
+      description: "and fogevent event as well",
+      changes: [
+        "Vasebreaker has been added as board items.",
+        "Adding a vase into the Initial Board will automatically trigger vasebreaker mini-game.",
+        "Fog replace event has been added into Events/Ambushes",
+      ],
+    },
+    {
       version: "v1.2.2",
       date: "2026/6/29",
       title: "GE 0.10",

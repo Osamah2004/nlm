@@ -252,6 +252,9 @@ const GenerateLevel = () => {
     })
     let tntWires = []
     let isTdMode = false
+    let isVasebreaker = false
+    let vases = []
+    let vaseLines = []
     boardItems.forEach(e => {
         const gridType = eStarter(e.name)
         switch(gridType){
@@ -265,6 +268,8 @@ const GenerateLevel = () => {
             case 'molds':molds[e.y][e.x] = '1';isMold = true;break;
             case 'fog':fog[e.y][e.x] = '1';isFog = true;break;
             case 'all-alone':addAllAlone(e);break;
+            case 'VZ': vases.push({ZombieTypeName:e.name.slice(3),Count:1});vaseLines.push(Number(e.x));break
+            case 'VP': vases.push({PlantTypeName:e.name.slice(3),Count:1});vaseLines.push(Number(e.x));break
             case 'wire':tntWires.push(Number(e.x)+1);break;
             case 'Row1':
             case 'Row2':
@@ -276,6 +281,22 @@ const GenerateLevel = () => {
             default: otherGi.push({'GridX':e.x,'GridY':e.y,'TypeName':e.name})
         }
     })
+    if (vases.length > 0) {
+        isVasebreaker = true
+        pushModuleObject("VaseBreaker","VaseBreakerPresetProperties",{
+            VaseGridItemType:'vase',
+            MinColumnIndex:Math.min(...vaseLines),
+            MaxColumnIndex:Math.max(...vaseLines),
+            Vases:vases,
+            NumColoredPlantVases:getSession('NumColoredPlantVases') || 0,
+            NumColoredZombieVases:getSession('NumColoredZombieVases') || 0
+        })
+        modules.push("RTID(VaseBreakerArcade@LevelModules)")
+        removeFromModule('SeedBank')
+        removeFromModule('Mowers')
+        removeFromModule('SunDropper')
+        removeFromModule('NewWaves')
+    }
     if (tntWires.length > 0) {
         const temp = {
             "Speed": 0.5,
@@ -1371,7 +1392,7 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
     const rewardParam = getSession('FirstRewardParam') || 0
     //version
     let level = {
-        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.2.2'}),
+        ...(isPinata ? {"#comment": "Level Of The Day",} : {[`#${name} by ${author}`]: 'NLM v 1.3'}),
         ...(debug && {"Debug mode":true}),
         "Information": {
             Author:author,
@@ -1387,6 +1408,7 @@ case 'toadstool':list[i].NewObjdata.SunProducePerZombie = 25;break;
                     "Description": description,
                     ...(rewardType != 0 && {FirstRewardType:rewardType}),
                     ...(rewardType != 0 && {FirstRewardParam:rewardParam}),
+                    "IsVasebreaker":isVasebreaker,
                     "StageModule": stage ? `RTID(${stage}@${stageModule})` : 'RTID(TutorialStage@LevelModules)',
                     "LevelNumber": 1,
                     "Loot": "RTID(DefaultLoot@LevelModules)",

@@ -48,7 +48,7 @@ const reset = () => {
   sessionStorage.clear()
 
   //version
-  localStorage.setItem('nlm-version','1.2.2')
+  localStorage.setItem('nlm-version','1.3')
   sessionStorage.setItem('fontSize',fontSize)
   window.location.reload()
 }
@@ -82,7 +82,7 @@ export default function App() {
   const [boardTracker, setBoardTracker] = useState([])
   const [selectedBoardItem, setSelectedBoardItem] = useState(null);
   const [headerVisibility,setHeaderVisibility] = useState(true)
-  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.2.2' ? false : <Version/>));
+  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.3' ? false : <Version/>));
   const [fogColor,setFogColor] = useState(JSON.parse(sessionStorage.getItem('fogColor')) || {r:0,g:0,b:0})
   const [showColorPicker, setShowColorPicker] = useState(false);
   const fogFirstRender = useRef(true)
@@ -100,7 +100,7 @@ export default function App() {
 
   useEffect(() => {
   //version
-    localStorage.setItem('nlm-version','1.2.2');
+    localStorage.setItem('nlm-version','1.3');
     localStorage.setItem('has mowers',true);
     sessionStorage.setItem('SunDropper','DefaultSunDropper');
   },[])
@@ -326,6 +326,13 @@ const BoardGroup = ({ group, summary, color }) => {
             <BoardGroup color={'borad-group6'} group={plants.map(e=>`SOS_${e}`)} summary="Endangered plants" />
             <BoardGroup color={'borad-group7'} group={plants.map(e=>`F_${e}`)} summary="Frozen plants" />
             <BoardGroup color={'borad-group8'} group={zombies.objects.map(e=>e.aliases[0]).map(e=>`FZ_${e}`)} summary="Frozen zombies" />
+            <p className="text-gray-500 p-1">Vases positions are hardcoded to be randomized.</p>
+            <p className="text-gray-500 p-1">And there's no workaround for that.</p>
+            <BoardGroup color={'borad-group7'} group={plants.map(e=>`VP_${e}`)} summary="Vase plants" />
+            <BoardGroup color={'borad-group8'} group={zombies.objects.map(e=>e.aliases[0]).map(e=>`VZ_${e}`)} summary="Vase zombies" />
+            <NumberInput min={0} label={'NumColoredPlantVases'}/>
+            <p className="text-gray-500 p-1">This is hardcoded to spawn vase garg.</p>
+            <NumberInput min={0} label={'NumColoredZombieVases'}/>
             <button className="button w-full p-2 text-2xl" onClick={() => localStorage.setItem('board-item','point-1')}>SplinePoints</button>
             <p className="text-gray-500 p-1">pressing it again will reset it to 1</p>
             <hr />
@@ -815,7 +822,7 @@ const handleDrop = (e) => {
     <ReactFlowProvider>
       <div onDragOver={handleDragOver} onDrop={(e) => handleDrop(e)} style={{ width: '100vw', height: '100vh' }} className='overflow-hidden'>
         <header className={`absolute space-x-2 ${headerVisibility ? 'flex' : 'hidden'} z-10 pl-2 py-2 bg-gray-950/70 w-full`}>
-          <h1 className='text-white font-mono'>NLM v1.2</h1>
+          <h1 className='text-white font-mono'>NLM v1.3</h1>
           <input
             type="file"
             accept=".json"
@@ -832,7 +839,6 @@ const handleDrop = (e) => {
           <button className='px-0.5 button' onClick={() => downloadJson([storageToObject(localStorage),storageToObject(sessionStorage)],`${levelName || 'blank'}Data`)}>Export Data<span className='block text-xs text-center opacity-70'></span></button>
           <button className='px-0.5 button' onClick={() => document.getElementById('json-upload').click()}>Import Data<span className='block text-xs text-center opacity-70'></span></button>
           <button className='px-0.5 button' onClick={() => setChildModal(<NodesLayout/>)}>Page layout</button>
-          <button className='px-0.5 button' onClick={() => setChildModal(<Campaign/>)}>Campaign levels</button>
           <button className='px-0.5 bg-red-600 hover:bg-red-800 transition-colors rounded text-white cursor-pointer' onClick={reset}>clear data<span className='block text-xs text-center opacity-70'>F7</span></button>
         </header>
         

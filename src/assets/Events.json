@@ -577,6 +577,28 @@
       "Events": ["RTID(Deadline@CurrentLevel)"]
     }
   },
+  "FogEvent":{
+      "aliases": [
+          "Fog"
+      ],
+      "objclass": "WaveFogEventProperties",
+        "objdata": {
+          "Fogs": [
+            {
+              "ModifyingType": "replace",
+              "Color": { "r": 255, "g": 255, "b": 255 },
+              "BasePosition": { "x": 0, "y": 0 },
+              "FogMatrix": [
+                  "000000000",
+                  "000000000",
+                  "000000000",
+                  "000000000",
+                  "000000000"
+              ]
+            }
+          ]
+        }
+  },
   "Path":{
     "#Comment":[
       "The only purpose of this ambush is to copy the walking route and put it into the desired zombie's props",
