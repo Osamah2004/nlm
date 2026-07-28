@@ -5098,7 +5098,31 @@
       "Disabled": "DarkMatterDragonfruit",
       "Plant": "DarkMatterDragonfruit"
     }
-  }
+  },
+  {
+      "ID": 208,
+      "_CARDSPRITENAME": "mirrornut",
+      "CODENAME": "mirrornut",
+      "COSTUME": 0,
+      "OBTAINWORLD": "market",
+      "BOOST": 3,
+      "ALMANAC": "RTID(mirrornut@PlantAlmanac)",
+      "PROPS": "RTID(mirrornut@PlantProps)",
+      "NAME": {
+        "en": "Mirror-nut",
+        "zh": "镜面坚果"
+      },
+      "TYPE": [
+        "plant"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "dirt"
+      },
+      "RES": {
+        "Disabled": "MirrorNut",
+        "Plant": "MirrorNut"
+      }
+    }
   ],
   "SEEDCHOOSERDEFAULTORDER": [
     "sunflower",
@@ -5482,6 +5506,7 @@
     "peacommando",
     "poisonpeashooter",
     "wasabiwhip",
-    "darkmatterdragonfruit"
+    "darkmatterdragonfruit",
+    "mirrornut"
   ]
 }

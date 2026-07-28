@@ -5722,6 +5722,33 @@
       "Plantfood": false
     }
   }
+},
+{
+  "objclass": "PlantProperties",
+  "aliases": [
+    "mirrornut"
+  ],
+  "objdata": {
+    "CallsMirrorNutsOnDamaged": true,
+    "MaxShots": 4,
+    "ShieldLifespan": 15,
+    "AccumulatedDamagePerShot": 2000,
+    "ShootInterval": 0.3,
+    "DeathRayDamage": 550,
+    "PeaType": "magnifying_grass",
+    "MintDamageFactor": 3,
+    "Cooldown": 20,
+    "CooldownFrom": 0.5,
+    "SunCost": 150,
+    "BeghouledCost": 1000,
+    "Toughness": 4000,
+    "Family": "Defence",
+    "MintBoostedProps": {
+      "ResistanceMult": 3,
+      "SpeedMult": 1,
+      "Plantfood": true
+    }
+  }
 }
 ]
 }

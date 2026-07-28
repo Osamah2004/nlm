@@ -3504,6 +3504,16 @@
     "PlantBasedOn": "darkmatterdragonfruit",
     "Properties": "RTID(darkmatterdragonfruit@PlantProps)"
   }
+},
+{
+  "objclass": "PlantType",
+  "aliases": [
+    "mirrornut"
+  ],
+  "objdata": {
+    "PlantBasedOn": "mirrornut",
+    "Properties": "RTID(mirrornut@PlantProps)"
+  }
 }
 ]
 }
