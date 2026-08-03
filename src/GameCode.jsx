@@ -2,17 +2,51 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import JSZip from 'jszip';
 import Editor from '@monaco-editor/react';
+import ArmorFeatures from './assets/ArmorFeatures.json'
+import ArmorProps from './assets/ArmorProps.json'
+import ArmorTypes from './assets/ArmorTypes.json'
+import BoardGridMaps from './assets/BoardGridMaps.json'
+import DinosaurFeatures from './assets/DinosaurFeatures.json'
+import DinosaurProps from './assets/DinosaurProps.json'
+import DinosaurTypes from './assets/DinosaurTypes.json'
+import GridItemTypes from './assets/GridItemTypes.json'
+import LawnFeatures from './assets/LawnFeatures.json'
+import LevelModules from './assets/LevelModules.json'
+import NarrativeList from './assets/NarrativeList.json'
+import PlantAlmanac from './assets/PlantAlmanac.json'
+import PlantFeatures from './assets/PlantFeatures.json'
+import PlantProps from './assets/PlantProps.json'
+import PlantTypes from './assets/PlantTypes.json'
+import PortalProps from './assets/PortalProps.json'
+import PortalTypes from './assets/PortalTypes.json'
+import ProjectileFeatures from './assets/ProjectileFeatures.json'
+import ProjectileProps from './assets/ProjectileProps.json'
+import ProjectileTypes from './assets/ProjectileTypes.json'
+import PropertySheets from './assets/PropertySheets.json'
+import RectangleProps from './assets/RectangleProps.json'
+import StoreCommodityFeatures from './assets/StoreCommodityFeatures.json'
+import TileLiquidProps from './assets/TileLiquidProps.json'
+import TileLiquidsFeatures from './assets/TileLiquidsFeatures.json'
+import TileProps from './assets/TileProps.json'
+import TilesFeatures from './assets/TilesFeatures.json'
+import TombstoneProps from './assets/TombstoneProps.json'
+import TombstonesFeatures from './assets/TombstonesFeatures.json'
+import TrophyFeatures from './assets/TrophyFeatures.json'
+import UpgradeFeatures from './assets/UpgradeFeatures.json'
+import ZombieAlmanac from './assets/ZombieAlmanac.json'
+import ZombieFeatures from './assets/ZombieFeatures.json'
+import ZombieProps from './assets/ZombieProps.json'
+import ZombieTypes from './assets/ZombieTypes.json'
 
 const GameCode = () => {
-  const [jsonFiles, setJsonFiles] = useState([]);
+  const jsonFiles = [ArmorFeatures,ArmorProps,ArmorTypes,BoardGridMaps,DinosaurFeatures,DinosaurProps,DinosaurTypes,GridItemTypes,LawnFeatures,LevelModules,NarrativeList,PlantAlmanac,PlantFeatures,PlantProps,PlantTypes,PortalProps,PortalTypes,ProjectileFeatures,ProjectileProps,ProjectileTypes,PropertySheets,RectangleProps,StoreCommodityFeatures,TileLiquidProps,TileLiquidsFeatures,TileProps,TilesFeatures,TombstoneProps,TombstonesFeatures,TrophyFeatures,UpgradeFeatures,ZombieAlmanac,ZombieFeatures,ZombieProps,ZombieTypes]
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileContent, setFileContent] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const editorRef = useRef(null);
 
-  // Your list of JSON files
-  const FILE_LIST = [
+const FILE_LIST = [
     "ArmorFeatures.json",
     "ArmorProps.json",
     "ArmorTypes.json",
@@ -20,7 +54,6 @@ const GameCode = () => {
     "DinosaurFeatures.json",
     "DinosaurProps.json",
     "DinosaurTypes.json",
-    "files.json",
     "GridItemTypes.json",
     "LawnFeatures.json",
     "LevelModules.json",
@@ -51,47 +84,17 @@ const GameCode = () => {
     "ZombieTypes.json"
   ];
 
-  // Set the file list immediately when component mounts
-  useEffect(() => {
-    setJsonFiles(FILE_LIST);
-  }, []);
-
   // Handle editor mount
   const handleEditorDidMount = (editor) => {
     editorRef.current = editor;
   };
 
   // Fetch selected file content
-  const fetchFileContent = useCallback(async (filename) => {
-    try {
-      setLoading(true);
-      setError(null);
-      
-      // Try to fetch from root public folder first
-      let response = await fetch(`/${filename}`);
-      
-      // If that fails, try /data/ folder
-      if (!response.ok) {
-        response = await fetch(`/data/${filename}`);
-      }
-      
-      if (!response.ok) throw new Error('Failed to fetch file');
-      
-      const content = await response.json();
-      setFileContent(content);
-      setSelectedFile(filename);
-    } catch (err) {
-      console.error('Error fetching file:', err);
-      setError(`Failed to load ${filename}`);
-      setFileContent(null);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+  const fetchFileContent = file => setFileContent(file)
 
   // Download single file
-  const downloadSingleFile = useCallback(() => {
-    if (!selectedFile || !fileContent) return;
+  const downloadSingleFile = () => {
+    if (!fileContent) return;
 
     const blob = new Blob([JSON.stringify(fileContent, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -102,48 +105,23 @@ const GameCode = () => {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  }, [selectedFile, fileContent]);
+  }
 
   // Download all files as zip
   const downloadAllAsZip = useCallback(async () => {
     try {
-      setLoading(true);
-      setError(null);
       const zip = new JSZip();
-      let failedFiles = [];
-
       // Fetch and add each JSON file to zip
-      for (const filename of jsonFiles) {
-        try {
-          // Try root folder first
-          let response = await fetch(`/${filename}`);
-          
-          // Try /data/ folder if root fails
-          if (!response.ok) {
-            response = await fetch(`/data/${filename}`);
-          }
-          
-          if (response.ok) {
-            const content = await response.json();
-            zip.file(filename, JSON.stringify(content, null, 2));
-          } else {
-            failedFiles.push(filename);
-          }
-        } catch (err) {
-          failedFiles.push(filename);
-        }
-      }
-      
-      if (failedFiles.length > 0) {
-        console.warn('Failed to fetch:', failedFiles);
-      }
+      FILE_LIST.forEach((filename,index) => {
+        zip.file(filename,JSON.stringify(jsonFiles[index],null,2))
+      })
 
       // Generate and download zip
       const zipBlob = await zip.generateAsync({ type: 'blob' });
       const url = URL.createObjectURL(zipBlob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'all-json-files.zip';
+      a.download = 'GE_JSONs.zip';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -169,14 +147,17 @@ const GameCode = () => {
       <div className="flex flex-1 min-h-0">
         {/* Left column - File list */}
         <div className="w-1/3 border-r overflow-y-auto p-2">
-          {jsonFiles.length === 0 ? (
+          {FILE_LIST.length === 0 ? (
             <p className="text-gray-500 px-2">No JSON files found</p>
           ) : (
             <ul className="space-y-1">
-              {jsonFiles.map((filename) => (
+              {FILE_LIST.map((filename,index) => (
                 <li key={filename}>
                   <button
-                    onClick={() => fetchFileContent(filename)}
+                    onClick={() => {
+                        fetchFileContent(jsonFiles[index]);
+                        setSelectedFile(filename)
+                    }}
                     className={`button w-full p-1 text-lg ${
                       selectedFile === filename
                         ? 'gray'
@@ -234,7 +215,7 @@ const GameCode = () => {
       <div className="bg-gray-100 px-4 py-3 border-t rounded-b-lg flex justify-end space-x-3">
         <button
           onClick={downloadSingleFile}
-          disabled={!selectedFile || loading}
+          disabled={!fileContent}
           className={`px-4 text-lg button`}
         >
           Download {selectedFile || 'selected file'}

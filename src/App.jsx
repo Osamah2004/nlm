@@ -48,7 +48,7 @@ const reset = () => {
   sessionStorage.clear()
 
   //version
-  localStorage.setItem('nlm-version','1.3')
+  localStorage.setItem('nlm-version','1.3.1')
   sessionStorage.setItem('fontSize',fontSize)
   window.location.reload()
 }
@@ -82,7 +82,7 @@ export default function App() {
   const [boardTracker, setBoardTracker] = useState([])
   const [selectedBoardItem, setSelectedBoardItem] = useState(null);
   const [headerVisibility,setHeaderVisibility] = useState(true)
-  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.3' ? false : <Version/>));
+  const [childModal, setChildModal] = useState((localStorage.getItem('nlm-version') == '1.3.1' ? false : <Version/>));
   const [fogColor,setFogColor] = useState(JSON.parse(sessionStorage.getItem('fogColor')) || {r:0,g:0,b:0})
   const [showColorPicker, setShowColorPicker] = useState(false);
   const fogFirstRender = useRef(true)
@@ -100,7 +100,7 @@ export default function App() {
 
   useEffect(() => {
   //version
-    localStorage.setItem('nlm-version','1.3');
+    localStorage.setItem('nlm-version','1.3.1');
     localStorage.setItem('has mowers',true);
     sessionStorage.setItem('SunDropper','DefaultSunDropper');
   },[])
@@ -126,7 +126,7 @@ export default function App() {
     )
   }
   // Function to generate wave nodes based on count and interval
-const BoardGroup = ({ group, summary, color }) => {
+const BoardGroup = ({ group, summary }) => {
   const [searchTerm, setSearchTerm] = useState('')
   
   const filteredGroup = useMemo(() => {

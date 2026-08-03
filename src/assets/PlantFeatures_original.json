@@ -324,7 +324,7 @@
       "CODENAME": "pumpkin",
       "OBTAINWORLD": "epic",
       "BOOST": 2,
-      "COSTUME": 0,
+      "COSTUME": 1,
       "ALMANAC": "RTID(pumpkin@PlantAlmanac)",
       "PROPS": "RTID(pumpkin@PlantProps)",
       "NAME": {
@@ -346,7 +346,7 @@
       "ID": 14,
       "_CARDSPRITENAME": "peavine",
       "CODENAME": "pvine",
-      "COSTUME": 0,
+      "COSTUME": 1,
       "OBTAINWORLD": "epic",
       "BOOST": 2,
       "ALMANAC": "RTID(pvine@PlantAlmanac)",
@@ -370,7 +370,7 @@
       "ID": 15,
       "_CARDSPRITENAME": "floawerPot",
       "CODENAME": "floawerPot",
-      "OBTAINWORLD": "epic",
+      "OBTAINWORLD": "market",
       "BOOST": 2,
       "COSTUME": 0,
       "ALMANAC": "RTID(floawerPot@PlantAlmanac)",
@@ -539,7 +539,7 @@
       "ID": 22,
       "_CARDSPRITENAME": "shootingstarfruit",
       "CODENAME": "shootingstarfruit",
-      "OBTAINWORLD": "market",
+      "OBTAINWORLD": "lod",
       "BOOST": 2,
       "COSTUME": 0,
       "ALMANAC": "RTID(shootingstarfruit@PlantAlmanac)",
@@ -1126,7 +1126,7 @@
       "ID": 46,
       "_CARDSPRITENAME": "doomshroom",
       "CODENAME": "doomshroom",
-      "COSTUME": 1,
+      "COSTUME": 2,
       "OBTAINWORLD": "epic",
       "BOOST": 0,
       "ALMANAC": "RTID(doomshroom@PlantAlmanac)",
@@ -1656,7 +1656,8 @@
         "zh": "倭瓜"
       },
       "TYPE": [
-        "plant"
+        "plant",
+        "losingPlant"
       ],
       "ZENGARDEN": {
         "PlantPlace": "dirt"
@@ -2035,7 +2036,7 @@
       "_CARDSPRITENAME": "imitator",
       "CODENAME": "imitater",
       "COSTUME": 0,
-      "OBTAINWORLD": "market",
+      "OBTAINWORLD": "lod",
       "BOOST": 0,
       "ALMANAC": "RTID(imitater@PlantAlmanac)",
       "PROPS": "RTID(imitater@PlantProps)",
@@ -2044,6 +2045,7 @@
         "zh": "模仿者"
       },
       "TYPE": [
+        "imitater",
         "any"
       ],
       "ZENGARDEN": {
@@ -3313,7 +3315,7 @@
       ],
       "ZENGARDEN": {
         "FixedWeight": 1,
-        "PlantPlace": "solid"
+        "PlantPlace": "dirt"
       },
       "RES": {
         "Disabled": "GoldLeaf",
@@ -4263,7 +4265,7 @@
     },
     {
       "ID": 171,
-      "COSTUME": 0,
+      "COSTUME": 1,
       "_CARDSPRITENAME": "pyrevine",
       "CODENAME": "pyrevine",
       "OBTAINWORLD": "market",
@@ -4984,7 +4986,7 @@
       "_CARDSPRITENAME": "snappea",
       "CODENAME": "snappea",
       "COSTUME": 1,
-      "OBTAINWORLD": "market",
+      "OBTAINWORLD": "lod",
       "BOOST": 2,
       "ALMANAC": "RTID(snappea@PlantAlmanac)",
       "PROPS": "RTID(snappea@PlantProps)",
@@ -5001,6 +5003,248 @@
       "RES": {
         "Disabled": "SnapPea",
         "Plant": "SnapPea"
+      }
+    },
+    {
+      "ID": 199,
+      "_CARDSPRITENAME": "asparagus",
+      "CODENAME": "asparagus",
+      "COSTUME": 1,
+      "OBTAINWORLD": "market",
+      "BOOST": 2,
+      "ALMANAC": "RTID(asparagus@PlantAlmanac)",
+      "PROPS": "RTID(asparagus@PlantProps)",
+      "NAME": {
+        "en": "Asparajet",
+        "zh": "芦笋战机"
+      },
+      "TYPE": [
+        "fly"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "fly"
+      },
+      "RES": {
+        "Disabled": "Asparagus",
+        "Plant": "Asparagus"
+      }
+    },
+    {
+      "ID": 200,
+      "_CARDSPRITENAME": "pineapple",
+      "CODENAME": "pineapple",
+      "COSTUME": 1,
+      "OBTAINWORLD": "sky",
+      "BOOST": 2,
+      "ALMANAC": "RTID(pineapple@PlantAlmanac)",
+      "PROPS": "RTID(pineapple@PlantProps)",
+      "NAME": {
+        "en": "Spinapple",
+        "zh": "旋转菠萝"
+      },
+      "TYPE": [
+        "fly"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "fly"
+      },
+      "RES": {
+        "Disabled": "Pineapple",
+        "Plant": "Pineapple"
+      }
+    },
+    {
+      "ID": 201,
+      "_CARDSPRITENAME": "anthurium",
+      "CODENAME": "anthurium",
+      "COSTUME": 1,
+      "OBTAINWORLD": "sky",
+      "BOOST": 2,
+      "ALMANAC": "RTID(anthurium@PlantAlmanac)",
+      "PROPS": "RTID(anthurium@PlantProps)",
+      "NAME": {
+        "en": "Ampereum",
+        "zh": "电离红掌"
+      },
+      "TYPE": [
+        "plant"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "dirt"
+      },
+      "RES": {
+        "Disabled": "Anthurium",
+        "Plant": "Anthurium"
+      }
+    },
+    {
+      "ID": 202,
+      "_CARDSPRITENAME": "bulbkekengi",
+      "CODENAME": "bulbkekengi",
+      "COSTUME": 1,
+      "OBTAINWORLD": "sky",
+      "BOOST": 2,
+      "ALMANAC": "RTID(bulbkekengi@PlantAlmanac)",
+      "PROPS": "RTID(bulbkekengi@PlantProps)",
+      "NAME": {
+        "en": "Bulbkekengi",
+        "zh": "灯笼草"
+      },
+      "TYPE": [
+        "fly"
+      ],
+      "ZENGARDEN": {
+        "FixedWeight": 1,
+        "PlantPlace": "fly"
+      },
+      "RES": {
+        "Disabled": "Bulbkekengi",
+        "Plant": "Bulbkekengi"
+      }
+    },
+    {
+      "ID": 203,
+      "_CARDSPRITENAME": "loquat",
+      "CODENAME": "loquat",
+      "COSTUME": 0,
+      "OBTAINWORLD": "sky",
+      "BOOST": 0,
+      "ALMANAC": "RTID(loquat@PlantAlmanac)",
+      "PROPS": "RTID(loquat@PlantProps)",
+      "NAME": {
+        "en": "Loquanado",
+        "zh": "漩涡枇杷"
+      },
+      "TYPE": [
+        "fly",
+        "losingPlant"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "fly"
+      },
+      "RES": {
+        "Disabled": "Loquat",
+        "Plant": "Loquat"
+      }
+    },
+    {
+      "ID": 204,
+      "_CARDSPRITENAME": "peacommando",
+      "CODENAME": "peacommando",
+      "COSTUME": 0,
+      "OBTAINWORLD": "sky",
+      "BOOST": 3,
+      "ALMANAC": "RTID(peacommando@PlantAlmanac)",
+      "PROPS": "RTID(peacommando@PlantProps)",
+      "NAME": {
+        "en": "Pea Commando",
+        "zh": "豌豆突击队"
+      },
+      "TYPE": [
+        "fly"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "fly"
+      },
+      "RES": {
+        "Disabled": "PeaCommando",
+        "Plant": "PeaCommando"
+      }
+    },
+    {
+      "ID": 205,
+      "_CARDSPRITENAME": "wasabiwhip",
+      "CODENAME": "wasabiwhip",
+      "COSTUME": 1,
+      "OBTAINWORLD": "market",
+      "BOOST": 3,
+      "ALMANAC": "RTID(wasabiwhip@PlantAlmanac)",
+      "PROPS": "RTID(wasabiwhip@PlantProps)",
+      "NAME": {
+        "en": "Wasabi Whip",
+        "zh": "炙热山葵"
+      },
+      "TYPE": [
+        "plant"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "solid"
+      },
+      "RES": {
+        "Disabled": "WasabiWhip",
+        "Plant": "WasabiWhip"
+      }
+    },
+    {
+      "ID": 206,
+      "_CARDSPRITENAME": "goopeashooter",
+      "CODENAME": "poisonpeashooter",
+      "COSTUME": 1,
+      "OBTAINWORLD": "epic",
+      "BOOST": 3,
+      "ALMANAC": "RTID(poisonpeashooter@PlantAlmanac)",
+      "PROPS": "RTID(poisonpeashooter@PlantProps)",
+      "NAME": {
+        "en": "Goo Peashooter",
+        "zh": "黏毒豌豆"
+      },
+      "TYPE": [
+        "plant"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "dirt"
+      },
+      "RES": {
+        "Disabled": "GooPeashooter",
+        "Plant": "GooPeashooter"
+      }
+    },
+    {
+      "ID": 207,
+      "_CARDSPRITENAME": "darkmatterdragonfruit",
+      "CODENAME": "darkmatterdragonfruit",
+      "COSTUME": 0,
+      "OBTAINWORLD": "lod",
+      "BOOST": 3,
+      "ALMANAC": "RTID(darkmatterdragonfruit@PlantAlmanac)",
+      "PROPS": "RTID(darkmatterdragonfruit@PlantProps)",
+      "NAME": {
+        "en": "Dark Matter Dragonfruit",
+        "zh": "暗物质火龙果"
+      },
+      "TYPE": [
+        "plant"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "dirt"
+      },
+      "RES": {
+        "Disabled": "DarkMatterDragonfruit",
+        "Plant": "DarkMatterDragonfruit"
+      }
+    },
+    {
+      "ID": 208,
+      "_CARDSPRITENAME": "mirrornut",
+      "CODENAME": "mirrornut",
+      "COSTUME": 0,
+      "OBTAINWORLD": "market",
+      "BOOST": 3,
+      "ALMANAC": "RTID(mirrornut@PlantAlmanac)",
+      "PROPS": "RTID(mirrornut@PlantProps)",
+      "NAME": {
+        "en": "Mirror-nut",
+        "zh": "镜面坚果"
+      },
+      "TYPE": [
+        "plant"
+      ],
+      "ZENGARDEN": {
+        "PlantPlace": "dirt"
+      },
+      "RES": {
+        "Disabled": "MirrorNut",
+        "Plant": "MirrorNut"
       }
     }
   ],
@@ -5054,6 +5298,7 @@
     "magnifyinggrass",
     "powerplant",
     "applemortar",
+    "wasabiwhip",
     "solartomato",
     "pumpkin",
     "hollyknight",
@@ -5064,6 +5309,7 @@
     "fumeshroom",
     "sunbean",
     "peanut",
+    "poisonpeashooter",
     "magnetshroom",
     "scaredyshroom",
     "plantern",
@@ -5078,6 +5324,7 @@
     "banana",
     "seashroom",
     "chomper",
+    "snappea",
     "missiletoe",
     "seashooter",
     "ghostpepper",
@@ -5107,9 +5354,6 @@
     "zoybeanpod",
     "aloe",
     "shinevine",
-    "skyshooter",
-    "moonbean",
-    "floawerPot",
     "firegourd",
     "snowpea",
     "bambooshoot",
@@ -5132,6 +5376,7 @@
     "intensivecarrot",
     "caulipower",
     "bloominghearts",
+    "mirrornut",
     "grapeshot",
     "primalpeashooter",
     "primalwallnut",
@@ -5142,6 +5387,15 @@
     "shrinkingviolet",
     "meteorflower",
     "explodeonut",
+    "skyshooter",
+    "pineapple",
+    "moonbean",
+    "anthurium",
+    "asparagus",
+    "loquat",
+    "bulbkekengi",
+    "peacommando",
+    "floawerPot",
     "moonflower",
     "nightshade",
     "shadowshroom",
@@ -5155,8 +5409,8 @@
     "gloomvine",
     "gloomshroom",
     "umbrellaleaf",
-    "snappea",
     "cranjelly",
+    "darkmatterdragonfruit",
     "appeasemint",
     "enlightenmint",
     "reinforcemint",
@@ -5241,6 +5495,7 @@
     "starfruit",
     "pinkstarfruit",
     "shootingstarfruit",
+    "wasabiwhip",
     "applemortar",
     "solartomato",
     "pumpkin",
@@ -5256,6 +5511,7 @@
     "scaredyshroom",
     "peanut",
     "hypnoshroom",
+    "poisonpeashooter",
     "plantern",
     "vamporcini",
     "glaciershroom",
@@ -5276,6 +5532,7 @@
     "ghostpepper",
     "parsnip",
     "icebloom",
+    "snappea",
     "tool_projectile_bowlingbulb1",
     "tool_projectile_bowlingbulb2",
     "tool_projectile_bowlingbulb3",
@@ -5323,9 +5580,6 @@
     "bamboobusket",
     "atombomb_seedling",
     "atombomb",
-    "skyshooter",
-    "moonbean",
-    "floawerPot",
     "phatbeet",
     "celerystalker",
     "thymewarp",
@@ -5337,6 +5591,7 @@
     "caulipower",
     "strawburst",
     "bloominghearts",
+    "mirrornut",
     "primalpeashooter",
     "primalwallnut",
     "perfumeshroom",
@@ -5346,6 +5601,15 @@
     "coldsnapdragon",
     "explodeonut",
     "meteorflower",
+    "skyshooter",
+    "pineapple",
+    "moonbean",
+    "anthurium",
+    "loquat",
+    "bulbkekengi",
+    "peacommando",
+    "asparagus",
+    "floawerPot",
     "moonflower",
     "nightshade",
     "shadowshroom",
@@ -5360,8 +5624,8 @@
     "shadowpeashooter",
     "noctarine",
     "gloomvine",
-    "snappea",
     "cranjelly",
+    "darkmatterdragonfruit",
     "appeasemint",
     "enlightenmint",
     "reinforcemint",

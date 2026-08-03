@@ -34,6 +34,114 @@
     {
       "objclass": "ProjectileProperties",
       "aliases": [
+        "sky_battleplane_bullet"
+      ],
+      "objdata": {
+        "Damage": 30,
+        "DamageToShip": 20,
+        "Size": {
+          "w": 16,
+          "h": 16
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "airraid_0"
+      ],
+      "objdata": {
+        "Damage": 10,
+        "DamageToShip": 20,
+        "Size": {
+          "w": 4,
+          "h": 4
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "airraid_1"
+      ],
+      "objdata": {
+        "Damage": 20,
+        "DamageToShip": 20,
+        "Size": {
+          "w": 4,
+          "h": 4
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "airraid_2"
+      ],
+      "objdata": {
+        "PositiveCharge": 0,
+        "NegativeCharge": 0,
+        "Damage": 30,
+        "DamageToShip": 30,
+        "Size": {
+          "w": 4,
+          "h": 4
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "darkmatter"
+      ],
+      "objdata": {
+        "IgnoredBy3SectionStaff": true,
+        "CannotBeReversedByJester": true,
+        "Damage": 40,
+        "SplashDamage": [
+          {
+            "Damage": 80,
+            "Range": {
+              "w": 3,
+              "h": 3
+            }
+          }
+        ],
+        "Size": {
+          "w": 30,
+          "h": 30
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "darkmatter_shadow"
+      ],
+      "objdata": {
+        "IgnoredBy3SectionStaff": true,
+        "CannotBeReversedByJester": true,
+        "Damage": 40,
+        "DarkMatterDuration": 10,
+        "SplashDamage": [
+          {
+            "DarkMatterDuration": 10,
+            "Damage": 80,
+            "Range": {
+              "w": 3,
+              "h": 3
+            }
+          }
+        ],
+        "Size": {
+          "w": 30,
+          "h": 30
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
         "pea"
       ],
       "objdata": {
@@ -515,7 +623,176 @@
         },
         "SplashDamage": [
           {
-            "Damage": 150,
+            "Damage": 75,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando_flame_yellow"
+      ],
+      "objdata": {
+        "Damage": 150,
+        "BlueIgnitedType": "pea_commando_flame_blue",
+        "SuppressArmorImpactSound": true,
+        "SuppressZombieImpactSound": true,
+        "MeltsIceTile": true,
+        "DamageScale": 2,
+        "DamageType": "fire",
+        "Size": {
+          "w": 20,
+          "h": 20
+        },
+        "SplashDamage": [
+          {
+            "Damage": 75,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando_flame_blue"
+      ],
+      "objdata": {
+        "Damage": 150,
+        "SuppressArmorImpactSound": true,
+        "SuppressZombieImpactSound": true,
+        "MeltsIceTile": true,
+        "DamageScale": 3,
+        "DamageType": "fire",
+        "Size": {
+          "w": 20,
+          "h": 20
+        },
+        "SplashDamage": [
+          {
+            "Damage": 75,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando1_flame_yellow"
+      ],
+      "objdata": {
+        "Damage": 450,
+        "SpeedMult": 1.5,
+        "BlueIgnitedType": "pea_commando1_flame_blue",
+        "SuppressArmorImpactSound": true,
+        "SuppressZombieImpactSound": true,
+        "MeltsIceTile": true,
+        "DamageScale": 2,
+        "DamageType": "fire",
+        "Size": {
+          "w": 20,
+          "h": 20
+        },
+        "SplashDamage": [
+          {
+            "Damage": 225,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando1_flame_blue"
+      ],
+      "objdata": {
+        "Damage": 450,
+        "SpeedMult": 1.5,
+        "SuppressArmorImpactSound": true,
+        "SuppressZombieImpactSound": true,
+        "MeltsIceTile": true,
+        "DamageScale": 3,
+        "DamageType": "fire",
+        "Size": {
+          "w": 20,
+          "h": 20
+        },
+        "SplashDamage": [
+          {
+            "Damage": 225,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando2_flame_yellow"
+      ],
+      "objdata": {
+        "Damage": 750,
+        "SpeedMult": 2,
+        "BlueIgnitedType": "pea_commando2_flame_blue",
+        "SuppressArmorImpactSound": true,
+        "SuppressZombieImpactSound": true,
+        "MeltsIceTile": true,
+        "DamageScale": 2,
+        "DamageType": "fire",
+        "Size": {
+          "w": 20,
+          "h": 20
+        },
+        "SplashDamage": [
+          {
+            "Damage": 375,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando2_flame_blue"
+      ],
+      "objdata": {
+        "Damage": 750,
+        "SpeedMult": 2,
+        "SuppressArmorImpactSound": true,
+        "SuppressZombieImpactSound": true,
+        "MeltsIceTile": true,
+        "DamageScale": 3,
+        "DamageType": "fire",
+        "Size": {
+          "w": 20,
+          "h": 20
+        },
+        "SplashDamage": [
+          {
+            "Damage": 375,
             "Range": {
               "w": 1,
               "h": 1
@@ -717,6 +994,90 @@
         "Size": {
           "w": 16,
           "h": 16
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_goo"
+      ],
+      "objdata": {
+        "Damage": 30,
+        "Size": {
+          "w": 16,
+          "h": 16
+        },
+        "PoisonStacked": {
+          "DPS": 10,
+          "Duration": 5
+        },
+        "ZombieSpeedStacked": {
+          "SpeedMult": 0.95,
+          "Duration": 5
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_goo1"
+      ],
+      "objdata": {
+        "Damage": 90,
+        "SpeedMult": 1.5,
+        "Size": {
+          "w": 16,
+          "h": 16
+        },
+        "PoisonStacked": {
+          "DPS": 30,
+          "Duration": 5
+        },
+        "ZombieSpeedStacked": {
+          "SpeedMult": 0.9,
+          "Duration": 5
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_goo2"
+      ],
+      "objdata": {
+        "Damage": 150,
+        "SpeedMult": 2,
+        "Size": {
+          "w": 16,
+          "h": 16
+        },
+        "PoisonStacked": {
+          "DPS": 50,
+          "Duration": 5
+        },
+        "ZombieSpeedStacked": {
+          "SpeedMult": 0.85,
+          "Duration": 5
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_goo_pf"
+      ],
+      "objdata": {
+        "Damage": 200,
+        "TileLiquidType": "goo",
+        "LeapBackDistance": 2,
+        "Size": {
+          "w": 160,
+          "h": 160
+        },
+        "Poison": {
+          "DPS": 50,
+          "Duration": 5
         }
       }
     },
@@ -2961,7 +3322,7 @@
           {
             "Damage": 50,
             "Range": {
-              "w": 1,
+              "w": 2,
               "h": 1
             }
           }
@@ -2981,9 +3342,9 @@
         "Damage": 150,
         "SplashDamage": [
           {
-            "Damage": 50,
+            "Damage": 150,
             "Range": {
-              "w": 1,
+              "w": 2,
               "h": 1
             }
           }
@@ -3003,9 +3364,9 @@
         "Damage": 250,
         "SplashDamage": [
           {
-            "Damage": 50,
+            "Damage": 250,
             "Range": {
-              "w": 1,
+              "w": 2,
               "h": 1
             }
           }
@@ -3049,7 +3410,7 @@
           {
             "Damage": 25,
             "Range": {
-              "w": 1,
+              "w": 2,
               "h": 1
             }
           }
@@ -3738,6 +4099,7 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
+        "CannotInterruptOtherKnockback": true,
         "KnockbackDistance": 0.05,
         "Damage": 20,
         "YellowIgnitedType": "pea_sky_flame_yellow",
@@ -3764,14 +4126,15 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
-        "KnockbackDistance": 0.1,
+        "CannotInterruptOtherKnockback": true,
+        "KnockbackDistance": 0.15,
         "SpeedMult": 1.5,
         "Damage": 60,
         "YellowIgnitedType": "pea_sky1_flame_yellow",
         "BlueIgnitedType": "pea_sky1_flame_blue",
         "SplashDamage": [
           {
-            "KnockbackDistance": 0.1,
+            "KnockbackDistance": 0.15,
             "Range": {
               "w": 0.5,
               "h": 1
@@ -3791,14 +4154,15 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
-        "KnockbackDistance": 0.15,
+        "CannotInterruptOtherKnockback": true,
+        "KnockbackDistance": 0.25,
         "SpeedMult": 2,
         "Damage": 100,
         "YellowIgnitedType": "pea_sky2_flame_yellow",
         "BlueIgnitedType": "pea_sky2_flame_blue",
         "SplashDamage": [
           {
-            "KnockbackDistance": 0.15,
+            "KnockbackDistance": 0.25,
             "Range": {
               "w": 0.5,
               "h": 1
@@ -3818,6 +4182,7 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
+        "CannotInterruptOtherKnockback": true,
         "Damage": 20,
         "BlueIgnitedType": "pea_sky_flame_blue",
         "SuppressArmorImpactSound": true,
@@ -3848,6 +4213,7 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
+        "CannotInterruptOtherKnockback": true,
         "SpeedMult": 1.5,
         "Damage": 60,
         "BlueIgnitedType": "pea_sky1_flame_blue",
@@ -3856,10 +4222,10 @@
         "MeltsIceTile": true,
         "DamageScale": 2,
         "DamageType": "fire",
-        "KnockbackDistance": 0.05,
+        "KnockbackDistance": 0.15,
         "SplashDamage": [
           {
-            "KnockbackDistance": 0.1,
+            "KnockbackDistance": 0.15,
             "Range": {
               "w": 0.5,
               "h": 1
@@ -3879,6 +4245,7 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
+        "CannotInterruptOtherKnockback": true,
         "SpeedMult": 2,
         "Damage": 100,
         "BlueIgnitedType": "pea_sky2_flame_blue",
@@ -3887,10 +4254,10 @@
         "MeltsIceTile": true,
         "DamageScale": 2,
         "DamageType": "fire",
-        "KnockbackDistance": 0.05,
+        "KnockbackDistance": 0.25,
         "SplashDamage": [
           {
-            "KnockbackDistance": 0.15,
+            "KnockbackDistance": 0.25,
             "Range": {
               "w": 0.5,
               "h": 1
@@ -3910,6 +4277,7 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
+        "CannotInterruptOtherKnockback": true,
         "Damage": 20,
         "SuppressArmorImpactSound": true,
         "SuppressZombieImpactSound": true,
@@ -3939,6 +4307,7 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
+        "CannotInterruptOtherKnockback": true,
         "SpeedMult": 1.5,
         "Damage": 60,
         "SuppressArmorImpactSound": true,
@@ -3946,10 +4315,10 @@
         "MeltsIceTile": true,
         "DamageScale": 3,
         "DamageType": "fire",
-        "KnockbackDistance": 0.05,
+        "KnockbackDistance": 0.15,
         "SplashDamage": [
           {
-            "KnockbackDistance": 0.1,
+            "KnockbackDistance": 0.15,
             "Range": {
               "w": 0.5,
               "h": 1
@@ -3969,6 +4338,7 @@
       ],
       "objdata": {
         "CancelsKnockbackFlying": true,
+        "CannotInterruptOtherKnockback": true,
         "SpeedMult": 2,
         "Damage": 100,
         "SuppressArmorImpactSound": true,
@@ -3976,10 +4346,10 @@
         "MeltsIceTile": true,
         "DamageScale": 3,
         "DamageType": "fire",
-        "KnockbackDistance": 0.05,
+        "KnockbackDistance": 0.25,
         "SplashDamage": [
           {
-            "KnockbackDistance": 0.15,
+            "KnockbackDistance": 0.25,
             "Range": {
               "w": 0.5,
               "h": 1
@@ -3989,6 +4359,38 @@
         "Size": {
           "w": 16,
           "h": 16
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "sky_bolt_positive"
+      ],
+      "objdata": {
+        "CannotBeReversedByJester": true,
+        "IgnoredBy3SectionStaff": true,
+        "Damage": 0,
+        "PositiveCharge": 1,
+        "Size": {
+          "w": 20,
+          "h": 20
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "sky_bolt_negative"
+      ],
+      "objdata": {
+        "CannotBeReversedByJester": true,
+        "IgnoredBy3SectionStaff": true,
+        "Damage": 0,
+        "NegativeCharge": 1,
+        "Size": {
+          "w": 20,
+          "h": 20
         }
       }
     },
@@ -4041,6 +4443,180 @@
         "Size": {
           "w": 16,
           "h": 16
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "anthurium_bolt"
+      ],
+      "objdata": {
+        "IgnoredBy3SectionStaff": true,
+        "CannotBeReversedByJester": true,
+        "DamageType": "electricity",
+        "Damage": 20,
+        "Size": {
+          "w": 25,
+          "h": 25
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "anthurium_bolt1"
+      ],
+      "objdata": {
+        "IgnoredBy3SectionStaff": true,
+        "CannotBeReversedByJester": true,
+        "DamageType": "electricity",
+        "Damage": 60,
+        "SpeedMult": 1.5,
+        "Size": {
+          "w": 25,
+          "h": 25
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "anthurium_bolt2"
+      ],
+      "objdata": {
+        "IgnoredBy3SectionStaff": true,
+        "CannotBeReversedByJester": true,
+        "DamageType": "electricity",
+        "Damage": 100,
+        "SpeedMult": 2,
+        "Size": {
+          "w": 25,
+          "h": 25
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "anthurium_bolt_big"
+      ],
+      "objdata": {
+        "IgnoredBy3SectionStaff": true,
+        "CannotBeReversedByJester": true,
+        "DamageType": "electricity",
+        "Damage": 400,
+        "Size": {
+          "w": 25,
+          "h": 25
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "anthurium_bolt_big1"
+      ],
+      "objdata": {
+        "IgnoredBy3SectionStaff": true,
+        "CannotBeReversedByJester": true,
+        "DamageType": "electricity",
+        "Damage": 1200,
+        "SpeedMult": 1.5,
+        "Size": {
+          "w": 25,
+          "h": 25
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "anthurium_bolt_big2"
+      ],
+      "objdata": {
+        "IgnoredBy3SectionStaff": true,
+        "CannotBeReversedByJester": true,
+        "DamageType": "electricity",
+        "Damage": 2000,
+        "SpeedMult": 2,
+        "Size": {
+          "w": 25,
+          "h": 25
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando"
+      ],
+      "objdata": {
+        "Damage": 150,
+        "YellowIgnitedType": "pea_commando_flame_yellow",
+        "BlueIgnitedType": "pea_commando_flame_blue",
+        "SplashDamage": [
+          {
+            "Damage": 75,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ],
+        "Size": {
+          "w": 20,
+          "h": 20
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando1"
+      ],
+      "objdata": {
+        "Damage": 450,
+        "SpeedMult": 1.5,
+        "YellowIgnitedType": "pea_commando1_flame_yellow",
+        "BlueIgnitedType": "pea_commando1_flame_blue",
+        "SplashDamage": [
+          {
+            "Damage": 225,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ],
+        "Size": {
+          "w": 20,
+          "h": 20
+        }
+      }
+    },
+    {
+      "objclass": "ProjectileProperties",
+      "aliases": [
+        "pea_commando2"
+      ],
+      "objdata": {
+        "Damage": 750,
+        "SpeedMult": 2,
+        "YellowIgnitedType": "pea_commando2_flame_yellow",
+        "BlueIgnitedType": "pea_commando2_flame_blue",
+        "SplashDamage": [
+          {
+            "Damage": 375,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ],
+        "Size": {
+          "w": 20,
+          "h": 20
         }
       }
     },

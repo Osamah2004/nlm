@@ -1,6 +1,17 @@
 const Version = () => {
   const versions = [
     {
+      version: "v1.3.1",
+      date: "2026/8/4",
+      title: "Minor bug fixes",
+      description: "",
+      changes: [
+        "Fixed custom zombie not working error.",
+        "Custom zombies now are saved automatically instead of manually.",
+        "Fixed 'Game Code' not displaying gardendless JSON files error.",
+      ],
+    },
+    {
       version: "v1.3",
       date: "2026/7/14",
       title: "Vasebreaker",

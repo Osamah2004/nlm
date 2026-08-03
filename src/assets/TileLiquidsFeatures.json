@@ -1,0 +1,29 @@
+{
+  "Tiles": [
+    {
+      "CODENAME": "sapfling",
+      "PROPS": "RTID(sapfling@TileLiquidProps)",
+      "RES": "Sapfling"
+    },
+    {
+      "CODENAME": "butter",
+      "PROPS": "RTID(butter@TileLiquidProps)",
+      "RES": "Butter"
+    },
+    {
+      "CODENAME": "cranjelly",
+      "PROPS": "RTID(cranjelly@TileLiquidProps)",
+      "RES": "Cranjelly"
+    },
+    {
+      "CODENAME": "moltenpool",
+      "PROPS": "RTID(moltenpool@TileLiquidProps)",
+      "RES": "MoltenPool"
+    },
+    {
+      "CODENAME": "lavaguava",
+      "PROPS": "RTID(lavaguava@TileLiquidProps)",
+      "RES": "LavaGuava"
+    }
+  ]
+}

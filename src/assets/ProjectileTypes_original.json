@@ -5,11 +5,81 @@
     {
       "objclass": "ProjectileType",
       "aliases": [
+        "darkmatter"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "darkmatter",
+        "Props": "RTID(darkmatter@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "darkmatter_shadow"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "darkmatter_shadow",
+        "Props": "RTID(darkmatter_shadow@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
         "abbot_fan_storm"
       ],
       "objdata": {
         "ProjectileBasedOn": "abbot_fan_storm",
         "Props": "RTID(abbot_fan_storm@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "airraid_0"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "airraid_0",
+        "Props": "RTID(airraid_0@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "airraid_1"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "airraid_1",
+        "Props": "RTID(airraid_1@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "airraid_2"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "homing_thistle_pf",
+        "Props": "RTID(airraid_2@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "airraid_bolt_positive"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "sky_bolt_positive",
+        "Props": "RTID(airraid_2@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "airraid_bolt_negative"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "sky_bolt_negative",
+        "Props": "RTID(airraid_2@ProjectileProps)"
       }
     },
     {
@@ -272,6 +342,48 @@
       "objdata": {
         "ProjectileBasedOn": "pea_snow2",
         "Props": "RTID(pea_snow2@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_goo"
+      ],
+      "objdata": {
+        "MintBoostedType": "pea_goo2",
+        "ProjectileBasedOn": "pea_goo",
+        "Props": "RTID(pea_goo@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_goo1"
+      ],
+      "objdata": {
+        "MintBoostedType": "pea_goo2",
+        "ProjectileBasedOn": "pea_goo1",
+        "Props": "RTID(pea_goo1@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_goo2"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "pea_goo2",
+        "Props": "RTID(pea_goo2@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_goo_pf"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "pea_goo_pf",
+        "Props": "RTID(pea_goo_pf@ProjectileProps)"
       }
     },
     {
@@ -2168,6 +2280,102 @@
     {
       "objclass": "ProjectileType",
       "aliases": [
+        "pea_commando"
+      ],
+      "objdata": {
+        "MintBoostedType": "pea_commando2",
+        "ProjectileBasedOn": "pea",
+        "Props": "RTID(pea_commando@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_commando1"
+      ],
+      "objdata": {
+        "MintBoostedType": "pea_commando2",
+        "ProjectileBasedOn": "pea1",
+        "Props": "RTID(pea_commando1@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_commando2"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "pea2",
+        "Props": "RTID(pea_commando2@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_commando_flame_yellow"
+      ],
+      "objdata": {
+        "MintBoostedType": "pea_commando2_flame_yellow",
+        "ProjectileBasedOn": "pea_flame_yellow",
+        "Props": "RTID(pea_commando_flame_yellow@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_commando1_flame_yellow"
+      ],
+      "objdata": {
+        "MintBoostedType": "pea_commando2_flame_yellow",
+        "ProjectileBasedOn": "pea1_flame_yellow",
+        "Props": "RTID(pea_commando1_flame_yellow@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_commando2_flame_yellow"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "pea2_flame_yellow",
+        "Props": "RTID(pea_commando2_flame_yellow@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_commando_flame_blue"
+      ],
+      "objdata": {
+        "MintBoostedType": "pea_commando2_flame_blue",
+        "ProjectileBasedOn": "pea_flame_blue",
+        "Props": "RTID(pea_commando_flame_blue@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_commando1_flame_blue"
+      ],
+      "objdata": {
+        "MintBoostedType": "pea_commando2_flame_blue",
+        "ProjectileBasedOn": "pea1_flame_blue",
+        "Props": "RTID(pea_commando1_flame_blue@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "pea_commando2_flame_blue"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "pea2_flame_blue",
+        "Props": "RTID(pea_commando2_flame_blue@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
         "shootingstar"
       ],
       "objdata": {
@@ -2339,6 +2547,70 @@
       "objdata": {
         "ProjectileBasedOn": "cranjelly",
         "Props": "RTID(cranjelly@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "anthurium_bolt"
+      ],
+      "objdata": {
+        "MintBoostedType": "anthurium_bolt2",
+        "ProjectileBasedOn": "anthurium_bolt",
+        "Props": "RTID(anthurium_bolt@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "anthurium_bolt1"
+      ],
+      "objdata": {
+        "MintBoostedType": "anthurium_bolt2",
+        "ProjectileBasedOn": "anthurium_bolt",
+        "Props": "RTID(anthurium_bolt1@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "anthurium_bolt2"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "anthurium_bolt",
+        "Props": "RTID(anthurium_bolt2@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "anthurium_bolt_big"
+      ],
+      "objdata": {
+        "MintBoostedType": "anthurium_bolt_big2",
+        "ProjectileBasedOn": "anthurium_bolt_big",
+        "Props": "RTID(anthurium_bolt_big@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "anthurium_bolt_big1"
+      ],
+      "objdata": {
+        "MintBoostedType": "anthurium_bolt_big2",
+        "ProjectileBasedOn": "anthurium_bolt_big",
+        "Props": "RTID(anthurium_bolt_big1@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "anthurium_bolt_big2"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "anthurium_bolt_big",
+        "Props": "RTID(anthurium_bolt_big2@ProjectileProps)"
       }
     },
     {
@@ -2641,6 +2913,36 @@
       "objdata": {
         "ProjectileBasedOn": "eighties_speaker_wave",
         "Props": "RTID(eighties_speaker_wave@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "sky_battleplane_bullet"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "sky_battleplane_bullet",
+        "Props": "RTID(sky_battleplane_bullet@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "sky_bolt_positive"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "sky_bolt_positive",
+        "Props": "RTID(sky_bolt_positive@ProjectileProps)"
+      }
+    },
+    {
+      "objclass": "ProjectileType",
+      "aliases": [
+        "sky_bolt_negative"
+      ],
+      "objdata": {
+        "ProjectileBasedOn": "sky_bolt_negative",
+        "Props": "RTID(sky_bolt_negative@ProjectileProps)"
       }
     },
     {
